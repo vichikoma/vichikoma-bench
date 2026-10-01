@@ -57,7 +57,7 @@ node render.mjs --encode --out=out/mv.mp4                                       
 
 | 模型 | 输出轮次 |
 |---|---|
-| DeepSeek V4.1 Flash | **不是一轮直出**：作者在其结果上让它微调了几处细节 |
+| DeepSeek V4.1 Flash | **不是一轮直出**：在首次产出基础上微调了 **4 处细节**，共多出 **6 轮交互** |
 | GLM 5.3 Flash | 一次性输出（质量太差，无法调整） |
 | Xiaomi MiMo V2.6 Pro | 一次性输出（质量太差，无法调整） |
 
