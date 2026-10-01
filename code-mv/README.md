@@ -61,8 +61,6 @@ node render.mjs --encode --out=out/mv.mp4                                       
 | GLM 5.3 Flash | 一次性输出（质量太差，无法调整） |
 | Xiaomi MiMo V2.6 Pro | 一次性输出（质量太差，无法调整） |
 
-（原作者自己也经过多轮调整。）
-
 ## 四、参赛的 3 家
 
 只请了 3 家，原因是：
