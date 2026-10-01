@@ -1,0 +1,12 @@
+{
+  "name": "mv-task",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Build a programmatically-animated music video for the song in assets/",
+  "license": "ISC",
+  "dependencies": {
+    "p5": "^2.3.3",
+    "p5.brush": "^2.2.3",
+    "puppeteer-core": "^25.11.0"
+  }
+}
