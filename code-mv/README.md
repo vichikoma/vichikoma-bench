@@ -66,8 +66,8 @@ node render.mjs --encode --out=out/mv.mp4                                       
 只请了 3 家，原因是：
 
 - **太贵、不实用**：Kimi K3、Qwen 3.8 Max
-- **做不出来**：Qwen 3.8 Flash
-- **按之前测评不值得花时间(钱)**：MiniMax、Doubao
+- **做不出来**：Qwen 3.8 Flash、MiniMax M3.1 Flash
+- **做不出来且贵**：Doubao Seed 2.1 Pro
 
 ## 五、为什么不设 AI 打分
 
