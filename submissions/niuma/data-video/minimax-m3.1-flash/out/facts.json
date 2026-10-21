@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "film": "牛马咖啡 2026 Q3 经营速报",
+    "period": "2026-07 ~ 2026-09（第三季度）",
+    "compare_bases": {"环比": "2026-04 ~ 2026-06（第二季度）", "同比": "2025-07 ~ 2025-09（去年同期）"},
+    "source_rows": "data/sales_2025-01_2026-09.csv，条件：月份 ∈ 期间；其余按 大区/渠道/品类 字段筛选后求和",
+    "unit_rule": "金额源数据为元，除以 10000 四舍五入到 0.1 显示为「万元」；比率显示到 0.1 位并带单位 %；毛利率差显示为 pp（百分点）",
+    "timing_rule": "t_appear = 该数字滚动/弹入动画开始的绝对时刻（秒）；t_settled = 滚动到终值、此后不再变化的时刻。场景起点帧 = t_appear 所在帧 - 局部 delay。",
+    "fps": 30,
+    "generator": "video-task/build_facts.py（口径）+ video-task/gen_data_ts.py（写入 project/src/data.ts）"
+  },
+
+  "facts": [
+    {"id": "F01", "scene": "S1", "screen_text": "2026 Q3", "value": 2026, "unit": "（期间标识）", "t_appear": 0.40, "t_settled": 0.40, "basis": "brief.md 指定的汇报期间 2026 年第三季度，不是统计量，仅为期间标签"},
+    {"id": "F02", "scene": "S1", "screen_text": "Q3", "value": 3, "unit": "（季度序数）", "t_appear": 0.40, "t_settled": 0.40, "basis": "7/8/9 三个月为第三季度，标识用途"},
+
+    {"id": "F10", "scene": "S2", "screen_text": "第三季度总销售额 6902.5 万元", "value": 6902.5, "unit": "万元", "t_appear": 2.20, "t_settled": 3.20, "basis": "Σ 销售额(元) where 月份∈{2026-07,2026-08,2026-09} = 69,024,831 元 ÷ 10000 = 6902.4831 → 6902.5"},
+    {"id": "F11", "scene": "S2", "screen_text": "同比 37.1%", "value": 37.1, "unit": "%", "t_appear": 2.67, "t_settled": 3.47, "basis": "(69024831 ÷ Σ销售额 where 月份∈{2025-07,2025-08,2025-09}=50336617 − 1)×100 = 37.126 → 37.1"},
+    {"id": "F12", "scene": "S2", "screen_text": "环比 30.9%", "value": 30.9, "unit": "%", "t_appear": 2.90, "t_settled": 3.70, "basis": "(69024831 ÷ Σ销售额 where 月份∈{2026-04,2026-05,2026-06}=52722425 − 1)×100 = 30.921 → 30.9"},
+    {"id": "F13", "scene": "S2", "screen_text": "毛利 3740.8 万元", "value": 3740.8, "unit": "万元", "t_appear": 3.13, "t_settled": 3.93, "basis": "Σ 毛利(元) where 月份∈{2026-07,2026-08,2026-09} = 37,408,123 元 ÷ 10000 = 3740.8123 → 3740.8"},
+
+    {"id": "F20", "scene": "S3", "screen_text": "1564.0（04月柱）", "value": 1564.0, "unit": "万元", "t_appear": 5.47, "t_settled": 5.47, "basis": "Σ 销售额(元) where 月份=2026-04 = 15,639,656 ÷ 10000 = 1563.9656 → 1564.0"},
+    {"id": "F21", "scene": "S3", "screen_text": "1727.9（05月柱）", "value": 1727.9, "unit": "万元", "t_appear": 5.67, "t_settled": 5.67, "basis": "Σ 销售额(元) where 月份=2026-05 = 17,278,958 ÷ 10000 = 1727.8958 → 1727.9"},
+    {"id": "F22", "scene": "S3", "screen_text": "1980.4（06月柱）", "value": 1980.4, "unit": "万元", "t_appear": 5.87, "t_settled": 5.87, "basis": "Σ 销售额(元) where 月份=2026-06 = 19,803,811 ÷ 10000 = 1980.3811 → 1980.4"},
+    {"id": "F23", "scene": "S3", "screen_text": "2656.2（07月柱）", "value": 2656.2, "unit": "万元", "t_appear": 6.07, "t_settled": 6.07, "basis": "Σ 销售额(元) where 月份=2026-07 = 26,561,910 ÷ 10000 = 2656.191 → 2656.2"},
+    {"id": "F24", "scene": "S3", "screen_text": "2247.8（08月柱）", "value": 2247.8, "unit": "万元", "t_appear": 6.27, "t_settled": 6.27, "basis": "Σ 销售额(元) where 月份=2026-08 = 22,478,291 ÷ 10000 = 2247.8291 → 2247.8"},
+    {"id": "F25", "scene": "S3", "screen_text": "1998.5（09月柱）", "value": 1998.5, "unit": "万元", "t_appear": 6.47, "t_settled": 6.47, "basis": "Σ 销售额(元) where 月份=2026-09 = 19,984,630 ÷ 10000 = 1998.463 → 1998.5"},
+    {"id": "F26", "scene": "S3", "screen_text": "-24.8%", "value": -24.8, "unit": "%", "t_appear": 6.73, "t_settled": 6.73, "basis": "(19984630 ÷ 26561910 − 1)×100 = −24.762 → −24.8"},
+    {"id": "F27", "scene": "S3", "screen_text": "7 月 2656.2 万元", "value": 2656.2, "unit": "万元", "t_appear": 7.07, "t_settled": 7.07, "basis": "同 F23，注解中重复引用峰值月"},
+    {"id": "F28", "scene": "S3", "screen_text": "9 月 1998.5 万元", "value": 1998.5, "unit": "万元", "t_appear": 7.07, "t_settled": 7.07, "basis": "同 F25，注解中重复引用谷值月"},
+
+    {"id": "F30", "scene": "S4", "screen_text": "华北 销售额环比 61.3%", "value": 61.3, "unit": "%", "t_appear": 8.47, "t_settled": 9.20, "basis": "(Σ销售额 where 大区=华北 and 月份∈Q3 = 17056587) ÷ (Σ销售额 where 大区=华北 and 月份∈Q2 = 10576292) − 1，×100 = 61.272 → 61.3"},
+    {"id": "F31", "scene": "S4", "screen_text": "华北 增量贡献 39.8%", "value": 39.8, "unit": "%", "t_appear": 8.67, "t_settled": 9.40, "basis": "(17056587 − 10576292) ÷ (69024831 − 52722425) × 100 = 39.751 → 39.8"},
+    {"id": "F32", "scene": "S4", "screen_text": "华北 环比增量 648.0 万元", "value": 648.0, "unit": "万元", "t_appear": 8.87, "t_settled": 9.60, "basis": "(17056587 − 10576292) 元 = 6,480,295 ÷ 10000 = 648.0295 → 648.0"},
+    {"id": "F33", "scene": "S4", "screen_text": "西南 +32.2%", "value": 32.2, "unit": "%", "t_appear": 9.07, "t_settled": 9.07, "basis": "(7706466 ÷ 5829675 − 1)×100 = 32.194 → 32.2"},
+    {"id": "F34", "scene": "S4", "screen_text": "西南 增量 187.7 万元", "value": 187.7, "unit": "万元", "t_appear": 9.07, "t_settled": 9.07, "basis": "(7706466 − 5829675) = 1,876,791 ÷ 10000 → 187.7"},
+    {"id": "F35", "scene": "S4", "screen_text": "华南 +22.3%", "value": 22.3, "unit": "%", "t_appear": 9.33, "t_settled": 9.33, "basis": "(14754593 ÷ 12059431 − 1)×100 = 22.349 → 22.3"},
+    {"id": "F36", "scene": "S4", "screen_text": "华南 增量 269.5 万元", "value": 269.5, "unit": "万元", "t_appear": 9.33, "t_settled": 9.33, "basis": "(14754593 − 12059431) = 2,695,162 ÷ 10000 → 269.5"},
+    {"id": "F37", "scene": "S4", "screen_text": "华东 +21.9%", "value": 21.9, "unit": "%", "t_appear": 9.60, "t_settled": 9.60, "basis": "(20704289 ÷ 16982820 − 1)×100 = 21.913 → 21.9"},
+    {"id": "F38", "scene": "S4", "screen_text": "华东 增量 372.1 万元", "value": 372.1, "unit": "万元", "t_appear": 9.60, "t_settled": 9.60, "basis": "(20704289 − 16982820) = 3,721,469 ÷ 10000 → 372.1"},
+    {"id": "F39", "scene": "S4", "screen_text": "华中 +21.0%", "value": 21.0, "unit": "%", "t_appear": 9.87, "t_settled": 9.87, "basis": "(8802896 ÷ 7274207 − 1)×100 = 21.015 → 21.0"},
+    {"id": "F40", "scene": "S4", "screen_text": "华中 增量 152.9 万元", "value": 152.9, "unit": "万元", "t_appear": 9.87, "t_settled": 9.87, "basis": "(8802896 − 7274207) = 1,528,689 ÷ 10000 → 152.9"},
+
+    {"id": "F50", "scene": "S5", "screen_text": "外卖贡献了 58.3% 的增量", "value": 58.3, "unit": "%", "t_appear": 11.07, "t_settled": 11.07, "basis": "(Σ销售额 where 渠道=外卖 and 月份∈Q3 = 35853231) − (同口径 Q2 = 26352981) = 9,500,250；÷ 16,302,406（Q3−Q2 总增量）×100 = 58.275 → 58.3"},
+    {"id": "F51", "scene": "S5", "screen_text": "门店 48.1%", "value": 48.1, "unit": "%", "t_appear": 11.80, "t_settled": 12.60, "basis": "Σ销售额 where 渠道=门店 and 月份∈Q3 = 33,171,600 ÷ 69,024,831 ×100 = 48.057 → 48.1"},
+    {"id": "F52", "scene": "S5", "screen_text": "外卖 51.9%", "value": 51.9, "unit": "%", "t_appear": 12.00, "t_settled": 12.80, "basis": "Σ销售额 where 渠道=外卖 and 月份∈Q3 = 35,853,231 ÷ 69,024,831 ×100 = 51.943 → 51.9"},
+    {"id": "F53", "scene": "S5", "screen_text": "外卖 · 环比增量 950.0 万元", "value": 950.0, "unit": "万元", "t_appear": 12.60, "t_settled": 13.33, "basis": "(35853231 − 26352981) = 9,500,250 ÷ 10000 → 950.0"},
+    {"id": "F54", "scene": "S5", "screen_text": "外卖 +36.1%", "value": 36.1, "unit": "%", "t_appear": 12.60, "t_settled": 12.60, "basis": "(35853231 ÷ 26352981 − 1)×100 = 36.050 → 36.1"},
+    {"id": "F55", "scene": "S5", "screen_text": "门店 · 环比增量 680.2 万元", "value": 680.2, "unit": "万元", "t_appear": 12.90, "t_settled": 13.63, "basis": "(33171600 − 26369444) = 6,802,156 ÷ 10000 → 680.2"},
+    {"id": "F56", "scene": "S5", "screen_text": "门店 +25.8%", "value": 25.8, "unit": "%", "t_appear": 12.90, "t_settled": 12.90, "basis": "(33171600 ÷ 26369444 − 1)×100 = 25.796 → 25.8"},
+
+    {"id": "F60", "scene": "S6", "screen_text": "第二季度 55.9%", "value": 55.9, "unit": "%", "t_appear": 14.27, "t_settled": 14.27, "basis": "Σ毛利(元) where 月份∈Q2 = 29,479,777 ÷ Σ销售额(元) where 月份∈Q2 = 52,722,425 ×100 = 55.915 → 55.9"},
+    {"id": "F61", "scene": "S6", "screen_text": "-1.7pp", "value": -1.7, "unit": "pp", "t_appear": 14.53, "t_settled": 14.53, "basis": "Q3 毛利率 54.195 − Q2 毛利率 55.915 = −1.720 个百分点 → −1.7"},
+    {"id": "F62", "scene": "S6", "screen_text": "第三季度毛利率 54.2%", "value": 54.2, "unit": "%", "t_appear": 14.60, "t_settled": 15.53, "basis": "Σ毛利(元) where 月份∈Q3 = 37,408,123 ÷ 69,024,831 ×100 = 54.195 → 54.2"},
+    {"id": "F63", "scene": "S6", "screen_text": "外卖销售占比 49.3%（4月）", "value": 49.3, "unit": "%", "t_appear": 15.67, "t_settled": 15.67, "basis": "Σ销售额 where 渠道=外卖 and 月份=2026-04 ÷ Σ销售额 where 月份=2026-04 ×100 = 49.325 → 49.3"},
+    {"id": "F64", "scene": "S6", "screen_text": "外卖销售占比 53.0%（9月）", "value": 53.0, "unit": "%", "t_appear": 16.00, "t_settled": 16.00, "basis": "Σ销售额 where 渠道=外卖 and 月份=2026-09 ÷ Σ销售额 where 月份=2026-09 ×100 = 53.009 → 53.0"},
+
+    {"id": "F70", "scene": "S7", "screen_text": "同比大涨 37.1%", "value": 37.1, "unit": "%", "t_appear": 18.13, "t_settled": 19.27, "basis": "同 F11，(69024831 ÷ 50336617 − 1)×100 = 37.126 → 37.1"},
+    {"id": "F71", "scene": "S7", "screen_text": "Q3 销售额 6902.5 万元", "value": 6902.5, "unit": "万元", "t_appear": 18.87, "t_settled": 18.87, "basis": "同 F10，Σ销售额(元) where 月份∈Q3 ÷ 10000 → 6902.5"},
+
+    {"id": "F80", "scene": "S8", "screen_text": "2026 Q3", "value": 2026, "unit": "（期间标识）", "t_appear": 23.13, "t_settled": 23.13, "basis": "期间标签"},
+    {"id": "F81", "scene": "S8", "screen_text": "01 总量创新高 同比增速 37.1%", "value": 37.1, "unit": "%", "t_appear": 23.67, "t_settled": 24.33, "basis": "同 F11"},
+    {"id": "F82", "scene": "S8", "screen_text": "02 华北跑出来 增量贡献 39.8%", "value": 39.8, "unit": "%", "t_appear": 24.67, "t_settled": 25.33, "basis": "同 F31"},
+    {"id": "F83", "scene": "S8", "screen_text": "03 毛利率承压 环比变化 -1.7pp", "value": -1.7, "unit": "pp", "t_appear": 25.67, "t_settled": 26.33, "basis": "同 F61"},
+
+    {"id": "F90", "scene": "S9", "screen_text": "2026 年第三季度经营速报", "value": 2026, "unit": "（期间标识）", "t_appear": 28.00, "t_settled": 28.00, "basis": "期间标签"}
+  ],
+
+  "consistency_rules": [
+    "销售额/毛利/增量一律显示为「万元」，保留 1 位小数：同一指标在 S2、S3、S4、S5、S7 中写法完全一致。",
+    "同比、环比、占比、增速一律显示为百分数，保留 1 位小数。",
+    "毛利率的期间差值一律写作 pp（百分点），不带 % 号，避免与增速混淆。",
+    "金额的每个数字在画面上的最后一次出现均已核对与本清单一致。"
+  ]
+}

@@ -1,0 +1,429 @@
+{
+  "bpm": 124,
+  "total_bars": 15,
+  "total_beats": 60,
+  "total_duration_sec": 29.032258064516128,
+  "sec_per_beat": 0.4838709677419355,
+  "beats": [
+    {
+      "beat_index": 0,
+      "time_sec": 0.0,
+      "bar": 0,
+      "beat_in_bar": 0,
+      "is_downbeat": true
+    },
+    {
+      "beat_index": 1,
+      "time_sec": 0.4839,
+      "bar": 0,
+      "beat_in_bar": 1,
+      "is_downbeat": false
+    },
+    {
+      "beat_index": 2,
+      "time_sec": 0.9677,
+      "bar": 0,
+      "beat_in_bar": 2,
+      "is_downbeat": false
+    },
+    {
+      "beat_index": 3,
+      "time_sec": 1.4516,
+      "bar": 0,
+      "beat_in_bar": 3,
+      "is_downbeat": false
+    },
+    {
+      "beat_index": 4,
+      "time_sec": 1.9355,
+      "bar": 1,
+      "beat_in_bar": 0,
+      "is_downbeat": true
+    },
+    {
+      "beat_index": 5,
+      "time_sec": 2.4194,
+      "bar": 1,
+      "beat_in_bar": 1,
+      "is_downbeat": false
+    },
+    {
+      "beat_index": 6,
+      "time_sec": 2.9032,
+      "bar": 1,
+      "beat_in_bar": 2,
+      "is_downbeat": false
+    },
+    {
+      "beat_index": 7,
+      "time_sec": 3.3871,
+      "bar": 1,
+      "beat_in_bar": 3,
+      "is_downbeat": false
+    },
+    {
+      "beat_index": 8,
+      "time_sec": 3.871,
+      "bar": 2,
+      "beat_in_bar": 0,
+      "is_downbeat": true
+    },
+    {
+      "beat_index": 9,
+      "time_sec": 4.3548,
+      "bar": 2,
+      "beat_in_bar": 1,
+      "is_downbeat": false
+    },
+    {
+      "beat_index": 10,
+      "time_sec": 4.8387,
+      "bar": 2,
+      "beat_in_bar": 2,
+      "is_downbeat": false
+    },
+    {
+      "beat_index": 11,
+      "time_sec": 5.3226,
+      "bar": 2,
+      "beat_in_bar": 3,
+      "is_downbeat": false
+    },
+    {
+      "beat_index": 12,
+      "time_sec": 5.8065,
+      "bar": 3,
+      "beat_in_bar": 0,
+      "is_downbeat": true
+    },
+    {
+      "beat_index": 13,
+      "time_sec": 6.2903,
+      "bar": 3,
+      "beat_in_bar": 1,
+      "is_downbeat": false
+    },
+    {
+      "beat_index": 14,
+      "time_sec": 6.7742,
+      "bar": 3,
+      "beat_in_bar": 2,
+      "is_downbeat": false
+    },
+    {
+      "beat_index": 15,
+      "time_sec": 7.2581,
+      "bar": 3,
+      "beat_in_bar": 3,
+      "is_downbeat": false
+    },
+    {
+      "beat_index": 16,
+      "time_sec": 7.7419,
+      "bar": 4,
+      "beat_in_bar": 0,
+      "is_downbeat": true
+    },
+    {
+      "beat_index": 17,
+      "time_sec": 8.2258,
+      "bar": 4,
+      "beat_in_bar": 1,
+      "is_downbeat": false
+    },
+    {
+      "beat_index": 18,
+      "time_sec": 8.7097,
+      "bar": 4,
+      "beat_in_bar": 2,
+      "is_downbeat": false
+    },
+    {
+      "beat_index": 19,
+      "time_sec": 9.1935,
+      "bar": 4,
+      "beat_in_bar": 3,
+      "is_downbeat": false
+    },
+    {
+      "beat_index": 20,
+      "time_sec": 9.6774,
+      "bar": 5,
+      "beat_in_bar": 0,
+      "is_downbeat": true
+    },
+    {
+      "beat_index": 21,
+      "time_sec": 10.1613,
+      "bar": 5,
+      "beat_in_bar": 1,
+      "is_downbeat": false
+    },
+    {
+      "beat_index": 22,
+      "time_sec": 10.6452,
+      "bar": 5,
+      "beat_in_bar": 2,
+      "is_downbeat": false
+    },
+    {
+      "beat_index": 23,
+      "time_sec": 11.129,
+      "bar": 5,
+      "beat_in_bar": 3,
+      "is_downbeat": false
+    },
+    {
+      "beat_index": 24,
+      "time_sec": 11.6129,
+      "bar": 6,
+      "beat_in_bar": 0,
+      "is_downbeat": true
+    },
+    {
+      "beat_index": 25,
+      "time_sec": 12.0968,
+      "bar": 6,
+      "beat_in_bar": 1,
+      "is_downbeat": false
+    },
+    {
+      "beat_index": 26,
+      "time_sec": 12.5806,
+      "bar": 6,
+      "beat_in_bar": 2,
+      "is_downbeat": false
+    },
+    {
+      "beat_index": 27,
+      "time_sec": 13.0645,
+      "bar": 6,
+      "beat_in_bar": 3,
+      "is_downbeat": false
+    },
+    {
+      "beat_index": 28,
+      "time_sec": 13.5484,
+      "bar": 7,
+      "beat_in_bar": 0,
+      "is_downbeat": true
+    },
+    {
+      "beat_index": 29,
+      "time_sec": 14.0323,
+      "bar": 7,
+      "beat_in_bar": 1,
+      "is_downbeat": false
+    },
+    {
+      "beat_index": 30,
+      "time_sec": 14.5161,
+      "bar": 7,
+      "beat_in_bar": 2,
+      "is_downbeat": false
+    },
+    {
+      "beat_index": 31,
+      "time_sec": 15.0,
+      "bar": 7,
+      "beat_in_bar": 3,
+      "is_downbeat": false
+    },
+    {
+      "beat_index": 32,
+      "time_sec": 15.4839,
+      "bar": 8,
+      "beat_in_bar": 0,
+      "is_downbeat": true
+    },
+    {
+      "beat_index": 33,
+      "time_sec": 15.9677,
+      "bar": 8,
+      "beat_in_bar": 1,
+      "is_downbeat": false
+    },
+    {
+      "beat_index": 34,
+      "time_sec": 16.4516,
+      "bar": 8,
+      "beat_in_bar": 2,
+      "is_downbeat": false
+    },
+    {
+      "beat_index": 35,
+      "time_sec": 16.9355,
+      "bar": 8,
+      "beat_in_bar": 3,
+      "is_downbeat": false
+    },
+    {
+      "beat_index": 36,
+      "time_sec": 17.4194,
+      "bar": 9,
+      "beat_in_bar": 0,
+      "is_downbeat": true
+    },
+    {
+      "beat_index": 37,
+      "time_sec": 17.9032,
+      "bar": 9,
+      "beat_in_bar": 1,
+      "is_downbeat": false
+    },
+    {
+      "beat_index": 38,
+      "time_sec": 18.3871,
+      "bar": 9,
+      "beat_in_bar": 2,
+      "is_downbeat": false
+    },
+    {
+      "beat_index": 39,
+      "time_sec": 18.871,
+      "bar": 9,
+      "beat_in_bar": 3,
+      "is_downbeat": false
+    },
+    {
+      "beat_index": 40,
+      "time_sec": 19.3548,
+      "bar": 10,
+      "beat_in_bar": 0,
+      "is_downbeat": true
+    },
+    {
+      "beat_index": 41,
+      "time_sec": 19.8387,
+      "bar": 10,
+      "beat_in_bar": 1,
+      "is_downbeat": false
+    },
+    {
+      "beat_index": 42,
+      "time_sec": 20.3226,
+      "bar": 10,
+      "beat_in_bar": 2,
+      "is_downbeat": false
+    },
+    {
+      "beat_index": 43,
+      "time_sec": 20.8065,
+      "bar": 10,
+      "beat_in_bar": 3,
+      "is_downbeat": false
+    },
+    {
+      "beat_index": 44,
+      "time_sec": 21.2903,
+      "bar": 11,
+      "beat_in_bar": 0,
+      "is_downbeat": true
+    },
+    {
+      "beat_index": 45,
+      "time_sec": 21.7742,
+      "bar": 11,
+      "beat_in_bar": 1,
+      "is_downbeat": false
+    },
+    {
+      "beat_index": 46,
+      "time_sec": 22.2581,
+      "bar": 11,
+      "beat_in_bar": 2,
+      "is_downbeat": false
+    },
+    {
+      "beat_index": 47,
+      "time_sec": 22.7419,
+      "bar": 11,
+      "beat_in_bar": 3,
+      "is_downbeat": false
+    },
+    {
+      "beat_index": 48,
+      "time_sec": 23.2258,
+      "bar": 12,
+      "beat_in_bar": 0,
+      "is_downbeat": true
+    },
+    {
+      "beat_index": 49,
+      "time_sec": 23.7097,
+      "bar": 12,
+      "beat_in_bar": 1,
+      "is_downbeat": false
+    },
+    {
+      "beat_index": 50,
+      "time_sec": 24.1935,
+      "bar": 12,
+      "beat_in_bar": 2,
+      "is_downbeat": false
+    },
+    {
+      "beat_index": 51,
+      "time_sec": 24.6774,
+      "bar": 12,
+      "beat_in_bar": 3,
+      "is_downbeat": false
+    },
+    {
+      "beat_index": 52,
+      "time_sec": 25.1613,
+      "bar": 13,
+      "beat_in_bar": 0,
+      "is_downbeat": true
+    },
+    {
+      "beat_index": 53,
+      "time_sec": 25.6452,
+      "bar": 13,
+      "beat_in_bar": 1,
+      "is_downbeat": false
+    },
+    {
+      "beat_index": 54,
+      "time_sec": 26.129,
+      "bar": 13,
+      "beat_in_bar": 2,
+      "is_downbeat": false
+    },
+    {
+      "beat_index": 55,
+      "time_sec": 26.6129,
+      "bar": 13,
+      "beat_in_bar": 3,
+      "is_downbeat": false
+    },
+    {
+      "beat_index": 56,
+      "time_sec": 27.0968,
+      "bar": 14,
+      "beat_in_bar": 0,
+      "is_downbeat": true
+    },
+    {
+      "beat_index": 57,
+      "time_sec": 27.5806,
+      "bar": 14,
+      "beat_in_bar": 1,
+      "is_downbeat": false
+    },
+    {
+      "beat_index": 58,
+      "time_sec": 28.0645,
+      "bar": 14,
+      "beat_in_bar": 2,
+      "is_downbeat": false
+    },
+    {
+      "beat_index": 59,
+      "time_sec": 28.5484,
+      "bar": 14,
+      "beat_in_bar": 3,
+      "is_downbeat": false
+    }
+  ]
+}

@@ -1,0 +1,512 @@
+{
+  "bpm": 120,
+  "time_signature": [
+    4,
+    4
+  ],
+  "duration_seconds": 30,
+  "beat_unit": "quarter_note",
+  "origin_seconds": 0,
+  "beats": [
+    {
+      "index": 0,
+      "time_seconds": 0.0,
+      "bar": 1,
+      "beat_in_bar": 1,
+      "is_downbeat": true,
+      "frame": 0
+    },
+    {
+      "index": 1,
+      "time_seconds": 0.5,
+      "bar": 1,
+      "beat_in_bar": 2,
+      "is_downbeat": false,
+      "frame": 15
+    },
+    {
+      "index": 2,
+      "time_seconds": 1.0,
+      "bar": 1,
+      "beat_in_bar": 3,
+      "is_downbeat": false,
+      "frame": 30
+    },
+    {
+      "index": 3,
+      "time_seconds": 1.5,
+      "bar": 1,
+      "beat_in_bar": 4,
+      "is_downbeat": false,
+      "frame": 45
+    },
+    {
+      "index": 4,
+      "time_seconds": 2.0,
+      "bar": 2,
+      "beat_in_bar": 1,
+      "is_downbeat": true,
+      "frame": 60
+    },
+    {
+      "index": 5,
+      "time_seconds": 2.5,
+      "bar": 2,
+      "beat_in_bar": 2,
+      "is_downbeat": false,
+      "frame": 75
+    },
+    {
+      "index": 6,
+      "time_seconds": 3.0,
+      "bar": 2,
+      "beat_in_bar": 3,
+      "is_downbeat": false,
+      "frame": 90
+    },
+    {
+      "index": 7,
+      "time_seconds": 3.5,
+      "bar": 2,
+      "beat_in_bar": 4,
+      "is_downbeat": false,
+      "frame": 105
+    },
+    {
+      "index": 8,
+      "time_seconds": 4.0,
+      "bar": 3,
+      "beat_in_bar": 1,
+      "is_downbeat": true,
+      "frame": 120
+    },
+    {
+      "index": 9,
+      "time_seconds": 4.5,
+      "bar": 3,
+      "beat_in_bar": 2,
+      "is_downbeat": false,
+      "frame": 135
+    },
+    {
+      "index": 10,
+      "time_seconds": 5.0,
+      "bar": 3,
+      "beat_in_bar": 3,
+      "is_downbeat": false,
+      "frame": 150
+    },
+    {
+      "index": 11,
+      "time_seconds": 5.5,
+      "bar": 3,
+      "beat_in_bar": 4,
+      "is_downbeat": false,
+      "frame": 165
+    },
+    {
+      "index": 12,
+      "time_seconds": 6.0,
+      "bar": 4,
+      "beat_in_bar": 1,
+      "is_downbeat": true,
+      "frame": 180
+    },
+    {
+      "index": 13,
+      "time_seconds": 6.5,
+      "bar": 4,
+      "beat_in_bar": 2,
+      "is_downbeat": false,
+      "frame": 195
+    },
+    {
+      "index": 14,
+      "time_seconds": 7.0,
+      "bar": 4,
+      "beat_in_bar": 3,
+      "is_downbeat": false,
+      "frame": 210
+    },
+    {
+      "index": 15,
+      "time_seconds": 7.5,
+      "bar": 4,
+      "beat_in_bar": 4,
+      "is_downbeat": false,
+      "frame": 225
+    },
+    {
+      "index": 16,
+      "time_seconds": 8.0,
+      "bar": 5,
+      "beat_in_bar": 1,
+      "is_downbeat": true,
+      "frame": 240
+    },
+    {
+      "index": 17,
+      "time_seconds": 8.5,
+      "bar": 5,
+      "beat_in_bar": 2,
+      "is_downbeat": false,
+      "frame": 255
+    },
+    {
+      "index": 18,
+      "time_seconds": 9.0,
+      "bar": 5,
+      "beat_in_bar": 3,
+      "is_downbeat": false,
+      "frame": 270
+    },
+    {
+      "index": 19,
+      "time_seconds": 9.5,
+      "bar": 5,
+      "beat_in_bar": 4,
+      "is_downbeat": false,
+      "frame": 285
+    },
+    {
+      "index": 20,
+      "time_seconds": 10.0,
+      "bar": 6,
+      "beat_in_bar": 1,
+      "is_downbeat": true,
+      "frame": 300
+    },
+    {
+      "index": 21,
+      "time_seconds": 10.5,
+      "bar": 6,
+      "beat_in_bar": 2,
+      "is_downbeat": false,
+      "frame": 315
+    },
+    {
+      "index": 22,
+      "time_seconds": 11.0,
+      "bar": 6,
+      "beat_in_bar": 3,
+      "is_downbeat": false,
+      "frame": 330
+    },
+    {
+      "index": 23,
+      "time_seconds": 11.5,
+      "bar": 6,
+      "beat_in_bar": 4,
+      "is_downbeat": false,
+      "frame": 345
+    },
+    {
+      "index": 24,
+      "time_seconds": 12.0,
+      "bar": 7,
+      "beat_in_bar": 1,
+      "is_downbeat": true,
+      "frame": 360
+    },
+    {
+      "index": 25,
+      "time_seconds": 12.5,
+      "bar": 7,
+      "beat_in_bar": 2,
+      "is_downbeat": false,
+      "frame": 375
+    },
+    {
+      "index": 26,
+      "time_seconds": 13.0,
+      "bar": 7,
+      "beat_in_bar": 3,
+      "is_downbeat": false,
+      "frame": 390
+    },
+    {
+      "index": 27,
+      "time_seconds": 13.5,
+      "bar": 7,
+      "beat_in_bar": 4,
+      "is_downbeat": false,
+      "frame": 405
+    },
+    {
+      "index": 28,
+      "time_seconds": 14.0,
+      "bar": 8,
+      "beat_in_bar": 1,
+      "is_downbeat": true,
+      "frame": 420
+    },
+    {
+      "index": 29,
+      "time_seconds": 14.5,
+      "bar": 8,
+      "beat_in_bar": 2,
+      "is_downbeat": false,
+      "frame": 435
+    },
+    {
+      "index": 30,
+      "time_seconds": 15.0,
+      "bar": 8,
+      "beat_in_bar": 3,
+      "is_downbeat": false,
+      "frame": 450
+    },
+    {
+      "index": 31,
+      "time_seconds": 15.5,
+      "bar": 8,
+      "beat_in_bar": 4,
+      "is_downbeat": false,
+      "frame": 465
+    },
+    {
+      "index": 32,
+      "time_seconds": 16.0,
+      "bar": 9,
+      "beat_in_bar": 1,
+      "is_downbeat": true,
+      "frame": 480
+    },
+    {
+      "index": 33,
+      "time_seconds": 16.5,
+      "bar": 9,
+      "beat_in_bar": 2,
+      "is_downbeat": false,
+      "frame": 495
+    },
+    {
+      "index": 34,
+      "time_seconds": 17.0,
+      "bar": 9,
+      "beat_in_bar": 3,
+      "is_downbeat": false,
+      "frame": 510
+    },
+    {
+      "index": 35,
+      "time_seconds": 17.5,
+      "bar": 9,
+      "beat_in_bar": 4,
+      "is_downbeat": false,
+      "frame": 525
+    },
+    {
+      "index": 36,
+      "time_seconds": 18.0,
+      "bar": 10,
+      "beat_in_bar": 1,
+      "is_downbeat": true,
+      "frame": 540
+    },
+    {
+      "index": 37,
+      "time_seconds": 18.5,
+      "bar": 10,
+      "beat_in_bar": 2,
+      "is_downbeat": false,
+      "frame": 555
+    },
+    {
+      "index": 38,
+      "time_seconds": 19.0,
+      "bar": 10,
+      "beat_in_bar": 3,
+      "is_downbeat": false,
+      "frame": 570
+    },
+    {
+      "index": 39,
+      "time_seconds": 19.5,
+      "bar": 10,
+      "beat_in_bar": 4,
+      "is_downbeat": false,
+      "frame": 585
+    },
+    {
+      "index": 40,
+      "time_seconds": 20.0,
+      "bar": 11,
+      "beat_in_bar": 1,
+      "is_downbeat": true,
+      "frame": 600
+    },
+    {
+      "index": 41,
+      "time_seconds": 20.5,
+      "bar": 11,
+      "beat_in_bar": 2,
+      "is_downbeat": false,
+      "frame": 615
+    },
+    {
+      "index": 42,
+      "time_seconds": 21.0,
+      "bar": 11,
+      "beat_in_bar": 3,
+      "is_downbeat": false,
+      "frame": 630
+    },
+    {
+      "index": 43,
+      "time_seconds": 21.5,
+      "bar": 11,
+      "beat_in_bar": 4,
+      "is_downbeat": false,
+      "frame": 645
+    },
+    {
+      "index": 44,
+      "time_seconds": 22.0,
+      "bar": 12,
+      "beat_in_bar": 1,
+      "is_downbeat": true,
+      "frame": 660
+    },
+    {
+      "index": 45,
+      "time_seconds": 22.5,
+      "bar": 12,
+      "beat_in_bar": 2,
+      "is_downbeat": false,
+      "frame": 675
+    },
+    {
+      "index": 46,
+      "time_seconds": 23.0,
+      "bar": 12,
+      "beat_in_bar": 3,
+      "is_downbeat": false,
+      "frame": 690
+    },
+    {
+      "index": 47,
+      "time_seconds": 23.5,
+      "bar": 12,
+      "beat_in_bar": 4,
+      "is_downbeat": false,
+      "frame": 705
+    },
+    {
+      "index": 48,
+      "time_seconds": 24.0,
+      "bar": 13,
+      "beat_in_bar": 1,
+      "is_downbeat": true,
+      "frame": 720
+    },
+    {
+      "index": 49,
+      "time_seconds": 24.5,
+      "bar": 13,
+      "beat_in_bar": 2,
+      "is_downbeat": false,
+      "frame": 735
+    },
+    {
+      "index": 50,
+      "time_seconds": 25.0,
+      "bar": 13,
+      "beat_in_bar": 3,
+      "is_downbeat": false,
+      "frame": 750
+    },
+    {
+      "index": 51,
+      "time_seconds": 25.5,
+      "bar": 13,
+      "beat_in_bar": 4,
+      "is_downbeat": false,
+      "frame": 765
+    },
+    {
+      "index": 52,
+      "time_seconds": 26.0,
+      "bar": 14,
+      "beat_in_bar": 1,
+      "is_downbeat": true,
+      "frame": 780
+    },
+    {
+      "index": 53,
+      "time_seconds": 26.5,
+      "bar": 14,
+      "beat_in_bar": 2,
+      "is_downbeat": false,
+      "frame": 795
+    },
+    {
+      "index": 54,
+      "time_seconds": 27.0,
+      "bar": 14,
+      "beat_in_bar": 3,
+      "is_downbeat": false,
+      "frame": 810
+    },
+    {
+      "index": 55,
+      "time_seconds": 27.5,
+      "bar": 14,
+      "beat_in_bar": 4,
+      "is_downbeat": false,
+      "frame": 825
+    },
+    {
+      "index": 56,
+      "time_seconds": 28.0,
+      "bar": 15,
+      "beat_in_bar": 1,
+      "is_downbeat": true,
+      "frame": 840
+    },
+    {
+      "index": 57,
+      "time_seconds": 28.5,
+      "bar": 15,
+      "beat_in_bar": 2,
+      "is_downbeat": false,
+      "frame": 855
+    },
+    {
+      "index": 58,
+      "time_seconds": 29.0,
+      "bar": 15,
+      "beat_in_bar": 3,
+      "is_downbeat": false,
+      "frame": 870
+    },
+    {
+      "index": 59,
+      "time_seconds": 29.5,
+      "bar": 15,
+      "beat_in_bar": 4,
+      "is_downbeat": false,
+      "frame": 885
+    }
+  ],
+  "end_boundary": {
+    "time_seconds": 30,
+    "frame": 900,
+    "next_bar": 16
+  },
+  "scene_boundaries_seconds": [
+    0,
+    4,
+    10,
+    16,
+    22,
+    30
+  ],
+  "cadence": {
+    "dominant_start_seconds": 24,
+    "tonic_preparation_seconds": 26,
+    "final_tonic_seconds": 28,
+    "release_end_seconds": 30
+  },
+  "note": "最后一小节在28秒落主和弦，30秒余音归零；无口播。"
+}

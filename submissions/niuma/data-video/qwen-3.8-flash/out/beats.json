@@ -1,0 +1,429 @@
+{
+ "bpm": 120.0,
+ "fps": 30,
+ "frames_per_beat": 15,
+ "total_beats": 60,
+ "duration_sec": 30.0,
+ "beats": [
+  {
+   "beat": 0,
+   "time_sec": 0.0,
+   "bar": 1,
+   "beat_in_bar": 1,
+   "downbeat": true
+  },
+  {
+   "beat": 1,
+   "time_sec": 0.5,
+   "bar": 1,
+   "beat_in_bar": 2,
+   "downbeat": false
+  },
+  {
+   "beat": 2,
+   "time_sec": 1.0,
+   "bar": 1,
+   "beat_in_bar": 3,
+   "downbeat": false
+  },
+  {
+   "beat": 3,
+   "time_sec": 1.5,
+   "bar": 1,
+   "beat_in_bar": 4,
+   "downbeat": false
+  },
+  {
+   "beat": 4,
+   "time_sec": 2.0,
+   "bar": 2,
+   "beat_in_bar": 1,
+   "downbeat": true
+  },
+  {
+   "beat": 5,
+   "time_sec": 2.5,
+   "bar": 2,
+   "beat_in_bar": 2,
+   "downbeat": false
+  },
+  {
+   "beat": 6,
+   "time_sec": 3.0,
+   "bar": 2,
+   "beat_in_bar": 3,
+   "downbeat": false
+  },
+  {
+   "beat": 7,
+   "time_sec": 3.5,
+   "bar": 2,
+   "beat_in_bar": 4,
+   "downbeat": false
+  },
+  {
+   "beat": 8,
+   "time_sec": 4.0,
+   "bar": 3,
+   "beat_in_bar": 1,
+   "downbeat": true
+  },
+  {
+   "beat": 9,
+   "time_sec": 4.5,
+   "bar": 3,
+   "beat_in_bar": 2,
+   "downbeat": false
+  },
+  {
+   "beat": 10,
+   "time_sec": 5.0,
+   "bar": 3,
+   "beat_in_bar": 3,
+   "downbeat": false
+  },
+  {
+   "beat": 11,
+   "time_sec": 5.5,
+   "bar": 3,
+   "beat_in_bar": 4,
+   "downbeat": false
+  },
+  {
+   "beat": 12,
+   "time_sec": 6.0,
+   "bar": 4,
+   "beat_in_bar": 1,
+   "downbeat": true
+  },
+  {
+   "beat": 13,
+   "time_sec": 6.5,
+   "bar": 4,
+   "beat_in_bar": 2,
+   "downbeat": false
+  },
+  {
+   "beat": 14,
+   "time_sec": 7.0,
+   "bar": 4,
+   "beat_in_bar": 3,
+   "downbeat": false
+  },
+  {
+   "beat": 15,
+   "time_sec": 7.5,
+   "bar": 4,
+   "beat_in_bar": 4,
+   "downbeat": false
+  },
+  {
+   "beat": 16,
+   "time_sec": 8.0,
+   "bar": 5,
+   "beat_in_bar": 1,
+   "downbeat": true
+  },
+  {
+   "beat": 17,
+   "time_sec": 8.5,
+   "bar": 5,
+   "beat_in_bar": 2,
+   "downbeat": false
+  },
+  {
+   "beat": 18,
+   "time_sec": 9.0,
+   "bar": 5,
+   "beat_in_bar": 3,
+   "downbeat": false
+  },
+  {
+   "beat": 19,
+   "time_sec": 9.5,
+   "bar": 5,
+   "beat_in_bar": 4,
+   "downbeat": false
+  },
+  {
+   "beat": 20,
+   "time_sec": 10.0,
+   "bar": 6,
+   "beat_in_bar": 1,
+   "downbeat": true
+  },
+  {
+   "beat": 21,
+   "time_sec": 10.5,
+   "bar": 6,
+   "beat_in_bar": 2,
+   "downbeat": false
+  },
+  {
+   "beat": 22,
+   "time_sec": 11.0,
+   "bar": 6,
+   "beat_in_bar": 3,
+   "downbeat": false
+  },
+  {
+   "beat": 23,
+   "time_sec": 11.5,
+   "bar": 6,
+   "beat_in_bar": 4,
+   "downbeat": false
+  },
+  {
+   "beat": 24,
+   "time_sec": 12.0,
+   "bar": 7,
+   "beat_in_bar": 1,
+   "downbeat": true
+  },
+  {
+   "beat": 25,
+   "time_sec": 12.5,
+   "bar": 7,
+   "beat_in_bar": 2,
+   "downbeat": false
+  },
+  {
+   "beat": 26,
+   "time_sec": 13.0,
+   "bar": 7,
+   "beat_in_bar": 3,
+   "downbeat": false
+  },
+  {
+   "beat": 27,
+   "time_sec": 13.5,
+   "bar": 7,
+   "beat_in_bar": 4,
+   "downbeat": false
+  },
+  {
+   "beat": 28,
+   "time_sec": 14.0,
+   "bar": 8,
+   "beat_in_bar": 1,
+   "downbeat": true
+  },
+  {
+   "beat": 29,
+   "time_sec": 14.5,
+   "bar": 8,
+   "beat_in_bar": 2,
+   "downbeat": false
+  },
+  {
+   "beat": 30,
+   "time_sec": 15.0,
+   "bar": 8,
+   "beat_in_bar": 3,
+   "downbeat": false
+  },
+  {
+   "beat": 31,
+   "time_sec": 15.5,
+   "bar": 8,
+   "beat_in_bar": 4,
+   "downbeat": false
+  },
+  {
+   "beat": 32,
+   "time_sec": 16.0,
+   "bar": 9,
+   "beat_in_bar": 1,
+   "downbeat": true
+  },
+  {
+   "beat": 33,
+   "time_sec": 16.5,
+   "bar": 9,
+   "beat_in_bar": 2,
+   "downbeat": false
+  },
+  {
+   "beat": 34,
+   "time_sec": 17.0,
+   "bar": 9,
+   "beat_in_bar": 3,
+   "downbeat": false
+  },
+  {
+   "beat": 35,
+   "time_sec": 17.5,
+   "bar": 9,
+   "beat_in_bar": 4,
+   "downbeat": false
+  },
+  {
+   "beat": 36,
+   "time_sec": 18.0,
+   "bar": 10,
+   "beat_in_bar": 1,
+   "downbeat": true
+  },
+  {
+   "beat": 37,
+   "time_sec": 18.5,
+   "bar": 10,
+   "beat_in_bar": 2,
+   "downbeat": false
+  },
+  {
+   "beat": 38,
+   "time_sec": 19.0,
+   "bar": 10,
+   "beat_in_bar": 3,
+   "downbeat": false
+  },
+  {
+   "beat": 39,
+   "time_sec": 19.5,
+   "bar": 10,
+   "beat_in_bar": 4,
+   "downbeat": false
+  },
+  {
+   "beat": 40,
+   "time_sec": 20.0,
+   "bar": 11,
+   "beat_in_bar": 1,
+   "downbeat": true
+  },
+  {
+   "beat": 41,
+   "time_sec": 20.5,
+   "bar": 11,
+   "beat_in_bar": 2,
+   "downbeat": false
+  },
+  {
+   "beat": 42,
+   "time_sec": 21.0,
+   "bar": 11,
+   "beat_in_bar": 3,
+   "downbeat": false
+  },
+  {
+   "beat": 43,
+   "time_sec": 21.5,
+   "bar": 11,
+   "beat_in_bar": 4,
+   "downbeat": false
+  },
+  {
+   "beat": 44,
+   "time_sec": 22.0,
+   "bar": 12,
+   "beat_in_bar": 1,
+   "downbeat": true
+  },
+  {
+   "beat": 45,
+   "time_sec": 22.5,
+   "bar": 12,
+   "beat_in_bar": 2,
+   "downbeat": false
+  },
+  {
+   "beat": 46,
+   "time_sec": 23.0,
+   "bar": 12,
+   "beat_in_bar": 3,
+   "downbeat": false
+  },
+  {
+   "beat": 47,
+   "time_sec": 23.5,
+   "bar": 12,
+   "beat_in_bar": 4,
+   "downbeat": false
+  },
+  {
+   "beat": 48,
+   "time_sec": 24.0,
+   "bar": 13,
+   "beat_in_bar": 1,
+   "downbeat": true
+  },
+  {
+   "beat": 49,
+   "time_sec": 24.5,
+   "bar": 13,
+   "beat_in_bar": 2,
+   "downbeat": false
+  },
+  {
+   "beat": 50,
+   "time_sec": 25.0,
+   "bar": 13,
+   "beat_in_bar": 3,
+   "downbeat": false
+  },
+  {
+   "beat": 51,
+   "time_sec": 25.5,
+   "bar": 13,
+   "beat_in_bar": 4,
+   "downbeat": false
+  },
+  {
+   "beat": 52,
+   "time_sec": 26.0,
+   "bar": 14,
+   "beat_in_bar": 1,
+   "downbeat": true
+  },
+  {
+   "beat": 53,
+   "time_sec": 26.5,
+   "bar": 14,
+   "beat_in_bar": 2,
+   "downbeat": false
+  },
+  {
+   "beat": 54,
+   "time_sec": 27.0,
+   "bar": 14,
+   "beat_in_bar": 3,
+   "downbeat": false
+  },
+  {
+   "beat": 55,
+   "time_sec": 27.5,
+   "bar": 14,
+   "beat_in_bar": 4,
+   "downbeat": false
+  },
+  {
+   "beat": 56,
+   "time_sec": 28.0,
+   "bar": 15,
+   "beat_in_bar": 1,
+   "downbeat": true
+  },
+  {
+   "beat": 57,
+   "time_sec": 28.5,
+   "bar": 15,
+   "beat_in_bar": 2,
+   "downbeat": false
+  },
+  {
+   "beat": 58,
+   "time_sec": 29.0,
+   "bar": 15,
+   "beat_in_bar": 3,
+   "downbeat": false
+  },
+  {
+   "beat": 59,
+   "time_sec": 29.5,
+   "bar": 15,
+   "beat_in_bar": 4,
+   "downbeat": false
+  }
+ ]
+}

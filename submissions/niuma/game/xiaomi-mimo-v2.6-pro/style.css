@@ -1,0 +1,228 @@
+/* 《植物大战僵尸 · 打工人版》界面样式 —— 全部纯 CSS，无外部字体/图片 */
+* { margin: 0; padding: 0; box-sizing: border-box; user-select: none; -webkit-user-select: none; }
+html, body {
+  width: 100%; height: 100%; overflow: hidden;
+  background: #1d2230;
+  font-family: "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", sans-serif;
+}
+#stage {
+  position: absolute; top: 0; left: 0;
+  width: 1280px; height: 720px;
+  transform-origin: top left;
+}
+#game { display: block; width: 1280px; height: 720px; background: #b8c4cf; }
+.hidden { display: none !important; }
+
+/* ---------- HUD ---------- */
+#hud { position: absolute; inset: 0; pointer-events: none; }
+#topbar {
+  position: absolute; top: 8px; left: 12px; right: 12px;
+  display: flex; align-items: flex-start; gap: 10px;
+  pointer-events: none;
+}
+#cards { display: flex; gap: 8px; pointer-events: auto; }
+
+.card {
+  width: 88px; height: 116px;
+  background: linear-gradient(180deg, #fffdf6 0%, #f1e9d6 100%);
+  border: 2px solid #b99b6b; border-radius: 10px;
+  box-shadow: 0 3px 0 #9c7c4e, 0 6px 12px rgba(0,0,0,.28);
+  cursor: grab; position: relative; overflow: hidden;
+  transition: transform .12s ease, filter .12s ease, box-shadow .12s ease;
+  pointer-events: auto;
+}
+.card:hover { transform: translateY(-4px); box-shadow: 0 7px 0 #9c7c4e, 0 12px 18px rgba(0,0,0,.32); }
+.card.disabled { filter: grayscale(1) brightness(.72); cursor: not-allowed; }
+.card.cooling::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0;
+  background: rgba(40,44,60,.55); height: 0%;
+  animation: none;
+}
+.card .card-icon {
+  width: 100%; height: 72px; display: block;
+  background: linear-gradient(180deg, #cfe9ff 0%, #eaf6ff 100%);
+}
+.card .card-name {
+  font-size: 13px; font-weight: 700; color: #4a3a22; text-align: center;
+  line-height: 1.15; padding: 2px 2px 0; white-space: nowrap;
+}
+.card .card-cost {
+  position: absolute; left: 0; right: 0; bottom: 3px;
+  text-align: center; font-size: 13px; font-weight: 800; color: #a8560c;
+}
+.card .card-cd {
+  position: absolute; top: 4px; right: 4px; font-size: 10px;
+  background: rgba(0,0,0,.55); color: #fff; border-radius: 5px; padding: 1px 4px;
+}
+.card .cool-mask {
+  position: absolute; left: 0; bottom: 0; width: 100%;
+  background: rgba(35,40,58,.55); pointer-events: none;
+}
+
+#tools { margin-left: auto; display: flex; align-items: center; gap: 8px; pointer-events: auto; }
+.tool {
+  width: 78px; height: 88px; border-radius: 10px; cursor: grab;
+  background: linear-gradient(180deg, #ffe9c9 0%, #f6c98a 100%);
+  border: 2px solid #c98d43; box-shadow: 0 3px 0 #a5702f, 0 6px 12px rgba(0,0,0,.28);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  color: #6b4318; font-weight: 800; position: relative;
+}
+.tool.selected { outline: 3px solid #ffd23f; transform: translateY(-3px); }
+.tool-icon { font-size: 30px; line-height: 1; }
+.tool-name { font-size: 13px; margin-top: 4px; }
+
+.btn {
+  pointer-events: auto; cursor: pointer;
+  padding: 10px 13px; border-radius: 10px; border: 2px solid #2e3a52;
+  background: linear-gradient(180deg, #4a5b7d 0%, #33405c 100%);
+  color: #eaf1ff; font-size: 14px; font-weight: 700;
+  box-shadow: 0 3px 0 #222c42, 0 6px 10px rgba(0,0,0,.25);
+}
+.btn:hover { filter: brightness(1.12); }
+.btn:active { transform: translateY(2px); box-shadow: 0 1px 0 #222c42; }
+.btn.on { background: linear-gradient(180deg, #f0a13c 0%, #c9741c 100%); border-color: #8a4c10; }
+
+#resource {
+  position: absolute; top: 140px; left: 16px;
+  background: rgba(28,32,46,.82); color: #ffd97a;
+  padding: 8px 14px; border-radius: 10px; font-size: 17px; font-weight: 800;
+  border: 2px solid rgba(255,217,122,.4); letter-spacing: 1px;
+}
+#resource b { font-size: 21px; margin-left: 4px; }
+.coffee-ico { filter: saturate(1.4); }
+
+#waveWrap {
+  position: absolute; left: 50%; transform: translateX(-50%); bottom: 16px;
+  width: 520px; text-align: center;
+}
+#waveText {
+  display: inline-block; margin-bottom: 7px;
+  background: rgba(28,32,46,.82); padding: 6px 18px; border-radius: 9px;
+  color: #fff; font-weight: 800; font-size: 15px; letter-spacing: 1px;
+}
+#waveBarOuter {
+  margin-top: 5px; height: 13px; border-radius: 8px; overflow: hidden;
+  background: rgba(20,24,38,.72); border: 2px solid rgba(255,255,255,.35);
+}
+#waveBarInner {
+  height: 100%; width: 0%;
+  background: linear-gradient(90deg, #6ee38c, #d9e34a, #f08a3c);
+  transition: width .35s ease;
+}
+
+#banner {
+  position: absolute; top: 46%; left: 50%; transform: translate(-50%,-50%) scale(1);
+  padding: 18px 44px; border-radius: 14px;
+  background: rgba(190, 32, 32, .92); color: #fff;
+  font-size: 40px; font-weight: 900; letter-spacing: 4px;
+  border: 4px solid #ffd23f; box-shadow: 0 14px 40px rgba(0,0,0,.5);
+  animation: bannerPop 2.6s ease forwards; white-space: nowrap;
+}
+@keyframes bannerPop {
+  0%   { opacity: 0; transform: translate(-50%,-50%) scale(.6); }
+  12%  { opacity: 1; transform: translate(-50%,-50%) scale(1.08); }
+  22%  { transform: translate(-50%,-50%) scale(1); }
+  82%  { opacity: 1; }
+  100% { opacity: 0; transform: translate(-50%,-50%) scale(1.02); }
+}
+
+#tooltip {
+  position: absolute; z-index: 30; max-width: 240px;
+  background: rgba(22,26,40,.95); color: #f4efdd;
+  border: 2px solid #d8b26a; border-radius: 10px; padding: 10px 12px;
+  font-size: 13px; line-height: 1.55; pointer-events: none;
+  box-shadow: 0 10px 24px rgba(0,0,0,.45);
+}
+#tooltip b { color: #ffd97a; font-size: 14px; }
+#tooltip .tt-cost { color: #9fe6a2; font-weight: 700; }
+
+#toast {
+  position: absolute; top: 200px; left: 50%; transform: translateX(-50%);
+  background: rgba(200, 40, 40, .9); color: #fff; padding: 10px 22px;
+  border-radius: 10px; font-size: 17px; font-weight: 700;
+  border: 2px solid rgba(255,255,255,.4); animation: toastFade 1.4s ease forwards;
+}
+@keyframes toastFade {
+  0% { opacity: 0; transform: translateX(-50%) translateY(-8px); }
+  18% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  78% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+#yearBadge { position: absolute; inset: 0; pointer-events: none; }
+
+/* ---------- 覆盖屏 ---------- */
+.screen {
+  position: absolute; inset: 0; display: flex;
+  align-items: center; justify-content: center;
+  background: radial-gradient(ellipse at center, rgba(24,28,44,.86) 0%, rgba(12,14,24,.95) 100%);
+  z-index: 50;
+}
+.panel {
+  width: 780px; max-height: 660px; overflow: auto;
+  background: linear-gradient(180deg, #2b3247 0%, #212739 100%);
+  border: 3px solid #d8b26a; border-radius: 18px;
+  padding: 34px 40px; text-align: center; color: #f2ead6;
+  box-shadow: 0 26px 60px rgba(0,0,0,.6);
+}
+.panel h1 {
+  font-size: 40px; letter-spacing: 2px; margin-bottom: 16px; color: #ffd97a;
+  text-shadow: 0 3px 0 rgba(0,0,0,.35);
+}
+.panel h1 .dot { color: #7fe0ff; }
+.subtitle { font-size: 16px; line-height: 1.9; color: #d8dcec; }
+.start-btns { margin: 26px 0 8px; display: flex; gap: 16px; justify-content: center; }
+.big-btn {
+  cursor: pointer; padding: 15px 34px; font-size: 21px; font-weight: 900;
+  border-radius: 13px; border: 3px solid #7c4a12;
+  background: linear-gradient(180deg, #ffc861 0%, #e8912a 100%);
+  color: #4a2a06; box-shadow: 0 5px 0 #a4641a, 0 12px 22px rgba(0,0,0,.4);
+  letter-spacing: 2px;
+}
+.big-btn:hover { filter: brightness(1.08); }
+.big-btn:active { transform: translateY(3px); box-shadow: 0 2px 0 #a4641a; }
+.big-btn.ghost {
+  background: linear-gradient(180deg, #46557a 0%, #2f3b58 100%);
+  color: #dfe8ff; border-color: #233049; box-shadow: 0 5px 0 #1c2438, 0 12px 22px rgba(0,0,0,.35);
+}
+.hint { margin-top: 18px; font-size: 13px; color: #9aa7c4; }
+
+#endTitle { font-size: 46px; }
+#endStats {
+  margin: 20px auto 6px; width: 460px; text-align: left;
+  background: rgba(255,255,255,.07); border-radius: 12px; padding: 16px 22px;
+  font-size: 17px; line-height: 2.1; color: #e8ecf8;
+}
+#endStats .k { color: #ffd97a; font-weight: 800; }
+.review {
+  margin-top: 14px; font-size: 17px; color: #a8e6b0; font-weight: 700;
+  background: rgba(120, 220, 140, .12); border: 1px dashed rgba(160,230,170,.5);
+  padding: 12px 18px; border-radius: 10px; line-height: 1.8;
+}
+
+/* ---------- 图鉴 ---------- */
+.dex-panel { width: 980px; max-height: 680px; }
+.dex-tabs { display: flex; gap: 12px; justify-content: center; margin-bottom: 18px; }
+.dex-tab {
+  cursor: pointer; padding: 9px 24px; border-radius: 10px; font-size: 16px; font-weight: 800;
+  border: 2px solid #4a5878; background: rgba(255,255,255,.08); color: #cdd7ee;
+}
+.dex-tab.active { background: linear-gradient(180deg, #ffc861, #e8912a); color: #4a2a06; border-color: #7c4a12; }
+.dex-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
+  max-height: 430px; overflow: auto; padding: 4px;
+}
+.dex-card {
+  background: rgba(255,255,255,.07); border: 2px solid rgba(216,178,106,.45);
+  border-radius: 12px; padding: 12px; text-align: left;
+}
+.dex-card canvas { width: 84px; height: 84px; background: rgba(255,255,255,.1); border-radius: 9px; float: left; margin-right: 11px; }
+.dex-card .d-name { font-size: 16px; font-weight: 800; color: #ffd97a; }
+.dex-card .d-cost { font-size: 13px; color: #9fe6a2; font-weight: 700; margin: 2px 0 6px; }
+.dex-card .d-desc { font-size: 12.5px; line-height: 1.65; color: #d3dbec; clear: both; padding-top: 6px; }
+.dex-card .d-stat { font-size: 12px; color: #9fb2d8; margin-top: 5px; line-height: 1.6; }
+.dex-card .tag {
+  display: inline-block; font-size: 11px; background: rgba(120,190,255,.22);
+  color: #a9d6ff; border-radius: 5px; padding: 1px 7px; margin-left: 6px; vertical-align: 2px;
+}
+.dex-card .tag.custom { background: rgba(255,170,90,.22); color: #ffc28a; }

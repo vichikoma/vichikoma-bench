@@ -1,0 +1,640 @@
+/* style.css - 游戏UI与体素精致排版（无任何外部字体/图片引用） */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #212121;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#game-container {
+  position: relative;
+  width: 1280px;
+  height: 720px;
+  background-color: #DCE775;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+#game-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* 隐藏类 */
+.hidden {
+  display: none !important;
+}
+
+/* ---------------- 顶部 HUD 与卡片栏 ---------------- */
+#hud {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none; /* 穿透到 canvas，卡片等可点击区域单独开启 */
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  gap: 12px;
+}
+
+/* 咖啡因资源计数器 */
+.resource-box {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  background: rgba(38, 50, 56, 0.9);
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 2px solid #FFD54F;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  color: #FFF;
+}
+
+.coffee-icon {
+  font-size: 20px;
+  margin-right: 6px;
+}
+
+.resource-val {
+  font-size: 20px;
+  font-weight: 800;
+  color: #FFD54F;
+}
+
+/* 卡片容器 */
+#cards-container {
+  pointer-events: auto;
+  display: flex;
+  gap: 8px;
+  background: rgba(38, 50, 56, 0.85);
+  padding: 6px 10px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+.card-item {
+  position: relative;
+  width: 72px;
+  height: 84px;
+  background: #ECEFF1;
+  border-radius: 8px;
+  border: 2px solid #B0BEC5;
+  cursor: grab;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px;
+  transition: transform 0.1s, border-color 0.1s, filter 0.15s;
+  overflow: hidden;
+}
+
+.card-item:hover:not(.disabled) {
+  transform: translateY(-4px);
+  border-color: #29B6F6;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.card-item:active:not(.disabled) {
+  cursor: grabbing;
+}
+
+.card-item.disabled {
+  filter: grayscale(85%) opacity(0.65);
+  cursor: not-allowed;
+}
+
+.card-cost {
+  position: absolute;
+  top: 2px;
+  left: 4px;
+  font-size: 11px;
+  font-weight: 800;
+  color: #E65100;
+  background: rgba(255, 236, 179, 0.9);
+  padding: 1px 4px;
+  border-radius: 4px;
+}
+
+.card-icon {
+  width: 40px;
+  height: 40px;
+  margin-top: 14px;
+  border-radius: 6px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+/* 用 Emoji 代替图标，保证纯静态零网络零贴图 */
+.icon-COFFEE_MAKER::after { content: "☕"; }
+.icon-DDL_CANNON::after { content: "💣"; }
+.icon-BACK_SCAPER::after { content: "🛡️"; }
+.icon-FISH_TANK::after { content: "🐟"; }
+.icon-RESIGN_LETTER::after { content: "✉️"; }
+.icon-FAKE_BUSY::after { content: "🧥"; }
+.icon-PAID_POOP::after { content: "🚽"; }
+.icon-PIE_MACHINE::after { content: "🥧"; }
+
+.card-name {
+  font-size: 11px;
+  font-weight: 700;
+  color: #263238;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.card-cooldown-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: rgba(0, 0, 0, 0.6);
+  pointer-events: none;
+  transition: height 0.05s linear;
+}
+
+/* 铲子工具 */
+.tool-box {
+  pointer-events: auto;
+}
+
+.shovel-btn {
+  width: 58px;
+  height: 84px;
+  background: #37474F;
+  border: 2px solid #78909C;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ECEFF1;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: grab;
+  gap: 4px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  transition: transform 0.1s, border-color 0.1s;
+}
+
+.shovel-btn:hover {
+  transform: translateY(-3px);
+  border-color: #FF5252;
+}
+
+.shovel-btn:active {
+  cursor: grabbing;
+}
+
+.shovel-icon {
+  font-size: 26px;
+}
+
+/* 右侧控制区 (波次进度条 + 按钮组) */
+.controls-box {
+  pointer-events: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-end;
+}
+
+.wave-progress-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  background: rgba(38, 50, 56, 0.85);
+  padding: 4px 10px;
+  border-radius: 8px;
+}
+
+#wave-text {
+  font-size: 12px;
+  font-weight: 700;
+  color: #FFF;
+  margin-bottom: 3px;
+}
+
+.progress-track {
+  width: 130px;
+  height: 8px;
+  background: #263238;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+#wave-progress-bar {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #4CAF50, #81C784);
+  transition: width 0.3s;
+}
+
+.btn-group {
+  display: flex;
+  gap: 6px;
+}
+
+.hud-btn {
+  background: rgba(38, 50, 56, 0.9);
+  color: #ECEFF1;
+  border: 1px solid #78909C;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.hud-btn:hover {
+  background: #455A64;
+  color: #FFF;
+}
+
+/* ---------------- 拖拽幽灵预览 ---------------- */
+.ghost-drag {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  display: none;
+}
+
+.active-card {
+  background: rgba(41, 182, 246, 0.85);
+  color: #FFF;
+  border: 2px solid #FFF;
+}
+
+.active-shovel {
+  background: rgba(239, 83, 80, 0.85);
+  color: #FFF;
+  border: 2px solid #FFF;
+}
+
+/* ---------------- 悬停 Tooltip ---------------- */
+#card-tooltip {
+  position: fixed;
+  z-index: 8000;
+  background: rgba(33, 33, 33, 0.92);
+  color: #FFF;
+  border: 1px solid #78909C;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  max-width: 240px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+  pointer-events: none;
+  line-height: 1.4;
+}
+
+.tip-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: #81D4FA;
+  margin-bottom: 2px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tip-cost {
+  color: #FFD54F;
+}
+
+.tip-stats {
+  font-size: 11px;
+  color: #B0BEC5;
+  margin-bottom: 4px;
+}
+
+.tip-desc {
+  font-size: 11px;
+  color: #ECEFF1;
+}
+
+/* ---------------- 游戏警报与浮层通知 ---------------- */
+.wave-alert {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(211, 47, 47, 0.92);
+  color: #FFF;
+  font-size: 32px;
+  font-weight: 900;
+  padding: 14px 40px;
+  border-radius: 12px;
+  border: 3px solid #FFD54F;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  pointer-events: none;
+  animation: pulseAlert 0.7s infinite alternate;
+  z-index: 1000;
+}
+
+@keyframes pulseAlert {
+  0% { transform: translate(-50%, -50%) scale(0.95); }
+  100% { transform: translate(-50%, -50%) scale(1.08); }
+}
+
+.vacation-alert-box {
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(46, 125, 50, 0.92);
+  color: #FFF;
+  font-size: 18px;
+  font-weight: 800;
+  padding: 10px 24px;
+  border-radius: 8px;
+  border: 2px solid #A5D6A7;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+  pointer-events: none;
+  z-index: 1000;
+}
+
+/* ---------------- 全屏菜单与弹窗 ---------------- */
+.menu-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5000;
+}
+
+.menu-card {
+  background: #ECEFF1;
+  border-radius: 16px;
+  padding: 32px 40px;
+  text-align: center;
+  max-width: 580px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+  border: 4px solid #37474F;
+}
+
+.game-title {
+  font-size: 36px;
+  font-weight: 900;
+  color: #1A237E;
+  margin-bottom: 6px;
+}
+
+.game-subtitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: #00796B;
+  margin-bottom: 20px;
+}
+
+.game-guide {
+  background: #FFF;
+  padding: 16px;
+  border-radius: 10px;
+  text-align: left;
+  font-size: 13px;
+  color: #37474F;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  border: 1px solid #CFD8DC;
+}
+
+.game-guide strong {
+  color: #C62828;
+}
+
+.menu-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.btn-primary {
+  background: #2E7D32;
+  color: #FFF;
+  font-size: 18px;
+  font-weight: 800;
+  padding: 12px 32px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(46, 125, 50, 0.4);
+  transition: transform 0.15s, background 0.15s;
+}
+
+.btn-primary:hover {
+  background: #388E3C;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: #455A64;
+  color: #FFF;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-secondary:hover {
+  background: #546E7A;
+}
+
+.btn-danger {
+  background: #C62828;
+  color: #FFF;
+  font-size: 18px;
+  font-weight: 800;
+  padding: 12px 32px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(198, 40, 40, 0.4);
+  transition: transform 0.15s, background 0.15s;
+}
+
+.btn-danger:hover {
+  background: #D32F2F;
+  transform: translateY(-2px);
+}
+
+/* 结算卡片细节 */
+.result-stats {
+  background: #FFF;
+  padding: 14px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #CFD8DC;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 700;
+  color: #37474F;
+  margin-bottom: 6px;
+}
+
+.stat-row:last-child {
+  margin-bottom: 0;
+}
+
+.comment-box {
+  background: #FFF9C4;
+  color: #E65100;
+  font-size: 14px;
+  font-weight: 800;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px dashed #FBC02D;
+  margin-bottom: 24px;
+}
+
+.defeat-comment-box {
+  background: #FFEBEE;
+  color: #C62828;
+  font-size: 14px;
+  font-weight: 800;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px dashed #EF9A9A;
+  margin-bottom: 24px;
+}
+
+.defeat-reason-box {
+  color: #C62828;
+  font-size: 15px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+/* ---------------- 图鉴模态窗 ---------------- */
+.handbook-modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 6000;
+}
+
+.handbook-content {
+  background: #ECEFF1;
+  width: 860px;
+  max-height: 600px;
+  border-radius: 12px;
+  border: 3px solid #37474F;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+}
+
+.handbook-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  background: #37474F;
+  color: #FFF;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: #FFF;
+  font-size: 20px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.handbook-list {
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.handbook-subhead {
+  font-size: 16px;
+  font-weight: 800;
+  color: #1A237E;
+  margin-top: 10px;
+  margin-bottom: 4px;
+  border-bottom: 2px solid #CFD8DC;
+  padding-bottom: 4px;
+}
+
+.handbook-card {
+  background: #FFF;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #CFD8DC;
+}
+
+.handbook-card.enemy-card {
+  border-left: 4px solid #C62828;
+}
+
+.h-name {
+  font-size: 14px;
+  font-weight: 800;
+  color: #263238;
+}
+
+.h-stats {
+  font-size: 12px;
+  font-weight: 700;
+  color: #00897B;
+  margin: 3px 0;
+}
+
+.h-desc {
+  font-size: 12px;
+  color: #455A64;
+  line-height: 1.4;
+}

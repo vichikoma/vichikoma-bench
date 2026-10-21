@@ -10,3 +10,7 @@ desktop.ini
 
 # 日志与临时文件
 *.log
+
+# 牛马横评·数据短片：原始交付目录名恰好是 out/，这里放行
+!submissions/niuma/data-video/*/out/
+!submissions/niuma/data-video/*/out/**

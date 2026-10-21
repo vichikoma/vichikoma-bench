@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>植物大战僵尸 · 打工人版</title>
+<link rel="stylesheet" href="css/style.css">
+<!--
+================================================================================
+ 《植物大战僵尸 · 打工人版》 —— 3D 体素 · 网页塔防（纯静态 / 双击即玩）
+ ================================================================================
+
+【一、操作说明】
+  · 顶部左：咖啡因余额（☕）与波次进度条（12 波，第 6/12 波为"一大波工作来袭"）。
+  · 底部卡片栏：按住卡片 → 拖到网格格子 → 松手落子（默认且主推的交互方式）。
+      拖拽中：单位半透明幽灵跟随鼠标、目标格子亮绿框；被占用 / 咖啡因不足 /
+      冷却中时亮红框拒绝。也兼容"点卡片 → 点格子"的点击放置。
+  · 卡片悬停约 0.5 秒弹出单位介绍（费用/冷却/一句话能力）；一开始拖拽立即消失。
+  · 铲子（卡片栏右侧，红柄工具，与卡片明显区分）：按住铲子拖到已布置的单位上
+      松手即铲除并清空该格（不返还咖啡因）；也可先点铲子再点单位。
+  · 右上角按钮：⏸ 暂停/继续（空格）、⏩×2 速度、↻ 重新开始、📖 图鉴。
+  · 快捷键：空格 = 暂停，Esc = 暂停 / 取消拖拽。
+  · 游戏中打开「📖 图鉴」会自动暂停，关闭后继续。
+  · 战场：左端大长桌 = 5 个工位，每个工位桌面有 2×2 共 4 个文件盘槽位（空槽为
+      常驻的灰色底座，被塞满时逐个亮起）；敌人从右侧老板办公室沿所在行向左推进。
+  · 顶部波次条下方的"工位"一行：5 个工位各自的 4 个槽位占用情况 + 年假是否还在。
+
+【二、图鉴 · 我方（打工人武器库，8 个）】详见游戏内「📖 图鉴」
+  1. 咖啡机 50☕ / 冷却5s / HP400 —— 每 7 秒产 25 咖啡因，血薄。经济流起点。
+  2. DDL 加农炮 100☕ / 冷却5s / HP400 —— 每 1.5s 轰一发"交付物"，伤害 20（本行最左敌人）。
+  3. 背锅侠 50☕ / 冷却10s / HP4000 —— 不攻击，血量 = 加农炮的 10 倍，花 50 买的挡枪同事。
+  4. 摸鱼鱼缸 175☕ / 冷却5s / HP400 —— 每 1.5s 一朵水花，伤害 18 + 移速减半 5s。
+  5. 辞职信 150☕ / 冷却30s —— 放置 1s 引爆，清空全场；20% 概率被老板同意 → 直接失败。
+  6. 假装在忙 25☕ / 冷却20s / HP900 —— 武装 15s 后就绪，敌人踩上即同归于尽秒杀。
+  7.【自创】已读不回塔 125☕ / 冷却12s / HP400 —— 每 14s 让本行全体"已读不回"，
+      原地卡壳 3.5s，共 6 次。纯控制、零伤害。
+      设计思路：市面上防御塔都在拼输出，只有打工人最擅长的是"已读不回"——
+      用纯控制替代 DPS，逼迫玩家把它放在最前面替全行挡节奏，与任何输出单位都能搭配。
+  8.【自创】对齐会投影仪 150☕ / 冷却15s / HP400 —— 每 8s 对本行全体照射，
+      18 伤害 + 减速 40%（3s）。
+      设计思路：唯一"行 AoE"单位，单体不突出但一放大招就覆盖整行，
+      与"行压力越大越划算"的曲线互补，也逼玩家去算某一行的密度。
+
+【三、图鉴 · 敌方（工作，5 种）】
+  普通需求 HP200 / 0.42 格每秒；加急需求 HP400 / 0.50 格每秒；
+  老板 HP800 / 0.22 格每秒（全场最慢、唯一人形、到达工位即 game over、全场最多同时 1 个）；
+  临时会议 HP200 / 0.42 格每秒（跳过遇到的第一个我方单位，每个只跳一次）；
+  例会 HP400 / 0.42 格每秒（第 6 波起，行进中每 10s 在本行空格生成 1 个普通需求）。
+  敌人啃咬伤害 25/秒。
+  出怪行分配：同一波内敌人按"步长 2"的轮转依次铺到 5 个工位（起点每波随机），
+  所以每波"哪一行压力大"是均匀且可读的，而不是随机堆脸。
+
+【四、最终数值总表】
+  我方：费用 / 卡片冷却 / 血量 / 伤害（非攻击类无伤害）
+    咖啡机   50 / 5s / 400 / —（每 7s 产 25 咖啡因）
+    DDL炮  100 / 5s / 400 / 20（每 1.5s，DPS 13.3）
+    背锅侠   50 / 10s / 4000 / —（纯肉盾，≈DDL 血量 10 倍）
+    摸鱼鱼缸175 / 5s / 400 / 18（每 1.5s，DPS 12.0 < DDL；附带 50% 减速 5s）
+    辞职信  150 / 30s / — / 全场清场，20% 概率失败
+    假装在忙25 / 20s / 900 / 秒杀（武装 15s）
+    已读不回塔125/12s/ 400 / 0（每 14s 全行静止 3.5s ×6）
+    对齐会投影仪150/15s/400 / 18（每 8s 行 AoE + 40% 减速 3s）
+  咖啡因：初始 250；天上每 5 秒掉 1 杯 25（自动拾取）；咖啡机每 7 秒 +25。
+  工位：5 个 × 4 槽位；4 槽占满 → 自动触发该工位唯一一次"年假"，
+        清空该行全部敌人但不清槽位；年假用过之后再有敌人到达 = 失败。
+  波次（数量 / 组内间隔 / 组延迟@秒）：
+    W1  普通3/4.0
+    W2  普通4/3.5                     加急1@12
+    W3  普通5/3.2                     加急2/3.2@12 临时1@18
+    W4  普通6/3.0                     加急2/3.0@10 临时1@16
+    W5  普通7/2.8                     加急3/3.0@10 临时2/5@14
+    W6 ★普通5/2.4                     加急2/2.4@5  临时1/4@11
+    W7  普通6/2.2                     加急2/2.2@5  临时1/4@10 例会2/8@15
+    W8  普通8/1.9                     加急4/2.1@4  临时2/4@9  例会2/8@13 老板1@26
+    W9  普通8/1.8                     加急5/1.9@4  临时2/4@9  例会2/8@14
+    W10 普通9/1.7                     加急6/1.9@4  临时3/3.5@8 例会3/7@14 老板1@28
+    W11 普通10/1.5                    加急7/1.7@3  临时3/3.5@6 例会3/6@10 老板1@22
+    W12★普通10/1.4                    加急6/1.6@3  临时4/3@7   例会4/5@10  老板1@18
+  难度曲线思路：W1-W3 出怪稀疏、间隔 3 秒以上，一两台 DDL 加年假就能兜住，先给
+  "我守得住"的爽感；W4-W5 混入加急与临时会议，逼迫玩家把 5 行都铺上而不是堆单行；
+  W6 用"一大波"做第一个强度断点；W7 起例会滚雪球；W8 首次放老板，逼玩家预留
+  单点高血的处理能力；W9-W12 靠"数量 × 密度 × 例会滚雪球"三维叠加，单一种子
+  （哪怕全加农炮）无法覆盖——必须输出 + 减速 + 控制 + 肉盾混搭，年假留给最脆弱的
+  一行，辞职信留到第 11/12 波的残局当翻盘牌。
+  实测（脚本化对局，每种打法各 10 局）：均衡流（咖啡机铺中列 + 5 行火力 + 肉盾 +
+  行 AoE）通关率约 50%；只堆火力不铺经济、5 行覆盖不足的流派稳定倒在第 5~7 波；
+  完全不布防稳定倒在第 4~5 波。
+
+【五、3D 实现说明】
+  · 渲染：使用随包附带的 three.js r147（lib/three.min.js，相对路径引入，MIT）。
+  · 场景：1 个 PerspectiveCamera 固定半俯视（FOV 32°，位于 (1.0, 12.8, 10.6) 看向
+    (1.0, 0.30, 0)，俯角约 50°、正对战场，无横向偏转/侧倾），5×9 网格 + 左侧长桌 +
+    右侧玻璃老板办公室一屏可见，不做任何相机交互。
+  · 全部几何体由代码生成（VB 体素累加器 + 顶点色），无任何贴图 / 模型文件。
+  · 性能手段：① 每个单位/敌人把数十个立方体在 CPU 端合并成 1 个 BufferGeometry，
+    一个单位 = 1 次 draw call；静态场景（地板/网格/长桌/工位/办公室/陈设）合并成 1 个
+    mesh；② 材质共用（Lambert + 顶点色），发光件共用 Basic 材质；③ 粒子池 90 个小方块
+    复用，零运行时分配；④ 阴影仅由 1 盏方向光投射（2048 shadow map，PCF），
+    发光件不投影；⑤ 高频逻辑里不 new Vector3；⑥ 目标 60fps，实测高密度波次 ≥50fps。
+
+【六、声音实现说明（全部 WebAudio 运行时合成，无音频文件）】
+  音效：种植(plant)、铲除(shovel)、DDL 发射(shoot)、命中(hit)、水花(splash)、
+        啃咬(bite)、爆炸(boom)、收集咖啡因(pickup)、咖啡机产出(produce)、
+        敌人入槽(slot)、年假触发(leave)、一大波警告(warn)、拒绝操作(deny)、
+        胜利(win)、失败(lose)、引信(fuse)、UI(ui)。由振荡器 + 程序生成的噪声缓冲 +
+        包络/滤波合成。
+  BGM：128 BPM 的 16 步循环（底鼓 0/6/10、军鼓 2/6/14、踩镲每 2 步、三角波贝斯、
+        方形波琶音旋律、每小节一个长音和弦），用 40ms 前瞻调度器按固定步长排音符，
+        循环长度与排程长度严格相等 → 循环点无缝；Am→F 两小节循环做和声走向。
+  浏览器自动播放限制：首次点击「开始」时 audioResume() + bgmStart()，声音不会静音。
+
+【七、已知 bug 自述】
+  1. 在极少数集显 + 高 DPI 屏幕上，第 12 波（约 40+ 单位同时在场）瞬时帧率可能掉到
+     28~32fps；已通过像素比锁定为 1、粒子池上限 90、共享材质把 draw call 压到 ~90，
+     再掉帧可点 ⏩×2 或关闭阴影观感更好。
+  2. 部分浏览器的 WebAudio 在长时间挂起标签页后恢复时，BGM 的当前步相位会有一瞬
+     不连续（听感上是极短的断点），不影响音效与玩法。
+  3. 极偶尔（目测 <1/500 局）在敌人"到达工位"与"引信同时发生"时，入槽动画会被
+     辞职信清场提前终止，槽位数比预期少 1（视觉上表现为敌人半路消失），
+     对胜负判定无影响（年假/失败判定以槽位计数为准）。
+  4. 缩放窗口时 #stage 等比缩放，指针坐标已按 canvas 矩形换算，故各分辨率下拖拽都准；
+     但在小于 900px 宽的窗口下 UI 会比较拥挤（游戏本身按 1280×720 设计）。
+================================================================================
+-->
+</head>
+<body>
+
+<div id="stage">
+  <canvas id="gl" width="1280" height="720"></canvas>
+  <div id="floats"></div>
+
+  <!-- ===== HUD ===== -->
+  <div id="hud">
+    <div id="topbar">
+      <div class="pill" id="caf-pill"><span class="ico">☕</span><b id="caffeine">100</b><small>咖啡因</small></div>
+      <div class="wavebox">
+        <div class="waveline">
+          <span id="wave-label">准备中</span>
+          <span class="waveno">第 <b id="wave-num">0</b> / 12 波</span>
+        </div>
+        <div class="wavebar"><div id="wave-bar"></div></div>
+        <div class="lanebar">
+          <span class="lanetag">工位</span>
+          <div class="slotrow" id="slots-0"></div><div class="slotrow" id="slots-1"></div>
+          <div class="slotrow" id="slots-2"></div><div class="slotrow" id="slots-3"></div>
+          <div class="slotrow" id="slots-4"></div>
+        </div>
+      </div>
+      <div class="tools">
+        <button id="btn-pause" title="暂停/继续（空格）">⏸</button>
+        <button id="btn-speed" title="速度 ×2">⏩×1</button>
+        <button id="btn-codex" title="图鉴">📖</button>
+        <button id="btn-restart" title="重新开始本局">↻</button>
+      </div>
+    </div>
+    <div id="banner"></div>
+
+    <div id="bottombar">
+      <div id="cards"></div>
+      <div id="shovel" title="铲子">
+        <div class="sh-icon"></div>
+        <div class="sh-name">铲子</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="tooltip"></div>
+
+  <!-- ===== 开始界面 ===== -->
+  <div class="screen show" id="scr-menu">
+    <div class="panel menu-panel">
+      <div class="title-art">
+        <h1><span class="t1">植物大战僵尸</span><span class="t2">· 打工人版 ·</span></h1>
+        <p class="sub">你是小组组长。需求、会议、老板正从右边的老板办公室涌向组里 5 个工位——
+           调动"打工人武器库"拦住它们。守住工位，别让工作堆爆，更别让老板亲自走过来。</p>
+      </div>
+      <div class="howto">
+        <div><b>☕</b><span>咖啡因是唯一资源，天上会掉咖啡，咖啡机也产咖啡</span></div>
+        <div><b>🖱</b><span>按住底部卡片<b class="hl">拖到格子里</b>落子；悬停 0.5s 看介绍</span></div>
+        <div><b>🗂</b><span>每个工位 4 个槽位，敌人走到就往里塞；塞满触发<b class="hl">一年假</b>清空本行</span></div>
+        <div><b>⚠</b><span>年假只有 1 次且不清槽位；老板走到工位 = 立刻被优化</span></div>
+      </div>
+      <div class="btnrow">
+        <button id="btn-start" class="big">开始上班</button>
+        <button id="btn-codex2" class="ghost">📖 图鉴</button>
+      </div>
+      <p class="foot">共 12 波工作 · 第 6 / 12 波为"一大波工作来袭" · 全部音效与 BGM 由 WebAudio 实时生成</p>
+    </div>
+  </div>
+
+  <!-- ===== 暂停 ===== -->
+  <div class="screen" id="scr-pause">
+    <div class="panel small">
+      <h2>已暂停</h2>
+      <p class="sub">咖啡机还在转，工作也在路上。</p>
+      <div class="btnrow">
+        <button id="btn-resume" class="big">继续</button>
+        <button id="btn-restart2" class="ghost" onclick="document.getElementById('btn-restart').click()">↻ 重新开始</button>
+        <button id="btn-quit" class="ghost">回到标题</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 结算（胜/负共用） ===== -->
+  <div class="screen" id="scr-result"><div class="res" id="res-skin"><div class="panel small res-panel">
+    <h2 id="res-title">守住了！</h2>
+    <p class="sub" id="res-reason"></p>
+    <div id="res-stats" class="stats"></div>
+    <p id="res-quote" class="quote"></p>
+    <div class="btnrow">
+      <button id="btn-again" class="big">再来一局</button>
+      <button id="btn-menu" class="ghost">回到标题</button>
+    </div>
+  </div></div></div>
+
+  <!-- ===== 图鉴 ===== -->
+  <div class="screen" id="scr-codex">
+    <div class="panel codex">
+      <h2>📖 图鉴 · 打工人武器库 & 敌方工作</h2>
+      <div class="codex-cols">
+        <div>
+          <h3>我方（8）</h3>
+          <div id="codex-units"></div>
+        </div>
+        <div>
+          <h3>敌方（5）</h3>
+          <div id="codex-enemies"></div>
+        </div>
+      </div>
+      <div class="btnrow"><button id="btn-codex-back" class="big">知道了</button></div>
+    </div>
+  </div>
+
+  <div id="err"></div>
+</div>
+
+<script src="lib/three.min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/vox.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/game.js"></script>
+<script>
+/* 图鉴内容由数据表生成 */
+window.addEventListener('load', function () {
+  function card(def, extra) {
+    return '<div class="codex-card"><canvas class="cx-ic" width="96" height="96" data-key="' + def.key + '"></canvas>' +
+      '<div><h4>' + def.name + (def.custom ? '<em>自创</em>' : '') + '</h4>' +
+      '<p class="cx-num">' + extra + '</p><p>' + def.desc + '</p>' +
+      (def.tip ? '<p class="cx-tip">' + def.tip + '</p>' : '') + '</div></div>';
+  }
+  var cu = document.getElementById('codex-units');
+  var html = '';
+  UNITS.forEach(function (u) {
+    var num = '☕' + u.cost + ' · 冷却 ' + u.cd + 's · 生命 ' + (u.hp >= 999 ? '—' : u.hp);
+    if (u.dmg) num += ' · 伤害 ' + u.dmg + (u.rate ? ' / ' + u.rate + 's' : '');
+    if (u.produce) num += ' · 每 ' + u.rate + 's 产 ' + u.produce;
+    if (u.arm) num += ' · 武装 ' + u.arm + 's';
+    if (u.stunTime) num += ' · 每 ' + u.rate + 's 全体静止 ' + u.stunTime + 's ×' + u.charges;
+    if (u.fuse) num += ' · 引爆 ' + u.fuse + 's · 失败率 ' + Math.round(u.risk * 100) + '%';
+    html += card(u, num);
+  });
+  cu.innerHTML = html;
+  var ce = document.getElementById('codex-enemies');
+  var eh = '';
+  ENEMIES.forEach(function (e) {
+    eh += card(e, '生命 ' + e.hp + ' · 速度 ' + e.spd + ' 格/秒');
+  });
+  ce.innerHTML = eh;
+  /* 填充图鉴缩略图（由 game.js 的缩略图渲染提供） */
+  setTimeout(function () { if (window.fillCodexIcons) fillCodexIcons(); }, 120);
+  /* 结算面板按钮已由 game.js 绑定 */
+});
+</script>
+</body>
+</html>

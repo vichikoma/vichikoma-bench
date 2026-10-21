@@ -1,0 +1,374 @@
+{
+ "bpm": 120,
+ "beatsPerBar": 4,
+ "bars": 15,
+ "duration": 30.0,
+ "beats": [
+  {
+   "beat": 0,
+   "t": 0.0,
+   "bar": 1,
+   "downbeat": true
+  },
+  {
+   "beat": 1,
+   "t": 0.5,
+   "bar": 1,
+   "downbeat": false
+  },
+  {
+   "beat": 2,
+   "t": 1.0,
+   "bar": 1,
+   "downbeat": false
+  },
+  {
+   "beat": 3,
+   "t": 1.5,
+   "bar": 1,
+   "downbeat": false
+  },
+  {
+   "beat": 4,
+   "t": 2.0,
+   "bar": 2,
+   "downbeat": true
+  },
+  {
+   "beat": 5,
+   "t": 2.5,
+   "bar": 2,
+   "downbeat": false
+  },
+  {
+   "beat": 6,
+   "t": 3.0,
+   "bar": 2,
+   "downbeat": false
+  },
+  {
+   "beat": 7,
+   "t": 3.5,
+   "bar": 2,
+   "downbeat": false
+  },
+  {
+   "beat": 8,
+   "t": 4.0,
+   "bar": 3,
+   "downbeat": true
+  },
+  {
+   "beat": 9,
+   "t": 4.5,
+   "bar": 3,
+   "downbeat": false
+  },
+  {
+   "beat": 10,
+   "t": 5.0,
+   "bar": 3,
+   "downbeat": false
+  },
+  {
+   "beat": 11,
+   "t": 5.5,
+   "bar": 3,
+   "downbeat": false
+  },
+  {
+   "beat": 12,
+   "t": 6.0,
+   "bar": 4,
+   "downbeat": true
+  },
+  {
+   "beat": 13,
+   "t": 6.5,
+   "bar": 4,
+   "downbeat": false
+  },
+  {
+   "beat": 14,
+   "t": 7.0,
+   "bar": 4,
+   "downbeat": false
+  },
+  {
+   "beat": 15,
+   "t": 7.5,
+   "bar": 4,
+   "downbeat": false
+  },
+  {
+   "beat": 16,
+   "t": 8.0,
+   "bar": 5,
+   "downbeat": true
+  },
+  {
+   "beat": 17,
+   "t": 8.5,
+   "bar": 5,
+   "downbeat": false
+  },
+  {
+   "beat": 18,
+   "t": 9.0,
+   "bar": 5,
+   "downbeat": false
+  },
+  {
+   "beat": 19,
+   "t": 9.5,
+   "bar": 5,
+   "downbeat": false
+  },
+  {
+   "beat": 20,
+   "t": 10.0,
+   "bar": 6,
+   "downbeat": true
+  },
+  {
+   "beat": 21,
+   "t": 10.5,
+   "bar": 6,
+   "downbeat": false
+  },
+  {
+   "beat": 22,
+   "t": 11.0,
+   "bar": 6,
+   "downbeat": false
+  },
+  {
+   "beat": 23,
+   "t": 11.5,
+   "bar": 6,
+   "downbeat": false
+  },
+  {
+   "beat": 24,
+   "t": 12.0,
+   "bar": 7,
+   "downbeat": true
+  },
+  {
+   "beat": 25,
+   "t": 12.5,
+   "bar": 7,
+   "downbeat": false
+  },
+  {
+   "beat": 26,
+   "t": 13.0,
+   "bar": 7,
+   "downbeat": false
+  },
+  {
+   "beat": 27,
+   "t": 13.5,
+   "bar": 7,
+   "downbeat": false
+  },
+  {
+   "beat": 28,
+   "t": 14.0,
+   "bar": 8,
+   "downbeat": true
+  },
+  {
+   "beat": 29,
+   "t": 14.5,
+   "bar": 8,
+   "downbeat": false
+  },
+  {
+   "beat": 30,
+   "t": 15.0,
+   "bar": 8,
+   "downbeat": false
+  },
+  {
+   "beat": 31,
+   "t": 15.5,
+   "bar": 8,
+   "downbeat": false
+  },
+  {
+   "beat": 32,
+   "t": 16.0,
+   "bar": 9,
+   "downbeat": true
+  },
+  {
+   "beat": 33,
+   "t": 16.5,
+   "bar": 9,
+   "downbeat": false
+  },
+  {
+   "beat": 34,
+   "t": 17.0,
+   "bar": 9,
+   "downbeat": false
+  },
+  {
+   "beat": 35,
+   "t": 17.5,
+   "bar": 9,
+   "downbeat": false
+  },
+  {
+   "beat": 36,
+   "t": 18.0,
+   "bar": 10,
+   "downbeat": true
+  },
+  {
+   "beat": 37,
+   "t": 18.5,
+   "bar": 10,
+   "downbeat": false
+  },
+  {
+   "beat": 38,
+   "t": 19.0,
+   "bar": 10,
+   "downbeat": false
+  },
+  {
+   "beat": 39,
+   "t": 19.5,
+   "bar": 10,
+   "downbeat": false
+  },
+  {
+   "beat": 40,
+   "t": 20.0,
+   "bar": 11,
+   "downbeat": true
+  },
+  {
+   "beat": 41,
+   "t": 20.5,
+   "bar": 11,
+   "downbeat": false
+  },
+  {
+   "beat": 42,
+   "t": 21.0,
+   "bar": 11,
+   "downbeat": false
+  },
+  {
+   "beat": 43,
+   "t": 21.5,
+   "bar": 11,
+   "downbeat": false
+  },
+  {
+   "beat": 44,
+   "t": 22.0,
+   "bar": 12,
+   "downbeat": true
+  },
+  {
+   "beat": 45,
+   "t": 22.5,
+   "bar": 12,
+   "downbeat": false
+  },
+  {
+   "beat": 46,
+   "t": 23.0,
+   "bar": 12,
+   "downbeat": false
+  },
+  {
+   "beat": 47,
+   "t": 23.5,
+   "bar": 12,
+   "downbeat": false
+  },
+  {
+   "beat": 48,
+   "t": 24.0,
+   "bar": 13,
+   "downbeat": true
+  },
+  {
+   "beat": 49,
+   "t": 24.5,
+   "bar": 13,
+   "downbeat": false
+  },
+  {
+   "beat": 50,
+   "t": 25.0,
+   "bar": 13,
+   "downbeat": false
+  },
+  {
+   "beat": 51,
+   "t": 25.5,
+   "bar": 13,
+   "downbeat": false
+  },
+  {
+   "beat": 52,
+   "t": 26.0,
+   "bar": 14,
+   "downbeat": true
+  },
+  {
+   "beat": 53,
+   "t": 26.5,
+   "bar": 14,
+   "downbeat": false
+  },
+  {
+   "beat": 54,
+   "t": 27.0,
+   "bar": 14,
+   "downbeat": false
+  },
+  {
+   "beat": 55,
+   "t": 27.5,
+   "bar": 14,
+   "downbeat": false
+  },
+  {
+   "beat": 56,
+   "t": 28.0,
+   "bar": 15,
+   "downbeat": true
+  },
+  {
+   "beat": 57,
+   "t": 28.5,
+   "bar": 15,
+   "downbeat": false
+  },
+  {
+   "beat": 58,
+   "t": 29.0,
+   "bar": 15,
+   "downbeat": false
+  },
+  {
+   "beat": 59,
+   "t": 29.5,
+   "bar": 15,
+   "downbeat": false
+  },
+  {
+   "beat": 60,
+   "t": 30.0,
+   "bar": 16,
+   "downbeat": true
+  }
+ ]
+}

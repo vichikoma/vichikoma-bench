@@ -1,0 +1,509 @@
+{
+  "passed": true,
+  "frames_sampled": 105,
+  "layout_issues": 0,
+  "numeric_occurrences": 11,
+  "raw_rows": 1060,
+  "clean_rows": 1050,
+  "removed_duplicates": 10,
+  "quarter_rows": 150,
+  "reading_checks": [
+    {
+      "scene": "opening",
+      "text": "季度经营速报",
+      "font_px": 44,
+      "count": 6,
+      "required_seconds": 1.5,
+      "fully_readable_seconds": 3.333
+    },
+    {
+      "scene": "opening",
+      "text": "2026 年第三季度",
+      "font_px": 58,
+      "count": 2,
+      "required_seconds": 1.5,
+      "fully_readable_seconds": 3.333
+    },
+    {
+      "scene": "opening",
+      "text": "牛马咖啡",
+      "font_px": 218,
+      "count": 4,
+      "required_seconds": 1.5,
+      "fully_readable_seconds": 3.333
+    },
+    {
+      "scene": "opening",
+      "text": "这季，火力拉满？",
+      "font_px": 130,
+      "count": 8,
+      "required_seconds": 1.5,
+      "fully_readable_seconds": 3.333
+    },
+    {
+      "scene": "opening",
+      "text": "经营开场，直接上强度",
+      "font_px": 48,
+      "count": 10,
+      "required_seconds": 1.667,
+      "fully_readable_seconds": 3.333
+    },
+    {
+      "scene": "sales",
+      "text": "牛马咖啡",
+      "font_px": 36,
+      "count": 4,
+      "required_seconds": 1.5,
+      "fully_readable_seconds": 5.333
+    },
+    {
+      "scene": "sales",
+      "text": "规模向上",
+      "font_px": 36,
+      "count": 4,
+      "required_seconds": 1.5,
+      "fully_readable_seconds": 5.333
+    },
+    {
+      "scene": "sales",
+      "text": "销售火力全开",
+      "font_px": 180,
+      "count": 6,
+      "required_seconds": 1.5,
+      "fully_readable_seconds": 5.333
+    },
+    {
+      "scene": "sales",
+      "text": "本季销售额",
+      "font_px": 47,
+      "count": 5,
+      "required_seconds": 1.5,
+      "fully_readable_seconds": 5.333
+    },
+    {
+      "scene": "sales",
+      "text": "6,468",
+      "font_px": 266,
+      "count": 1,
+      "required_seconds": 1.5,
+      "fully_readable_seconds": 5.333
+    },
+    {
+      "scene": "sales",
+      "text": "万元",
+      "font_px": 78,
+      "count": 1,
+      "required_seconds": 1.5,
+      "fully_readable_seconds": 5.333
+    },
+    {
+      "scene": "sales",
+      "text": "同比增长",
+      "font_px": 44,
+      "count": 4,
+      "required_seconds": 1.5,
+      "fully_readable_seconds": 5.333
+    },
+    {
+      "scene": "sales",
+      "text": "+28.5%",
+      "font_px": 100,
+      "count": 1,
+      "required_seconds": 1.5,
+      "fully_readable_seconds": 5.333
+    },
+    {
+      "scene": "sales",
+      "text": "去年同期",
+      "font_px": 42,
+      "count": 4,
+      "required_seconds": 1.5,
+      "fully_readable_seconds": 5.333
+    },
+    {
+      "scene": "sales",
+      "text": "本季",
+      "font_px": 42,
+      "count": 2,
+      "required_seconds": 1.5,
+      "fully_readable_seconds": 5.333
+    },
+    {
+      "scene": "growth",
+      "text": "牛马咖啡",
+      "font_px": 36,
+      "count": 4,
+      "required_seconds": 1.5,
+      "fully_readable_seconds": 5.333
+    },
+    {
+      "scene": "growth",
+      "text": "增长引擎",
+      "font_px": 36,
+      "count": 4,
+      "required_seconds": 1.5,
+      "fully_readable_seconds": 5.333
+    },
+    {
+      "scene": "growth",
+      "text": "轻食，扛起增量",
+      "font_px": 176,
+      "count": 7,
+      "required_seconds": 1.5,
+      "fully_readable_seconds": 5.333
+    },
+    {
+      "scene": "growth",
+      "text": "占全公司同比新增销售额",
+      "font_px": 44,
+      "count": 11,
+      "required_seconds": 1.833,
+      "fully_readable_seconds": 5.333
+    },
+    {
+      "scene": "growth",
+      "text": "46.3%",
+      "font_px": 242,
+      "count": 1,
+      "required_seconds": 1.5,
+      "fully_readable_seconds": 5.333
+    },
+    {
+      "scene": "growth",
+      "text": "增长功臣，轻食领跑",
+      "font_px": 48,
+      "count": 9,
+      "required_seconds": 1.5,
+      "fully_readable_seconds": 5.333
+    },
+    {
+      "scene": "growth",
+      "text": "各品类销售额同比增量",
+      "font_px": 38,
+      "count": 10,
+      "required_seconds": 1.667,
+      "fully_readable_seconds": 5.333
+    },
+    {
+      "scene": "growth",
+      "text": "轻食",
+      "font_px": 40,
+      "count": 2,
+      "required_seconds": 1.5,
+      "fully_readable_seconds": 5.333
+    },
+    {
+      "scene": "growth",
+      "text": "创意特调",
+      "font_px": 40,
+      "count": 4,
+      "required_seconds": 1.5,
+      "fully_readable_seconds": 5.333
+    },
+    {
+      "scene": "growth",
+      "text": "茶饮",
+      "font_px": 40,
+      "count": 2,
+      "required_seconds": 1.5,
+      "fully_readable_seconds": 5.333
+    },
+    {
+      "scene": "growth",
+      "text": "经典咖啡",
+      "font_px": 40,
+      "count": 4,
+      "required_seconds": 1.5,
+      "fully_readable_seconds": 5.333
+    },
+    {
+      "scene": "growth",
+      "text": "周边",
+      "font_px": 40,
+      "count": 2,
+      "required_seconds": 1.5,
+      "fully_readable_seconds": 5.333
+    },
+    {
+      "scene": "channel",
+      "text": "牛马咖啡",
+      "font_px": 36,
+      "count": 4,
+      "required_seconds": 1.5,
+      "fully_readable_seconds": 5.333
+    },
+    {
+      "scene": "channel",
+      "text": "渠道变化",
+      "font_px": 36,
+      "count": 4,
+      "required_seconds": 1.5,
+      "fully_readable_seconds": 5.333
+    },
+    {
+      "scene": "channel",
+      "text": "外卖占比过半",
+      "font_px": 180,
+      "count": 6,
+      "required_seconds": 1.5,
+      "fully_readable_seconds": 5.333
+    },
+    {
+      "scene": "channel",
+      "text": "本季销售额占比",
+      "font_px": 46,
+      "count": 7,
+      "required_seconds": 1.5,
+      "fully_readable_seconds": 5.333
+    },
+    {
+      "scene": "channel",
+      "text": "52.1%",
+      "font_px": 242,
+      "count": 1,
+      "required_seconds": 1.5,
+      "fully_readable_seconds": 5.333
+    },
+    {
+      "scene": "channel",
+      "text": "外卖",
+      "font_px": 49,
+      "count": 2,
+      "required_seconds": 1.5,
+      "fully_readable_seconds": 5.333
+    },
+    {
+      "scene": "channel",
+      "text": "门店",
+      "font_px": 49,
+      "count": 2,
+      "required_seconds": 1.5,
+      "fully_readable_seconds": 5.333
+    },
+    {
+      "scene": "channel",
+      "text": "渠道毛利率",
+      "font_px": 40,
+      "count": 5,
+      "required_seconds": 1.5,
+      "fully_readable_seconds": 5.333
+    },
+    {
+      "scene": "channel",
+      "text": "48.4%",
+      "font_px": 91,
+      "count": 1,
+      "required_seconds": 1.5,
+      "fully_readable_seconds": 5.333
+    },
+    {
+      "scene": "channel",
+      "text": "60.5%",
+      "font_px": 91,
+      "count": 1,
+      "required_seconds": 1.5,
+      "fully_readable_seconds": 5.333
+    },
+    {
+      "scene": "margin",
+      "text": "牛马咖啡",
+      "font_px": 36,
+      "count": 4,
+      "required_seconds": 1.5,
+      "fully_readable_seconds": 7.333
+    },
+    {
+      "scene": "margin",
+      "text": "经营提醒",
+      "font_px": 36,
+      "count": 4,
+      "required_seconds": 1.5,
+      "fully_readable_seconds": 7.333
+    },
+    {
+      "scene": "margin",
+      "text": "毛利，也得跟上",
+      "font_px": 176,
+      "count": 7,
+      "required_seconds": 1.5,
+      "fully_readable_seconds": 7.333
+    },
+    {
+      "scene": "margin",
+      "text": "综合毛利率同比变化",
+      "font_px": 46,
+      "count": 9,
+      "required_seconds": 1.5,
+      "fully_readable_seconds": 7.333
+    },
+    {
+      "scene": "margin",
+      "text": "-2.6",
+      "font_px": 400,
+      "count": 1,
+      "required_seconds": 1.5,
+      "fully_readable_seconds": 7.333
+    },
+    {
+      "scene": "margin",
+      "text": "个百分点",
+      "font_px": 85,
+      "count": 1,
+      "required_seconds": 1.5,
+      "fully_readable_seconds": 7.333
+    },
+    {
+      "scene": "margin",
+      "text": "本季",
+      "font_px": 36,
+      "count": 2,
+      "required_seconds": 1.5,
+      "fully_readable_seconds": 7.333
+    },
+    {
+      "scene": "margin",
+      "text": "54.2%",
+      "font_px": 52,
+      "count": 1,
+      "required_seconds": 1.5,
+      "fully_readable_seconds": 7.333
+    },
+    {
+      "scene": "margin",
+      "text": "去年同期",
+      "font_px": 36,
+      "count": 4,
+      "required_seconds": 1.5,
+      "fully_readable_seconds": 7.333
+    },
+    {
+      "scene": "margin",
+      "text": "56.8%",
+      "font_px": 52,
+      "count": 1,
+      "required_seconds": 1.5,
+      "fully_readable_seconds": 7.333
+    },
+    {
+      "scene": "margin",
+      "text": "销售跑起来，毛利要跟上",
+      "font_px": 44,
+      "count": 11,
+      "required_seconds": 1.833,
+      "fully_readable_seconds": 7.333
+    }
+  ],
+  "transitions": [
+    {
+      "start_seconds": 4,
+      "start_frame": 120,
+      "beat_index": 8,
+      "start_error_frames": 0.0,
+      "wipe_duration_frames": 4,
+      "midpoint_error_frames": 2
+    },
+    {
+      "start_seconds": 10,
+      "start_frame": 300,
+      "beat_index": 20,
+      "start_error_frames": 0.0,
+      "wipe_duration_frames": 4,
+      "midpoint_error_frames": 2
+    },
+    {
+      "start_seconds": 16,
+      "start_frame": 480,
+      "beat_index": 32,
+      "start_error_frames": 0.0,
+      "wipe_duration_frames": 4,
+      "midpoint_error_frames": 2
+    },
+    {
+      "start_seconds": 22,
+      "start_frame": 660,
+      "beat_index": 44,
+      "start_error_frames": 0.0,
+      "wipe_duration_frames": 4,
+      "midpoint_error_frames": 2
+    }
+  ],
+  "contrast": [
+    {
+      "foreground": "燃橙",
+      "background": "藏蓝黑",
+      "ratio": 7.212
+    },
+    {
+      "foreground": "冰蓝",
+      "background": "藏蓝黑",
+      "ratio": 6.493
+    },
+    {
+      "foreground": "明黄",
+      "background": "藏蓝黑",
+      "ratio": 13.023
+    },
+    {
+      "foreground": "雾白",
+      "background": "藏蓝黑",
+      "ratio": 17.444
+    },
+    {
+      "foreground": "雾灰",
+      "background": "藏蓝黑",
+      "ratio": 10.443
+    },
+    {
+      "foreground": "藏蓝黑",
+      "background": "明黄",
+      "ratio": 13.023
+    }
+  ],
+  "minimum_font_px": 36,
+  "music_onset_seconds": 0.0014791666666666666,
+  "last_100ms_music_peak_dbfs": -65.70002027162887,
+  "media": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080,
+        "avg_frame_rate": "30/1",
+        "duration": "30.000000",
+        "nb_frames": "900",
+        "side_data_list": [
+          {}
+        ]
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "sample_rate": "48000",
+        "channels": 2,
+        "avg_frame_rate": "0/0",
+        "duration": "30.000000",
+        "nb_frames": "1408"
+      }
+    ],
+    "format": {
+      "duration": "30.000000"
+    }
+  },
+  "visual_review": {
+    "opening": {
+      "first_focus": "牛马咖啡",
+      "motion": "杯身浮动、回弹推镜、视差、节拍粒子"
+    },
+    "middle": {
+      "first_focus": "46.3%",
+      "motion": "品类横条生长、扫光、推镜、视差"
+    },
+    "climax": {
+      "first_focus": "-2.6 个百分点",
+      "motion": "超大数字节拍放大、速度线、辉光、推镜"
+    }
+  }
+}

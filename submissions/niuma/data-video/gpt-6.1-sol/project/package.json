@@ -1,0 +1,24 @@
+{
+  "name": "niuma-quarterly-motion",
+  "version": "1.0.0",
+  "private": true,
+  "description": "牛马咖啡季度经营动态短片",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render": "remotion render src/index.ts NiumaQuarter ../out/video.mp4 --codec=h264 --crf=18 --pixel-format=yuv420p",
+    "check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.503",
+    "@remotion/media": "4.0.503",
+    "@remotion/transitions": "4.0.503",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "remotion": "4.0.503"
+  },
+  "devDependencies": {
+    "@types/react": "19.1.0",
+    "@types/react-dom": "19.1.0",
+    "typescript": "5.8.3"
+  }
+}

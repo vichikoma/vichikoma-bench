@@ -1,0 +1,463 @@
+{
+  "source": "out/make_bgm.py",
+  "bpm": 120,
+  "beats_per_bar": 4,
+  "bars": 15,
+  "beat_seconds": 0.5,
+  "duration_seconds": 30.0,
+  "count": 60,
+  "downbeats": [
+    0.0,
+    2.0,
+    4.0,
+    6.0,
+    8.0,
+    10.0,
+    12.0,
+    14.0,
+    16.0,
+    18.0,
+    20.0,
+    22.0,
+    24.0,
+    26.0,
+    28.0
+  ],
+  "beats": [
+    {
+      "index": 0,
+      "time": 0.0,
+      "bar": 1,
+      "beat_in_bar": 1,
+      "is_downbeat": true
+    },
+    {
+      "index": 1,
+      "time": 0.5,
+      "bar": 1,
+      "beat_in_bar": 2,
+      "is_downbeat": false
+    },
+    {
+      "index": 2,
+      "time": 1.0,
+      "bar": 1,
+      "beat_in_bar": 3,
+      "is_downbeat": false
+    },
+    {
+      "index": 3,
+      "time": 1.5,
+      "bar": 1,
+      "beat_in_bar": 4,
+      "is_downbeat": false
+    },
+    {
+      "index": 4,
+      "time": 2.0,
+      "bar": 2,
+      "beat_in_bar": 1,
+      "is_downbeat": true
+    },
+    {
+      "index": 5,
+      "time": 2.5,
+      "bar": 2,
+      "beat_in_bar": 2,
+      "is_downbeat": false
+    },
+    {
+      "index": 6,
+      "time": 3.0,
+      "bar": 2,
+      "beat_in_bar": 3,
+      "is_downbeat": false
+    },
+    {
+      "index": 7,
+      "time": 3.5,
+      "bar": 2,
+      "beat_in_bar": 4,
+      "is_downbeat": false
+    },
+    {
+      "index": 8,
+      "time": 4.0,
+      "bar": 3,
+      "beat_in_bar": 1,
+      "is_downbeat": true
+    },
+    {
+      "index": 9,
+      "time": 4.5,
+      "bar": 3,
+      "beat_in_bar": 2,
+      "is_downbeat": false
+    },
+    {
+      "index": 10,
+      "time": 5.0,
+      "bar": 3,
+      "beat_in_bar": 3,
+      "is_downbeat": false
+    },
+    {
+      "index": 11,
+      "time": 5.5,
+      "bar": 3,
+      "beat_in_bar": 4,
+      "is_downbeat": false
+    },
+    {
+      "index": 12,
+      "time": 6.0,
+      "bar": 4,
+      "beat_in_bar": 1,
+      "is_downbeat": true
+    },
+    {
+      "index": 13,
+      "time": 6.5,
+      "bar": 4,
+      "beat_in_bar": 2,
+      "is_downbeat": false
+    },
+    {
+      "index": 14,
+      "time": 7.0,
+      "bar": 4,
+      "beat_in_bar": 3,
+      "is_downbeat": false
+    },
+    {
+      "index": 15,
+      "time": 7.5,
+      "bar": 4,
+      "beat_in_bar": 4,
+      "is_downbeat": false
+    },
+    {
+      "index": 16,
+      "time": 8.0,
+      "bar": 5,
+      "beat_in_bar": 1,
+      "is_downbeat": true
+    },
+    {
+      "index": 17,
+      "time": 8.5,
+      "bar": 5,
+      "beat_in_bar": 2,
+      "is_downbeat": false
+    },
+    {
+      "index": 18,
+      "time": 9.0,
+      "bar": 5,
+      "beat_in_bar": 3,
+      "is_downbeat": false
+    },
+    {
+      "index": 19,
+      "time": 9.5,
+      "bar": 5,
+      "beat_in_bar": 4,
+      "is_downbeat": false
+    },
+    {
+      "index": 20,
+      "time": 10.0,
+      "bar": 6,
+      "beat_in_bar": 1,
+      "is_downbeat": true
+    },
+    {
+      "index": 21,
+      "time": 10.5,
+      "bar": 6,
+      "beat_in_bar": 2,
+      "is_downbeat": false
+    },
+    {
+      "index": 22,
+      "time": 11.0,
+      "bar": 6,
+      "beat_in_bar": 3,
+      "is_downbeat": false
+    },
+    {
+      "index": 23,
+      "time": 11.5,
+      "bar": 6,
+      "beat_in_bar": 4,
+      "is_downbeat": false
+    },
+    {
+      "index": 24,
+      "time": 12.0,
+      "bar": 7,
+      "beat_in_bar": 1,
+      "is_downbeat": true
+    },
+    {
+      "index": 25,
+      "time": 12.5,
+      "bar": 7,
+      "beat_in_bar": 2,
+      "is_downbeat": false
+    },
+    {
+      "index": 26,
+      "time": 13.0,
+      "bar": 7,
+      "beat_in_bar": 3,
+      "is_downbeat": false
+    },
+    {
+      "index": 27,
+      "time": 13.5,
+      "bar": 7,
+      "beat_in_bar": 4,
+      "is_downbeat": false
+    },
+    {
+      "index": 28,
+      "time": 14.0,
+      "bar": 8,
+      "beat_in_bar": 1,
+      "is_downbeat": true
+    },
+    {
+      "index": 29,
+      "time": 14.5,
+      "bar": 8,
+      "beat_in_bar": 2,
+      "is_downbeat": false
+    },
+    {
+      "index": 30,
+      "time": 15.0,
+      "bar": 8,
+      "beat_in_bar": 3,
+      "is_downbeat": false
+    },
+    {
+      "index": 31,
+      "time": 15.5,
+      "bar": 8,
+      "beat_in_bar": 4,
+      "is_downbeat": false
+    },
+    {
+      "index": 32,
+      "time": 16.0,
+      "bar": 9,
+      "beat_in_bar": 1,
+      "is_downbeat": true
+    },
+    {
+      "index": 33,
+      "time": 16.5,
+      "bar": 9,
+      "beat_in_bar": 2,
+      "is_downbeat": false
+    },
+    {
+      "index": 34,
+      "time": 17.0,
+      "bar": 9,
+      "beat_in_bar": 3,
+      "is_downbeat": false
+    },
+    {
+      "index": 35,
+      "time": 17.5,
+      "bar": 9,
+      "beat_in_bar": 4,
+      "is_downbeat": false
+    },
+    {
+      "index": 36,
+      "time": 18.0,
+      "bar": 10,
+      "beat_in_bar": 1,
+      "is_downbeat": true
+    },
+    {
+      "index": 37,
+      "time": 18.5,
+      "bar": 10,
+      "beat_in_bar": 2,
+      "is_downbeat": false
+    },
+    {
+      "index": 38,
+      "time": 19.0,
+      "bar": 10,
+      "beat_in_bar": 3,
+      "is_downbeat": false
+    },
+    {
+      "index": 39,
+      "time": 19.5,
+      "bar": 10,
+      "beat_in_bar": 4,
+      "is_downbeat": false
+    },
+    {
+      "index": 40,
+      "time": 20.0,
+      "bar": 11,
+      "beat_in_bar": 1,
+      "is_downbeat": true
+    },
+    {
+      "index": 41,
+      "time": 20.5,
+      "bar": 11,
+      "beat_in_bar": 2,
+      "is_downbeat": false
+    },
+    {
+      "index": 42,
+      "time": 21.0,
+      "bar": 11,
+      "beat_in_bar": 3,
+      "is_downbeat": false
+    },
+    {
+      "index": 43,
+      "time": 21.5,
+      "bar": 11,
+      "beat_in_bar": 4,
+      "is_downbeat": false
+    },
+    {
+      "index": 44,
+      "time": 22.0,
+      "bar": 12,
+      "beat_in_bar": 1,
+      "is_downbeat": true
+    },
+    {
+      "index": 45,
+      "time": 22.5,
+      "bar": 12,
+      "beat_in_bar": 2,
+      "is_downbeat": false
+    },
+    {
+      "index": 46,
+      "time": 23.0,
+      "bar": 12,
+      "beat_in_bar": 3,
+      "is_downbeat": false
+    },
+    {
+      "index": 47,
+      "time": 23.5,
+      "bar": 12,
+      "beat_in_bar": 4,
+      "is_downbeat": false
+    },
+    {
+      "index": 48,
+      "time": 24.0,
+      "bar": 13,
+      "beat_in_bar": 1,
+      "is_downbeat": true
+    },
+    {
+      "index": 49,
+      "time": 24.5,
+      "bar": 13,
+      "beat_in_bar": 2,
+      "is_downbeat": false
+    },
+    {
+      "index": 50,
+      "time": 25.0,
+      "bar": 13,
+      "beat_in_bar": 3,
+      "is_downbeat": false
+    },
+    {
+      "index": 51,
+      "time": 25.5,
+      "bar": 13,
+      "beat_in_bar": 4,
+      "is_downbeat": false
+    },
+    {
+      "index": 52,
+      "time": 26.0,
+      "bar": 14,
+      "beat_in_bar": 1,
+      "is_downbeat": true
+    },
+    {
+      "index": 53,
+      "time": 26.5,
+      "bar": 14,
+      "beat_in_bar": 2,
+      "is_downbeat": false
+    },
+    {
+      "index": 54,
+      "time": 27.0,
+      "bar": 14,
+      "beat_in_bar": 3,
+      "is_downbeat": false
+    },
+    {
+      "index": 55,
+      "time": 27.5,
+      "bar": 14,
+      "beat_in_bar": 4,
+      "is_downbeat": false
+    },
+    {
+      "index": 56,
+      "time": 28.0,
+      "bar": 15,
+      "beat_in_bar": 1,
+      "is_downbeat": true
+    },
+    {
+      "index": 57,
+      "time": 28.5,
+      "bar": 15,
+      "beat_in_bar": 2,
+      "is_downbeat": false
+    },
+    {
+      "index": 58,
+      "time": 29.0,
+      "bar": 15,
+      "beat_in_bar": 3,
+      "is_downbeat": false
+    },
+    {
+      "index": 59,
+      "time": 29.5,
+      "bar": 15,
+      "beat_in_bar": 4,
+      "is_downbeat": false
+    }
+  ],
+  "cuts": {
+    "note": "成片每一次切镜都落在下列拍点上（均为小节第一拍）",
+    "times": [
+      0.0,
+      2.0,
+      6.0,
+      10.0,
+      14.0,
+      18.0,
+      22.0,
+      26.0,
+      30.0
+    ]
+  },
+  "beats_json_generator": "out/make_beats.py"
+}

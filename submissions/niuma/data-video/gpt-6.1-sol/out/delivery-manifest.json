@@ -1,0 +1,292 @@
+[
+  {
+    "path": "TASK.md",
+    "bytes": 4533,
+    "sha256": "0561fd10a628392b3c98d6e626c9c1120d44d0d36a01ec155517252ffa683ac3"
+  },
+  {
+    "path": "brief.md",
+    "bytes": 1208,
+    "sha256": "bfc4dddcefd87eed96b5994a0266e050fefb93875c640fffca1ca57dfc56a9cd"
+  },
+  {
+    "path": "brand.md",
+    "bytes": 2553,
+    "sha256": "976a9b3ce1c7bd8bb92665db6cd4e74f60975fa8d0c86be9c86ad086e14d8a5e"
+  },
+  {
+    "path": "data/sales_2025-01_2026-09.csv",
+    "bytes": 54287,
+    "sha256": "ef7b39801291285fbf8b8933e7dfa607b6f870315352a7b2f5dc79097ee6bb09"
+  },
+  {
+    "path": "project/package-lock.json",
+    "bytes": 141188,
+    "sha256": "f71217849d398aaa9f3807e9aef8141a25f2c144bab9c4b08d658e0c236227a3"
+  },
+  {
+    "path": "project/package.json",
+    "bytes": 677,
+    "sha256": "57f76bbae64cef752ff55116d27442883136e2fe424407a87e3b6f842e2b210f"
+  },
+  {
+    "path": "project/README.md",
+    "bytes": 2186,
+    "sha256": "6d2ec3cec5c7782e93b148ca7a7cacb118994cc4421bc2c2d43591109e6242f6"
+  },
+  {
+    "path": "project/remotion.config.ts",
+    "bytes": 841,
+    "sha256": "4328772ac26ef5ad93d8c2e78eecc52d47c11d312ba8f00b859a2fb62e9bc581"
+  },
+  {
+    "path": "project/tsconfig.json",
+    "bytes": 278,
+    "sha256": "5ce163a5b68e5deccd7017ca18375324d3b6600bb333824767f32ea6eab5cce0"
+  },
+  {
+    "path": "project/public/bgm.wav",
+    "bytes": 5760044,
+    "sha256": "decd51686b1117f11fa7e3c9d8bdc05d47bb8cae2140c034fc0c175930933cd8"
+  },
+  {
+    "path": "project/scripts/verify-render.cjs",
+    "bytes": 2801,
+    "sha256": "60d5541fd89bbe4bdd6fd076702d3165b159c6d35a985873837df52cf2d388f3"
+  },
+  {
+    "path": "project/src/data.json",
+    "bytes": 14163,
+    "sha256": "d15c76f5a2dc834aad3d6ad63925d0bd7b5a917630ecaa8337b39b2670e8c45f"
+  },
+  {
+    "path": "project/src/design.tsx",
+    "bytes": 4945,
+    "sha256": "846e9f306185c19b3c5bc03a6894d6bd550b2afe272c8c19d152809073a1ecff"
+  },
+  {
+    "path": "project/src/index.ts",
+    "bytes": 88,
+    "sha256": "2e0e358282a1b998a65387c653b97c2bb2eb7aae94cf200fc0b8d919f7be73a6"
+  },
+  {
+    "path": "project/src/Root.tsx",
+    "bytes": 2869,
+    "sha256": "044d941ef3a67a50338b948465485ef1ea584230b129f083e656a0e86332693f"
+  },
+  {
+    "path": "project/src/scenes/Channel.tsx",
+    "bytes": 2035,
+    "sha256": "a1120efe2366a36008421aa306adec3514a7ead92a25355535c5d67a7dbd55ca"
+  },
+  {
+    "path": "project/src/scenes/Growth.tsx",
+    "bytes": 1648,
+    "sha256": "972c4ce0fd57d43c6135e3fcdb69319480dbdcff4655d5e957b730daf9b01874"
+  },
+  {
+    "path": "project/src/scenes/Intro.tsx",
+    "bytes": 1908,
+    "sha256": "1cda42638b1d8fa53c6e6169243907a9469afc9de059ac540ad5fcfb9160aa04"
+  },
+  {
+    "path": "project/src/scenes/Margin.tsx",
+    "bytes": 1711,
+    "sha256": "1a8dad72fe1cd56d89947ea3de97ac4e22bb37e38982f9052f093524114a3d5e"
+  },
+  {
+    "path": "project/src/scenes/Sales.tsx",
+    "bytes": 1804,
+    "sha256": "63be40e4addf352c0a3d606b56a04cd6cfe6be0e90c0d035c826e74d2b15a2b3"
+  },
+  {
+    "path": "scripts/prepare_data.py",
+    "bytes": 3050,
+    "sha256": "6744dbe43acef1fcb75616bbfa93da894c8ffee2225d18634bad9459ae60d411"
+  },
+  {
+    "path": "scripts/compose_bgm.py",
+    "bytes": 4766,
+    "sha256": "5a9d59d8fc6c149686ee2ee80d9492fa1cb150f57fc8daa6f57b0b62734ba9d6"
+  },
+  {
+    "path": "scripts/build_facts.py",
+    "bytes": 6427,
+    "sha256": "2c74ba7f572076836a6eca9db76a13a1af65176b9e3840417d7efbeac094e8d3"
+  },
+  {
+    "path": "scripts/final_check.py",
+    "bytes": 8563,
+    "sha256": "c6c663e185877e0ea7f98f3f829e01c4453ecdc86bbbde38c10996ecf18a0fb8"
+  },
+  {
+    "path": "scripts/contact_sheet.py",
+    "bytes": 753,
+    "sha256": "caf008c4ecc39ecbad45cc918d07d2cc0456411770d08b8eb709f488d2fb1fe2"
+  },
+  {
+    "path": "out/video.mp4",
+    "bytes": 11896244,
+    "sha256": "6db55a4e87b8354a9f8e97c5ec225e586916c6aa13faba6e5c55e7f8a8d9555a"
+  },
+  {
+    "path": "out/bgm.wav",
+    "bytes": 5760044,
+    "sha256": "decd51686b1117f11fa7e3c9d8bdc05d47bb8cae2140c034fc0c175930933cd8"
+  },
+  {
+    "path": "out/bgm.mid",
+    "bytes": 6510,
+    "sha256": "d2cf572e7d17fad640763b815e8107382373810f9a70b511ca069d82980a4b67"
+  },
+  {
+    "path": "out/generate_bgm.py",
+    "bytes": 4766,
+    "sha256": "5a9d59d8fc6c149686ee2ee80d9492fa1cb150f57fc8daa6f57b0b62734ba9d6"
+  },
+  {
+    "path": "out/beats.json",
+    "bytes": 9859,
+    "sha256": "f3fe7a73ca41528620edbcbca881ccefa2e46459ddd181763cd2c90cabf3677a"
+  },
+  {
+    "path": "out/facts.json",
+    "bytes": 26597,
+    "sha256": "c01a9b84217352325b4665dd02ed50e7aab826be73a23c081a6973bd2721057d"
+  },
+  {
+    "path": "out/README.md",
+    "bytes": 413,
+    "sha256": "63e9112c485e5c08716ad2241d614d798bc1663abbbb3821caea97f5d701a1a3"
+  },
+  {
+    "path": "out/QA.md",
+    "bytes": 1931,
+    "sha256": "7ab64e4387880a8b1ee9cabcea8e09a329f555015bfafad78e7d024f13f39999"
+  },
+  {
+    "path": "out/qa-report.json",
+    "bytes": 11821,
+    "sha256": "516a4efa9320f4ceda432f3dc244001b7c244242a2d4fa943a3e7e6af0e08d3f"
+  },
+  {
+    "path": "out/analysis.json",
+    "bytes": 14163,
+    "sha256": "d15c76f5a2dc834aad3d6ad63925d0bd7b5a917630ecaa8337b39b2670e8c45f"
+  },
+  {
+    "path": "out/cleaned.csv",
+    "bytes": 57928,
+    "sha256": "cb07a29109b3a7d6f8e35d225f503b80130fcaec6a52381626040571de4df6b4"
+  },
+  {
+    "path": "out/source_rows.json",
+    "bytes": 226957,
+    "sha256": "3e88fc20d5023c19a9a24c08562453ffa255fb30fda352e187c3a92ee315d1c0"
+  },
+  {
+    "path": "out/layout-raw.json",
+    "bytes": 375616,
+    "sha256": "5012da658b21b54d2c88bf5c83699a69628c835f8cfd778d4b98155ac2d1efb8"
+  },
+  {
+    "path": "out/layout-issues.json",
+    "bytes": 2,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "path": "out/media-probe.json",
+    "bytes": 593,
+    "sha256": "a25856cdc80bf0bcd183df3366110357988a3c0db636ae40914c9ebddfcdc474"
+  },
+  {
+    "path": "out/music-qa.json",
+    "bytes": 322,
+    "sha256": "081608ea4703bdbd83b4c6a651cc6cd911a15efdca62cbb0b9a8e612a5f4ffc1"
+  },
+  {
+    "path": "out/decode-check.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "out/stills/channel.png",
+    "bytes": 210885,
+    "sha256": "63ae030995979a4aae6543aed92a87a9bf688953ef0a7ccbe729f1903905f985"
+  },
+  {
+    "path": "out/stills/climax.png",
+    "bytes": 273423,
+    "sha256": "0bb076c4546886e2e00397e3e8fff33b97896c809168d38518f6412817088088"
+  },
+  {
+    "path": "out/stills/middle.png",
+    "bytes": 216331,
+    "sha256": "9d2fd8f505cd33c6d7a90f3f015b2cdb212587de5b68466f0eb1d9170fbabc4a"
+  },
+  {
+    "path": "out/stills/opening.png",
+    "bytes": 214409,
+    "sha256": "3a64f257be4f86b5949a4dd115dccf29ce27710a8e8ac556d4a05021a44ef4ce"
+  },
+  {
+    "path": "out/stills/sales.png",
+    "bytes": 201338,
+    "sha256": "d5afdc4e94b5949c88d01cc499e2deb0fb9939f3cca769d0dd7cfbdc206a96f3"
+  },
+  {
+    "path": "out/stills/transition-channel.png",
+    "bytes": 205046,
+    "sha256": "a134579ffea06de1b3a11955b1ad1b46939bfeba94187a8cfc5834882f898415"
+  },
+  {
+    "path": "out/stills/transition-growth.png",
+    "bytes": 209272,
+    "sha256": "317af831748eca81214550b272d23c483a3ea9ec1d02e967afc5e39187b440c9"
+  },
+  {
+    "path": "out/stills/transition-margin.png",
+    "bytes": 259890,
+    "sha256": "a9acb6dc9dfd34ad707e1409e92fb302d06a79591b58e0639ba457921c944216"
+  },
+  {
+    "path": "out/stills/transition-sales.png",
+    "bytes": 201823,
+    "sha256": "c694a639d989a9efdb04e0b840b9b915ff9e569d6cfd72634f30f0dcdcc4a6af"
+  },
+  {
+    "path": "out/stills/channel-preview.jpg",
+    "bytes": 89314,
+    "sha256": "fab84081361b2fdd4afc6d99df81c9588694fdca622a499557f68945c020b6bb"
+  },
+  {
+    "path": "out/stills/climax-preview.jpg",
+    "bytes": 94082,
+    "sha256": "fd6dc787dcd69c834e69f9e9dd14f4f130ed07889073a395d11fa407a5edc841"
+  },
+  {
+    "path": "out/stills/contact-sheet.jpg",
+    "bytes": 298671,
+    "sha256": "e09ef2107c48d1d7cffac0ff5085c566dc2ce921025976e5a1beb042a881b2b0"
+  },
+  {
+    "path": "out/stills/middle-preview.jpg",
+    "bytes": 95454,
+    "sha256": "f9c3bc812b423c9adc8694666138e4283894dd348bc15280ee23104ea20d0ec3"
+  },
+  {
+    "path": "out/stills/opening-preview.jpg",
+    "bytes": 86586,
+    "sha256": "fa446ffa4ca25cf4428bfd1b41d90fcf93b4726118cc915d10e5f5e1eda5c2c7"
+  },
+  {
+    "path": "out/stills/sales-preview.jpg",
+    "bytes": 92838,
+    "sha256": "5eda28ce26cbe3ee129f258c28ad691058acf898bd392cccf8b4b8219d0694f8"
+  },
+  {
+    "path": "out/stills/transitions.jpg",
+    "bytes": 221153,
+    "sha256": "08e66abaede5decbc84c3406bb3ba70c9ef4be94367cbde6849640a8b6ccb290"
+  }
+]

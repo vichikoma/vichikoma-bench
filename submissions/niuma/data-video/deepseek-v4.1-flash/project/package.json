@@ -1,0 +1,22 @@
+{
+  "name": "niuma-q3-video",
+  "version": "1.0.0",
+  "private": true,
+  "description": "牛马咖啡 2026 Q3 经营数据短片（Remotion）",
+  "scripts": {
+    "dev": "remotion studio",
+    "render": "remotion render NiuMaQ3 out/video.mp4",
+    "still": "remotion still NiuMaQ3 out/still.png"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.534",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "remotion": "4.0.534"
+  },
+  "devDependencies": {
+    "@types/react": "19.0.0",
+    "@types/react-dom": "19.0.0",
+    "typescript": "5.8.3"
+  }
+}

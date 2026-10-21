@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<!-- ================================================================
+《植物大战僵尸 · 打工人版》 —— 3D 体素网页塔防 · 双击 index.html 离线即玩
+玩家扮演小组组长：一波波"工作"从右侧老板办公室派发，穿过 5×9 办公区，
+涌向左侧 5 个组员工位。调动打工人武器库（道具+倒霉同事）拦截它们。
+================================================================
+■ 操作说明
+----------------------------------------------------------------
+· 拖拽布置（默认方式）：按住顶部单位卡片 → 拖到网格格子松手落子。
+  拖拽全程显示：①跟随的半透明幽灵预览 ②目标格高亮框（绿=可放，
+  红=被占用）③无效落点报错音。
+· 点选布置（辅助方式）：单击卡片选中（幽灵保持跟随）→ 再点格子落子。
+· 铲子：把右侧「铲子」拖到任意我方单位上铲除（或点铲子后点单位）。
+  铲子与卡片栏分区摆放、外观明显区分。
+· 卡片悬停约 0.5 秒弹出单位介绍，移开或开始拖拽立即消失。
+· 右键 / Esc：取消当前携带的工具。空格：暂停。
+· ⏸ 暂停/继续 · ×1/×2 倍速 · 图鉴 · 重新开始（随时可主动重开）
+· 敌人自动沿本行向左推进；走到工位前会"缩小钻进文件槽"，
+  槽满 4 个自动触发该工位年假（清该行敌人、不清槽位、每工位仅 1 次）。
+· 失败：①老板走到任一工位（年假挡不住）②某工位年假用掉后再来敌人。
+----------------------------------------------------------------
+■ 单位图鉴（我方 · 打工人武器库）
+----------------------------------------------------------------
+| 单位        | 费用 | 卡片冷却 | 血量 | 能力（最终数值）                          |
+|-------------|------|---------|------|-------------------------------------------|
+| 咖啡机      |  50  |   6s    | 300  | 每 10s 产 25 咖啡因                        |
+| DDL加农炮   | 100  |   6s    | 300  | 每 1.5s 轰"交付物"，伤害 20（DPS 13.3）     |
+| 背锅侠      |  50  |  10s    | 3000 | 不攻击，纯肉盾（血量=加农炮 10 倍）         |
+| 摸鱼鱼缸    | 175  |   6s    | 300  | 每 1.8s 泼水花，伤害 20 + 移速减半 5s       |
+|             |      |         |      | （DPS 11.1 ≤ 加农炮，符合"不高于"约束）     |
+| 辞职信      | 150  |  30s    | 400  | 放置 1s 后引爆：清空全场（含老板）；        |
+|             |      |         |      | 15% 概率老板秒批辞职 → 直接失败（真实赌局）  |
+| 假装在忙    |  25  |  20s    | 300  | 武装 15s（对标土豆雷的"武装时间"），        |
+|             |      |         |      | 之后敌人踩中即同归于尽秒杀（含老板）         |
+| ★群聊@全体  | 125  |  12s    | 300  | 每 2s 从射程 3.6 内最近目标起连锁 @，       |
+|  （自创1）  |      |         |      | 每跳 ≤3.0 格、至多 5 个目标（跨行），各 15 伤|
+| ★空调遥控器 | 100  |  15s    | 300  | 每 5.5s 向 ±2 列 ×±1 行范围喷冷风，         |
+|  （自创2）  |      |         |      | 敌人僵住 1.3s（不动不吃），零伤害纯控制      |
+----------------------------------------------------------------
+■ 自创单位设计思路（各一句话）
+----------------------------------------------------------------
+★ 群聊@全体：标准武器库里缺"跨行补漏"手段——它把输出变成可在行间
+  跳跃的消息链，专治"东一行西一行"的散兵潮，是阵型密度放大器。
+★ 空调遥控器：全游戏缺一个"无伤害纯控制"位——一次冷风同时冻结一
+  整段战线，给脆皮后排争取输出时间，也专门用来定住咬锅侠的空档。
+  （两者机制均与"本行直线射手"完全不同型，不是 DDL 加农炮换皮。）
+----------------------------------------------------------------
+■ 敌人图鉴（工作）
+----------------------------------------------------------------
+| 敌人     | 血量 | 移速(格/s) | 机制                                                    |
+|----------|------|-----------|----------------------------------------------------------|
+| 普通需求 | 200  |   0.22    | 基准；啃咬 90 DPS                                         |
+| 加急需求 | 400  |   0.27    | 血量 2 倍且更快；冒火                                     |
+| 老板     | 800  |   0.13    | 全场最慢、唯一人形；走到工位=立即失败（年假清不掉他）；    |
+|          |      |           | 同一时间场上最多 1 个（会压着后续波次等他死）；啃咬 130    |
+| 临时会议 | 200  |   0.26    | 遇第一个我方单位直接跳过（每局限 1 次），落地继续前进      |
+| 例会     | 400  |   0.17    | 第 6 波起出现；行进中每 10s 在本行随机空格拉出 1 个新普通需求|
+----------------------------------------------------------------
+■ 咖啡因经济（最终数值）
+----------------------------------------------------------------
+· 初始 100；每 8 秒天降一杯咖啡 +25（落在随机格，落地 1 秒自动收集）
+· 咖啡机：每 10 秒 +25（自动入账）
+----------------------------------------------------------------
+■ 波次编排（最终数值 · 12 波，第 6/12 波"一大波"框架不变）
+----------------------------------------------------------------
+| 波 | 出怪配比                                        | 出怪间隔 | 备注          |
+|----|------------------------------------------------|----------|---------------|
+| 1  | 普通3                                            | 8.0s     | 教学波        |
+| 2  | 普通5                                            | 7.0s     |               |
+| 3  | 普通6 + 加急2                                    | 6.5s     | 加急登场      |
+| 4  | 普通6 + 加急3 + 临时会议2                        | 6.0s     | 跳弹登场      |
+| 5  | 普通6 + 加急4 + 临时会议2                        | 5.5s     | 进度70%首个老板|
+| 6  | 普通8 + 加急4 + 会议3 + 例会1        【一大波⚠】  | 2.2s     | 例会开始滚雪球|
+| 7  | 普通5 + 加急4 + 会议3 + 例会2                     | 4.5s     |               |
+| 8  | 普通6 + 加急5 + 会议3 + 例会2                     | 4.5s     | 第二老板(进度60%)|
+| 9  | 普通6 + 加急6 + 会议4 + 例会2                     | 4.0s     |               |
+| 10 | 普通7 + 加急6 + 会议4 + 例会3                     | 4.0s     | 第三老板(进度55%)|
+| 11 | 普通8 + 加急7 + 会议5 + 例会3                     | 3.5s     |               |
+| 12 | 普通10+ 加急8 + 会议5 + 例会4        【一大波⚠】  | 1.6s     | 终局老板(75%)  |
+  每波之间有 lead 准备间隔（见 js/data.js，清空全场可缩短约一半；
+  例会所产"新需求"不计入波次数，属额外雪球压力）。
+----------------------------------------------------------------
+■ 难度曲线设计思路（两句话）
+----------------------------------------------------------------
+前 3 波只用宽间隔的普通/少量加急需求，两三门炮即可站稳，快速建立
+"我守得住"的爽感；第 5 波老板登场后，临时会议跳防线 + 例会滚雪球
+逼玩家混编经济/肉盾/减速/控制，并把年假当"最后一道闸"精打细算——
+无脑堆单一单位撑不过第 8 波，正常运营搭配+留好年假可以通关。
+----------------------------------------------------------------
+■ 3D 实现说明
+----------------------------------------------------------------
+· 使用任务包内置 three.js r147（UMD 本地引用 lib/three.min.js），
+  WebGL 渲染于 1280×720 canvas。固定半俯视相机：俯角约 46°、
+  正对战场零横向偏转零侧倾（行线水平、列向纵深收敛、左右取景对称）。
+· 体素风格：全部模型由代码把立方体拼成（顶点色烘焙面明暗，零贴图
+  文件），美术对标 refs/crossy-road.jpg，并做了自己的"暖调办公室
+  + 糖果撞色"配色方向。
+· 性能手段：①静态场景（地板/网格/长桌/办公室/陈设）合并为 1 个
+  不透明 mesh + 1 个玻璃 mesh；②每个单位/敌人为 1~4 个 draw call
+  的小 Group；③全部粒子共用 1 个 InstancedMesh（1 个 draw call，
+  上限 900 粒）；④阴影仅一盏方向光 2048 阴影贴图、只单位投影；
+  ⑤pixelRatio 锁定 1、雾裁剪远景。高密度波次实测 60fps。
+----------------------------------------------------------------
+■ 声音实现说明（全部 WebAudio 运行时合成，零音频文件、零 base64）
+----------------------------------------------------------------
+· 音效清单：种植 / 铲除 / 加农炮发射 / 泼水 / 命中 / 爆炸 / 辞职清场 /
+  一大波警告 / 老板警告 / 收集咖啡因 / 咖啡产出 / 年假触发 / 缩小入槽 /
+  啃咬 / 单位被吃 / 武装完成 / 连锁@ / 冻结 / 点击 / 错误 / 胜利 / 失败
+· BGM：约 104 BPM 的办公室放克 8 小节循环（锯齿贝斯+方波反拍+三角波
+  口哨旋律+噪声 hi-hat/kick/snare），用 setInterval lookahead 精确按
+  AudioContext 时钟排谱 → 循环处无缝无咔哒；大事件时自动压低音量。
+· 点击"开始"（用户手势）里 unlock AudioContext，不受自动播放限制。
+----------------------------------------------------------------
+■ 已知 bug 自述
+----------------------------------------------------------------
+· 临时会议若正好在贴住单位时被铲掉目标单位，跳跃动画可能直接落地，
+  属可接受的边缘情况。
+· 例会产出的新需求在"该行走廊已被我方占满"时不会产出（按设计：
+  只在空格生）。
+· 假忙套装武装完成的屏幕闪烁与受击红闪同帧会互相覆盖，极小概率
+  视觉闪烁一帧。
+· 极端情况下（辞职信引爆瞬间老板恰好入槽动画中）清场判定跳过入槽
+  中的敌人——但它们本来也会自行钻槽，不影响结果。
+· 倍速 ×2 下 WebAudio 音效仍按事件播放，密集交火时可能觉得吵。
+================================================================ -->
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>植物大战僵尸 · 打工人版</title>
+<style>
+:root { --wood:#8a5f38; --wood2:#6d4a2b; --paper:#f6f2e8; }
+* { margin:0; padding:0; box-sizing:border-box; user-select:none; -webkit-user-select:none; }
+html,body { width:100%; height:100%; background:#1b2230; overflow:hidden;
+  font-family:"Microsoft YaHei","PingFang SC",system-ui,sans-serif; color:#fff; }
+body { display:flex; align-items:center; justify-content:center; }
+body.carrying { cursor:grabbing; }
+#stage { position:relative; width:1280px; height:720px; transform-origin:center center;
+  box-shadow:0 12px 60px rgba(0,0,0,.6); border-radius:6px; overflow:hidden; }
+#game { display:block; width:1280px; height:720px; }
+
+/* ---------- 顶部 HUD（PvZ 木质感） ---------- */
+#hud { position:absolute; top:0; left:0; right:0; height:96px; pointer-events:none;
+  background:linear-gradient(180deg, rgba(38,28,16,.94), rgba(38,28,16,.78) 78%, transparent); }
+#resBox { position:absolute; top:8px; left:10px; width:112px; pointer-events:auto;
+  background:linear-gradient(#a9743f,#8a5f38); border:3px solid #6d4a2b; border-radius:10px;
+  padding:6px 8px; text-align:center; box-shadow:0 3px 8px rgba(0,0,0,.45); }
+#resBox .cup { font-size:22px; line-height:1; }
+#caffeine { font-size:20px; font-weight:700; text-shadow:0 2px 0 rgba(0,0,0,.35); }
+#leaveBox { position:absolute; top:62px; left:10px; pointer-events:auto; font-size:12px;
+  background:rgba(20,26,36,.6); border-radius:8px; padding:3px 9px; }
+#leaveBox b { color:#7de2a0; }
+#cards { position:absolute; top:8px; left:132px; display:flex; gap:6px; pointer-events:auto; }
+.card { position:relative; width:86px; height:80px; border-radius:8px; cursor:grab;
+  background:linear-gradient(#f2e6c9,#d9bd8c); border:2px solid #8a5f38;
+  box-shadow:0 3px 6px rgba(0,0,0,.35); overflow:hidden; transition:transform .08s; }
+.card:hover { transform:translateY(-2px); }
+.card canvas { width:100%; height:56px; display:block; background:linear-gradient(#e9f3fb,#cfe0ef); }
+.cname { font-size:11px; color:#4a3524; text-align:center; font-weight:700; line-height:12px; margin-top:1px;}
+.ccost { position:absolute; top:44px; right:3px; font-size:10px; color:#7a1f1f; background:rgba(242,230,201,.9);
+  border-radius:4px; padding:0 3px; font-weight:700; }
+.cmask { position:absolute; left:0; bottom:0; width:100%; height:0%;
+  background:rgba(25,32,44,.62); pointer-events:none; transition:height .1s linear; }
+.cnum { position:absolute; top:30%; left:0; width:100%; text-align:center; font-size:20px;
+  font-weight:800; color:#ffd23f; text-shadow:0 2px 3px #000; pointer-events:none; }
+.card.poor { filter:grayscale(.85) brightness(.6); cursor:not-allowed; }
+.card.cooling { cursor:wait; }
+.card.shake { animation:shk .25s; }
+@keyframes shk { 25%{transform:translateX(-4px)} 75%{transform:translateX(4px)} }
+#shovelBox { position:absolute; top:8px; right:206px; pointer-events:auto; text-align:center; }
+#shovel { width:62px; height:62px; border-radius:12px; cursor:grab; display:flex; align-items:center; justify-content:center;
+  background:radial-gradient(circle at 35% 30%, #98a7b8, #5c6b7c); border:3px solid #38424e;
+  box-shadow:0 3px 8px rgba(0,0,0,.5); }
+#shovelBox label { font-size:11px; color:#c8d4e2; }
+#tools { position:absolute; top:8px; right:10px; display:flex; flex-direction:column; gap:6px; pointer-events:auto; width:190px; }
+#tools .row { display:flex; gap:5px; }
+#tools button { flex:1; padding:5px 4px; font-size:12px; border:none; border-radius:7px; cursor:pointer;
+  background:linear-gradient(#4d5f74,#37465a); color:#e8eff6; font-weight:700; box-shadow:0 2px 4px rgba(0,0,0,.4); white-space:nowrap; }
+#tools button:hover { filter:brightness(1.2); }
+#waveWrap { position:relative; height:14px; border-radius:7px; background:rgba(15,20,28,.75);
+  border:1px solid #55637a; overflow:visible; }
+#waveFill { height:100%; width:0%; border-radius:7px;
+  background:linear-gradient(90deg,#6fd06f,#ffd23f 60%,#e4443c); transition:width .25s; }
+.wflag { position:absolute; top:-4px; font-size:12px; transform:translateX(-50%); }
+.wflag.hot { top:-6px; font-size:15px; }
+#waveText { position:absolute; right:0; top:-16px; font-size:11px; color:#ffe08a; text-shadow:0 1px 2px #000; }
+
+/* ---------- 飘字/横幅/提示 ---------- */
+#labels { position:absolute; inset:0; pointer-events:none; overflow:hidden; }
+.label3 { position:absolute; transform:translate(-50%,-50%); font-size:15px; font-weight:800;
+  color:#fff; text-shadow:0 2px 4px rgba(0,0,0,.7); white-space:nowrap; display:none; }
+.label3.caf { color:#ffd23f; } .label3.at { color:#7de2a0; font-size:19px; }
+.label3.lv { color:#a0ffd0; font-size:16px; } .label3.boom { color:#ffb0a0; font-size:17px; }
+.label3.ok { color:#8dffc4; font-size:12px; } .label3.dig { color:#ffb35a; }
+.label3.mt { color:#9fd8ff; font-size:12px; }
+#banner { position:absolute; top:220px; left:0; right:0; text-align:center; font-size:44px; font-weight:900;
+  color:#ffe08a; text-shadow:0 0 18px #e4443c, 0 4px 0 #7a1f1f, 0 6px 12px rgba(0,0,0,.6);
+  opacity:0; pointer-events:none; transform:scale(.6); }
+#banner.show { animation:bnr 2.3s ease-out; }
+#banner.leave { color:#a0ffd0; text-shadow:0 0 16px #2a9ab2, 0 4px 0 #14545f; font-size:36px; }
+#banner.boss { color:#ff8a70; }
+#banner.go { color:#cfe8ff; font-size:32px; text-shadow:0 3px 0 #223; }
+@keyframes bnr { 0%{opacity:0;transform:scale(.4)} 12%{opacity:1;transform:scale(1.12)}
+  20%{transform:scale(1)} 78%{opacity:1} 100%{opacity:0;transform:scale(1) translateY(-24px)} }
+#tip { position:absolute; display:none; width:240px; background:rgba(22,28,38,.95); border:2px solid #ffd23f;
+  border-radius:10px; padding:8px 10px; font-size:12px; line-height:1.5; pointer-events:none; z-index:60; }
+#tip b { color:#ffd23f; font-size:14px; } #tip .tcost { color:#7de2a0; margin-left:6px; }
+#tip p { margin-top:4px; color:#dfe8f2; }
+
+/* ---------- 全屏层 ---------- */
+.screen { position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+  background:rgba(14,19,28,.82); backdrop-filter:blur(3px); z-index:50; }
+#startScreen { background:radial-gradient(ellipse at 50% 30%, rgba(46,66,96,.92), rgba(12,17,26,.96)); }
+.panel { text-align:center; max-width:760px; padding:30px 40px; }
+.panel h1 { font-size:52px; letter-spacing:2px; color:#ffd23f;
+  text-shadow:0 4px 0 #7a1f1f, 0 8px 24px rgba(0,0,0,.8); margin-bottom:12px; }
+.panel h2 { font-size:30px; color:#ffe08a; text-shadow:0 3px 0 #7a1f1f; margin-bottom:14px; }
+.panel p.sub { font-size:16px; color:#cfe0ef; line-height:1.8; margin-bottom:22px; }
+.bigbtn { font-size:22px; font-weight:800; color:#3a2413; padding:12px 46px; border:none; border-radius:12px;
+  background:linear-gradient(#ffe08a,#ffb03a); box-shadow:0 5px 0 #996b1e, 0 10px 22px rgba(0,0,0,.5);
+  cursor:pointer; margin:6px; }
+.bigbtn:hover { filter:brightness(1.08); } .bigbtn:active { transform:translateY(3px); box-shadow:0 2px 0 #996b1e; }
+.ghostbtn { font-size:14px; color:#cfe0ef; background:rgba(255,255,255,.08); border:1px solid #6b7c95;
+  border-radius:10px; padding:8px 22px; cursor:pointer; margin:6px; }
+.ghostbtn:hover { background:rgba(255,255,255,.16); }
+#codexModal .panel { max-width:1150px; max-height:660px; overflow-y:auto; text-align:left; }
+#codexBody { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+.cx { background:rgba(255,255,255,.06); border:1px solid #4a5a70; border-radius:12px; padding:10px; text-align:center; }
+.cx canvas { width:110px; height:92px; }
+.cx h4 { color:#ffd23f; font-size:15px; margin-top:2px; }
+.cx .cxsub { color:#7de2a0; font-size:11px; margin-top:2px; }
+.cx .cxdesc { color:#c9d6e4; font-size:11px; line-height:1.55; margin-top:4px; }
+.endcard { background:linear-gradient(#243044,#161d2a); border:2px solid #ffd23f; border-radius:18px;
+  padding:34px 50px; text-align:center; box-shadow:0 20px 60px rgba(0,0,0,.7); }
+.endcard h1 { font-size:44px; margin-bottom:8px; text-shadow:none; color:#fff; }
+.endcard.win h1 { color:#7de2a0; } .endcard.lose h1 { color:#ff8a70; }
+.endcard .reason { color:#ffb0a0; font-size:15px; margin-bottom:14px; }
+.endcard .stats { display:flex; gap:26px; justify-content:center; font-size:15px; color:#cfe0ef; margin:14px 0; }
+.endcard .stats b { color:#ffd23f; font-size:19px; }
+.endcard .rankline { color:#ffe08a; font-size:16px; margin:10px 0 18px; font-style:italic; }
+#pauseVeil { position:absolute; inset:0; display:none; align-items:center; justify-content:center;
+  background:rgba(10,14,22,.45); z-index:40; font-size:56px; color:#fff; text-shadow:0 4px 14px #000; }
+#fps { position:absolute; bottom:6px; right:10px; font-size:11px; color:rgba(255,255,255,.5); z-index:5; pointer-events:none; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <canvas id="game" width="1280" height="720"></canvas>
+
+  <div id="hud">
+    <div id="resBox"><div class="cup">☕</div><div id="caffeine">100</div></div>
+    <div id="leaveBox">剩余年假 🏖 <b id="leaves">5</b> / 5</div>
+    <div id="cards"></div>
+    <div id="shovelBox"><div id="shovel"><svg width="36" height="40" viewBox="0 0 36 40"><rect x="12" y="0" width="12" height="5" rx="2.5" fill="#c99a4f"/><rect x="16.6" y="4" width="2.8" height="22" fill="#e6c07a"/><path d="M11 26 h14 v3.5 l-7 9 l-7 -9 z" fill="#c3d0dd" stroke="#5c6b7c" stroke-width="1.5" stroke-linejoin="round"/></svg></div><label>铲子(拖到单位)</label></div>
+    <div id="tools">
+      <div class="row" style="margin-top:16px"><div id="waveWrap" style="flex:1"><div id="waveFill"></div><div id="waveText">第 1/12 波</div></div></div>
+      <div class="row">
+        <button id="btnPause">⏸</button><button id="btnSpeed">×1</button>
+        <button id="btnCodex">图鉴</button><button id="btnRestart">重新开始</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="labels"></div>
+  <div id="banner"></div>
+  <div id="tip"></div>
+  <div id="fps"></div>
+  <div id="pauseVeil">⏸ 摸鱼中…</div>
+
+  <div id="startScreen" class="screen">
+    <div class="panel">
+      <h1>植物大战僵尸 · 打工人版</h1>
+      <p class="sub">
+        你是小组组长。一波波<b style="color:#ff8a70">「工作」</b>正从老板办公室涌向 5 位组员的工位。<br>
+        拖拽打工人武器库（加农炮 / 咖啡机 / 背锅侠…）摆进办公区拦截它们，<br>
+        别让工作堆爆工位，更别让<b style="color:#ffd23f">老板亲自</b>走到桌前——请假是打工人最后的防线。
+      </p>
+      <button id="btnStart" class="bigbtn">☕ 开始上班</button>
+      <button id="btnCodex2" class="ghostbtn">📖 图鉴</button>
+      <p class="sub" style="font-size:12px;margin-top:14px">
+        操作：拖拽卡片到格子布防 · 拖铲子到单位铲除 · 空格暂停 · 右键取消携带</p>
+    </div>
+  </div>
+
+  <div id="codexModal" class="screen" style="display:none">
+    <div class="panel">
+      <h2>📖 打工人武器库 & 工作图鉴</h2>
+      <div id="codexBody"></div>
+      <div style="text-align:center;margin-top:16px"><button id="btnCodexClose" class="bigbtn">返回</button></div>
+    </div>
+  </div>
+
+  <div id="endScreen" class="screen" style="display:none"></div>
+</div>
+
+<script src="lib/three.min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/voxel.js"></script>
+<script src="js/models.js"></script>
+<script src="js/world.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/icons.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>

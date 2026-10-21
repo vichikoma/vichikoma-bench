@@ -1,0 +1,84 @@
+{
+ "q3TotalWan": 6902.5,
+ "yoyPct": 37.1,
+ "qoqPct": 30.9,
+ "monthly": [
+  {
+   "label": "04月",
+   "wan": 1564.0
+  },
+  {
+   "label": "05月",
+   "wan": 1727.9
+  },
+  {
+   "label": "06月",
+   "wan": 1980.4
+  },
+  {
+   "label": "07月",
+   "wan": 2656.2
+  },
+  {
+   "label": "08月",
+   "wan": 2247.8
+  },
+  {
+   "label": "09月",
+   "wan": 1998.5
+  }
+ ],
+ "peakMonth": "7月",
+ "regions": [
+  {
+   "name": "华东",
+   "qoqPct": 21.9,
+   "q3Wan": 2070.4
+  },
+  {
+   "name": "华北",
+   "qoqPct": 61.3,
+   "q3Wan": 1705.7
+  },
+  {
+   "name": "华南",
+   "qoqPct": 22.3,
+   "q3Wan": 1475.5
+  },
+  {
+   "name": "华中",
+   "qoqPct": 21.0,
+   "q3Wan": 880.3
+  },
+  {
+   "name": "西南",
+   "qoqPct": 32.2,
+   "q3Wan": 770.6
+  }
+ ],
+ "cats": [
+  {
+   "name": "经典咖啡",
+   "yoyPct": 9.2
+  },
+  {
+   "name": "创意特调",
+   "yoyPct": 34.8
+  },
+  {
+   "name": "茶饮",
+   "yoyPct": 52.4
+  },
+  {
+   "name": "轻食",
+   "yoyPct": 215.0
+  },
+  {
+   "name": "周边",
+   "yoyPct": 0.9
+  }
+ ],
+ "wmShare": 51.9,
+ "mdShare": 48.1,
+ "wmYoy": 64.0
+}

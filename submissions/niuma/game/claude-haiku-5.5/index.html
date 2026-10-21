@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>植物大战僵尸 · 打工人版</title>
+<!--
+==============================================================================
+《植物大战僵尸 · 打工人版》（3D 体素 · 网页塔防）  ——  双击 index.html 即可离线运行
+==============================================================================
+
+【操作说明】
+- 开始：点「开始上班」。点击开始后会开启 WebAudio 声音（按 M 或右上角按钮静音）。
+- 布置单位：从底部卡片栏【按住拖拽】到办公区格子里松手。拖拽时会显示跟随鼠标的
+  幽灵预览 + 格子高亮（绿=可放 / 红=不可放并给出原因）。卡片悬停 0.5 秒出现介绍，开始拖拽立即消失。
+- 铲子：把底部橙色「⛏️ 铲子」拖到已布置的单位上即可铲除（不退咖啡因）；也可以先点一下铲子进入
+  「选中」模式，再点单位铲除（再点一次铲子按钮取消）。
+- 暂停 P / Esc（或按钮）；速度 ×2 按钮；「重新开始」随时可用（进行中在右上角控制区）。
+- 图鉴：开始界面与暂停界面均可打开，列出全部单位、敌人与数值总表。
+- 守住 5 个工位：敌人从右侧老板办公室涌出，沿行推进。敌人到达工位 → 钻进槽位（+1）。
+  某工位 4 个槽位占满 → 自动批准一张年假审批单，清空该行的敌人（每工位仅 1 次，且年假不清槽位）。
+  失败：① 老板到达任一工位；② 某工位年假已用过后，再有敌人到达该工位。
+
+【全部单位图鉴】（我方 = 打工人武器库；★ = 自创）
+| 单位 | 费用 | 冷却 | 血量 | 能力 |
+|---|---|---|---|---|
+| ☕ 咖啡机 | 50 | 5s | 150 | 每 10 秒自动产出 25 咖啡因；不攻击。 |
+| 🧨 DDL 加农炮 | 100 | 5s | 300 | 每 1.5s 轰出一发交付物，伤害 20。本波最后 25% 出怪时射速 +37%（死线越近火力越猛）。 |
+| 🍳 背锅侠 | 50 | 10s | 3000 | 纯肉盾，不攻击。玩家花 50 咖啡因请来的挡枪实习同事，背着一口大锅。（约 DDL 加农炮血量的 10 倍） |
+| 🐠 摸鱼鱼缸 | 175 | 5s | 250 | 每 1.5s 泼出水花，伤害 20，命中敌人移速减半 5 秒。 |
+| 📝 辞职信 | 150 | 30s | 100 | 放置 1 秒后引爆，清空全场所有敌人（含老板）。每次引爆 18% 概率「老板同意辞职」→ 游戏失败。 |
+| 🧥 假装在忙 | 25 | 20s | 1 | 放置后 15 秒进入状态（之前无效、也不挡路）。之后敌人踩中即秒杀该敌人并同归于尽；老板免疫。 |
+| 📄 碎纸机 ★ | 75 | 8s | 500 | 咬住它的敌人会被反咬，每秒受 15 伤害（"文件可以乱放，但绝不能乱碎"）。 |
+| 🌙 凌晨三点的抄送 ★ | 100 | 15s | 200 | 每 6 秒给本行所有敌人（老板除外）抄送一封「请大家周末看一下」，造成 30 伤害。 |
+
+【敌方图鉴】
+| 敌人 | 血量 | 移速 | 攻击 | 说明 |
+|---|---|---|---|---|
+| 普通需求 | 100 | 0.9/s | 8/s | 一沓需求文档。基准。 |
+| 加急需求 | 200 | 1.0/s | 12/s | 冒火的需求文档，血量约 2 倍。 |
+| 老板 | 400 | 0.4/s | 40/s | 拿公文包的老板。全场最慢；到达工位即结束；全场同时最多 1 个（第 4/8/12 波各出现 1 次）。 |
+| 临时会议 | 100 | 1.0/s | 8/s | 日历邀请。遇到第一个挡路的单位会跳过它（每个会议只跳一次）。第 3 波起出现。 |
+| 例会 | 200 | 0.7/s | 8/s | 行走的会议白板。第 6 波起出现；行进中每 10 秒在本行空格生成 1 个普通需求。 |
+
+【自创单位设计思路】
+- ★ 碎纸机：「反伤型肉盾」。背锅侠只会挨打，碎纸机让「咬上来的需求」自己受伤——把"被文件压住"变成"文件被碎掉"，和背锅侠/加农炮的定位区分开。
+- ★ 凌晨三点的抄送：「范围脉冲型」。不是直线射手，而是对整行做周期性的群体伤害（老板除外，因为老板不看邮件）。梗：凌晨三点的一封抄送，全组都会被"提醒"。
+
+【最终数值总表 & 难度曲线设计思路】
+- 咖啡因：初始 100；天降 +25 / 8s（随机格子，落地自动收集）；咖啡机 +25 / 10s。
+- 波次（12 波）：每波总数 = (8 + 3w) 向下取整，第 6/12 波 ×1.4 → 11, 14, 17, 20, 23, 36(第6波), 29, 32, 35, 38, 41, 62(第12波)。
+  出怪间隔 = max(0.8, 2.3 − 0.11·(w−1))s，第 6/12 波 ×0.85。
+  敌人配比：加急需求概率 = min(0.08 + 0.035·(w−1), 0.4)；第 3 波起临时会议 8%；第 6 波起例会 7%；其余普通需求。
+  老板在第 4/8/12 波各出现 1 次（若场上已有老板则替换为普通需求）。
+- 难度曲线思路：前 3 波只有普通需求和少量加急，咖啡因宽裕，一门加农炮 + 一台咖啡机就能顺利守住，建立"我守得住"的爽感；
+  第 3 波起混入会跳的临时会议，第 6 波出现例会（会不断产生新需求）与第一次大波，加急比例明显上升，需要开始搭配减速（鱼缸）与秒杀（假装在忙）；
+  第 8 波后老板登场、大波叠加，年假只清场不清槽位，必须规划哪一行先放年假、并在合适时机用辞职信清场（有 18% 翻车风险）。
+  单靠一种单位（比如只堆加农炮）后期会被例会与大波的总量压垮，需要组合。
+  注意：本数值由代码推算，未经长时间实测平衡，最终手感以实际试玩为准（见下方已知问题）。
+
+【3D 实现说明】
+- 使用 three.js r147（任务包内 lib/three.min.js，本地引用，MIT 协议）作为 WebGL 渲染器。
+- 所有模型均由代码生成：models.js 中的 VB 类把若干立方体顶点合并进一个 BufferGeometry（顶点色，无任何贴图/图片）；
+  每个单位/敌人一个 Group（一次 draw call），可动部件按名索引做待机、开火后坐力、受击回弹、缩小入槽等动画。
+- 固定视角：PerspectiveCamera 位于 (0, 13, 12.5)，俯角约 46°，始终 lookAt 战场中心，无横向偏转、无侧倾；
+  canvas 固定 1280×720，外层舞台按窗口等比缩放。
+- 性能手段：共享几何体/材质（投射物、粒子、单位材质按部件复用）；地砖合并为一个 Mesh；阴影仅一盏平行光（2048 贴图）；
+  粒子数量设上限（>500 时减少每次爆发的粒子数）；同屏逻辑为 O(单位数 × 敌人数)，30+ 单位规模下开销很小；
+  HUD 只在数值变化时写 DOM。
+
+【声音实现说明】
+- 全部由 WebAudio 运行时合成（audio.js），无任何音频文件。
+- 音效清单：布置（place）、铲除（shovel）、发射（shoot）、命中（hit）、啃咬（bite）、爆炸（explode）、
+  假装在忙武装/戳穿（arm/boom）、咖啡因收集（collect/cup）、敌人入槽（suck）、临时会议跳跃（pop）、
+  大波警告（warn，三连警报）、年假（annual，号角式上行音列）、点击（click）、拒绝（deny）、胜利（win）、失败（lose）。
+- BGM：A 小调，四小节 Am–F–C–G 和弦进行，64 步（16 分音符）循环；贝斯四分音 + 8 分琶音 + 旋律方波 + 三角波底鼓/军鼓噪声。
+  调度器按全局步数对 64 取模，循环点与首步完全一致 → 循环处无缝、无停顿。
+
+【已知 bug / 自述】
+- 数值未经大规模实测平衡（只做了代码层面的推算与少量自测），前期可能偏松或后期偏紧，需要试玩调参。
+- 临时会议跳跃时如果落点正好又是一个单位，会直接贴住它（不会再次跳跃）。
+- 辞职信引爆的失败判定会延迟约 1 秒结算，以便看完清场动画。
+- 老板（以及老板办公室的人影）为静态摆件/随波次入场，办公室内部未做更多剧情动画。
+- 拖拽在触摸屏上未专门适配（以鼠标为主）。
+- 年假的「清场」会把老板也清掉（规则上"清空该行的敌人"包含老板）；如需更严格可改为仅清普通敌人。
+-->
+<style>
+  * { box-sizing: border-box; user-select: none; -webkit-user-select: none; }
+  html, body { margin: 0; height: 100%; background: #1d1b26; overflow: hidden;
+    font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", sans-serif; }
+  #stage { position: absolute; left: 50%; top: 50%; width: 1280px; height: 720px;
+    transform-origin: center; overflow: hidden; background: #f4ead6; }
+  #c { position: absolute; left: 0; top: 0; width: 1280px; height: 720px; display: block; }
+
+  /* ---------- HUD ---------- */
+  .panel { position: absolute; background: rgba(255, 252, 244, 0.92); border: 2px solid #c9b48a;
+    border-radius: 12px; box-shadow: 0 4px 0 rgba(90, 70, 40, 0.35); color: #3b2f1e; }
+  #coffee-box { left: 16px; top: 14px; padding: 8px 16px; font-size: 22px; font-weight: 700; }
+  #coffee-box span { color: #9a5b12; font-size: 28px; margin-left: 4px; }
+  #wave-box { left: 50%; top: 12px; transform: translateX(-50%); width: 460px; padding: 8px 14px 10px; text-align: center; }
+  #wave-text { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+  #wave-bar { position: relative; height: 12px; background: #e7dcc5; border-radius: 6px; overflow: hidden; }
+  #wave-fill { display: block; height: 100%; width: 0%; background: linear-gradient(90deg, #f59e0b, #ef4444);
+    transition: width 0.3s; }
+  .wmark { position: absolute; top: -2px; width: 2px; height: 16px; background: #7c2d12; }
+  .wmark span { position: absolute; top: -18px; left: -14px; font-size: 11px; color: #7c2d12; white-space: nowrap; }
+  #stations { right: 14px; top: 12px; padding: 8px 10px; width: 262px; }
+  #stations .hd { font-size: 13px; font-weight: 700; margin-bottom: 4px; color: #6b4a1f; }
+  .st { display: flex; align-items: center; height: 26px; font-size: 13px; }
+  .stn { width: 60px; font-weight: 700; }
+  .slots { display: inline-flex; gap: 4px; margin-right: 10px; }
+  .slots i { width: 22px; height: 12px; border-radius: 3px; background: #d6cbb3; border: 1px solid #b7a88a; }
+  .slots i.full { background: #fff; border-color: #f59e0b; box-shadow: inset 0 -4px 0 #f59e0b; }
+  .ann { font-size: 12px; padding: 1px 6px; border-radius: 8px; background: #bbf7d0; color: #14532d; }
+  .ann.used { background: #e5e7eb; color: #6b7280; text-decoration: line-through; }
+  #controls { left: 16px; top: 70px; padding: 6px; display: flex; flex-direction: row; gap: 6px; }
+  .btn { font-family: inherit; font-size: 14px; font-weight: 700; padding: 7px 12px; min-width: 96px; cursor: pointer;
+    background: #fff7e6; color: #5a3d14; border: 2px solid #c9b48a; border-radius: 8px; box-shadow: 0 3px 0 #b49a6b; }
+  .btn:hover { background: #fffdf7; }
+  .btn:active { transform: translateY(2px); box-shadow: 0 1px 0 #b49a6b; }
+  .btn.on { background: #fde68a; }
+  .btn.primary { background: #f59e0b; color: #fff; border-color: #b45309; box-shadow: 0 4px 0 #92400e; padding: 12px 28px; font-size: 18px; }
+  .btn.ghostb { background: transparent; color: #fff; border-color: #fff8; box-shadow: none; }
+  #banner { position: absolute; left: 50%; top: 150px; transform: translate(-50%, -50%) scale(0.6); opacity: 0;
+    padding: 14px 30px; font-size: 30px; font-weight: 900; color: #fff; background: #dc2626; border: 4px solid #fde047;
+    border-radius: 14px; box-shadow: 0 6px 0 #7f1d1d; pointer-events: none; transition: all 0.25s; white-space: nowrap; }
+  #banner.show { opacity: 1; transform: translate(-50%, -50%) scale(1); animation: flash 0.5s steps(2) 6; }
+  @keyframes flash { 50% { background: #fde047; color: #7f1d1d; } }
+  #toast { position: absolute; left: 50%; bottom: 128px; transform: translateX(-50%); padding: 8px 16px; max-width: 900px;
+    background: rgba(40, 30, 20, 0.85); color: #fff8e7; border-radius: 10px; font-size: 15px; opacity: 0; pointer-events: none; white-space: nowrap; }
+  #toast.show { animation: toastIn 2.6s ease forwards; }
+  @keyframes toastIn { 0% { opacity: 0; transform: translate(-50%, 8px); } 10%, 80% { opacity: 1; transform: translate(-50%, 0); } 100% { opacity: 0; } }
+  .fl { position: absolute; transform: translate(-50%, -50%); font-size: 20px; font-weight: 900; color: #fff;
+    text-shadow: 0 2px 0 #3b2f1e, 0 0 6px rgba(0,0,0,.4); pointer-events: none; animation: rise 1s ease-out forwards; white-space: nowrap; }
+  @keyframes rise { to { transform: translate(-50%, -110px); opacity: 0; } }
+  .paper { position: absolute; left: -420px; padding: 10px 18px; background: #fffbeb; border: 3px solid #b45309; border-radius: 6px;
+    font-size: 20px; font-weight: 800; color: #7c2d12; box-shadow: 0 6px 16px rgba(0,0,0,.3); pointer-events: none; white-space: nowrap;
+    animation: fly 2s ease-in-out forwards; }
+  @keyframes fly { 0% { left: -420px; transform: rotate(-4deg); } 50% { left: 420px; transform: rotate(3deg); } 100% { left: 1320px; transform: rotate(-2deg); opacity: .9; } }
+  .label { position: absolute; font-size: 15px; font-weight: 900; color: #5b3b12; letter-spacing: 2px; pointer-events: none;
+    background: rgba(255, 250, 235, .75); padding: 2px 10px; border-radius: 6px; }
+
+  /* ---------- 底部卡片栏 ---------- */
+  #bar { position: absolute; left: 0; right: 0; bottom: 0; height: 116px; background: linear-gradient(#f7ecd6, #e6d3ad);
+    border-top: 3px solid #b49a6b; display: flex; align-items: center; padding: 0 14px; gap: 8px; }
+  #cards { display: flex; gap: 8px; }
+  .card { position: relative; width: 104px; height: 92px; background: #fffdf6; border: 2px solid #c9b48a; border-radius: 10px;
+    box-shadow: 0 3px 0 #b49a6b; cursor: grab; overflow: hidden; text-align: center; padding-top: 4px; transition: transform .1s; }
+  .card:hover { transform: translateY(-3px); }
+  .card.custom { border-style: dashed; border-color: #7c3aed; background: #faf5ff; }
+  .card .ic { font-size: 30px; line-height: 40px; }
+  .card .nm { font-size: 12px; font-weight: 700; line-height: 15px; padding: 0 3px; height: 30px; overflow: hidden; }
+  .card .cost { font-size: 12px; font-weight: 700; color: #9a5b12; }
+  .card .cdov { position: absolute; left: 0; right: 0; bottom: 0; height: 0; background: rgba(40, 30, 20, .55);
+    color: #fff; font-weight: 900; font-size: 18px; line-height: 92px; }
+  .card.off { filter: grayscale(1); opacity: .55; cursor: not-allowed; }
+  .card.off.custom { opacity: .55; }
+  .card.cdng { filter: grayscale(.6); }
+  .card.custom::after { content: "自创"; position: absolute; top: 2px; right: 3px; font-size: 10px; color: #7c3aed; font-weight: 700; }
+  #shovel { margin-left: 14px; width: 96px; height: 92px; background: #fb923c; border: 2px solid #9a3412; border-radius: 10px;
+    box-shadow: 0 3px 0 #7c2d12; color: #fff; text-align: center; cursor: grab; padding-top: 4px; }
+  #shovel .ic { font-size: 30px; line-height: 40px; }
+  #shovel .nm { font-size: 13px; font-weight: 900; }
+  #shovel .sub { font-size: 11px; opacity: .9; }
+  #shovel.on { background: #ea580c; box-shadow: 0 0 0 3px #fde047, 0 3px 0 #7c2d12; }
+  #hint { margin-left: auto; font-size: 12px; color: #6b4a1f; line-height: 18px; width: 170px; }
+
+  /* ---------- 悬停提示 / 拖拽浮标 ---------- */
+  #tip { position: absolute; display: none; width: 300px; padding: 10px 12px; background: #fffbeb; color: #3b2f1e;
+    border: 2px solid #b45309; border-radius: 10px; box-shadow: 0 6px 16px rgba(0,0,0,.3); font-size: 13px; line-height: 19px;
+    pointer-events: none; z-index: 20; }
+  #tip b { font-size: 15px; }
+  #tip .tmeta { color: #9a5b12; font-weight: 700; margin: 3px 0; }
+  #dragchip { position: fixed; display: none; transform: translate(-50%, -135%); pointer-events: none; z-index: 1000;
+    align-items: center; gap: 6px; padding: 6px 10px; background: #fff; border: 2px solid #b45309; border-radius: 10px;
+    box-shadow: 0 6px 14px rgba(0,0,0,.3); white-space: nowrap; font-size: 14px; color: #3b2f1e; }
+  #dragchip .ci { font-size: 22px; }
+  #dragchip .ct { font-weight: 700; }
+  #dragchip.bad { border-color: #dc2626; }
+  #dragchip.bad .ct { color: #dc2626; }
+
+  /* ---------- 覆盖层 ---------- */
+  .ov { position: absolute; inset: 0; background: rgba(35, 25, 18, .55); display: flex; align-items: center; justify-content: center; z-index: 50; }
+  .ov.hidden { display: none; }
+  .ovbox { background: #fffaf0; border: 4px solid #b45309; border-radius: 18px; box-shadow: 0 10px 0 #7c2d12, 0 18px 40px rgba(0,0,0,.4);
+    width: 620px; padding: 28px 34px; text-align: center; color: #3b2f1e; }
+  .ovbox h1 { margin: 0 0 6px; font-size: 40px; color: #9a3412; letter-spacing: 2px; }
+  .ovbox h2 { margin: 0 0 10px; font-size: 26px; color: #9a3412; }
+  .ovbox p { font-size: 16px; line-height: 26px; margin: 8px 0; }
+  .ovbox .tips { text-align: left; background: #fff3d6; border-radius: 10px; padding: 10px 16px; font-size: 14px; line-height: 24px; margin: 12px 0; }
+  .ovbox .row { display: flex; gap: 12px; justify-content: center; margin-top: 14px; flex-wrap: wrap; }
+  #end-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 16px; margin: 10px 0; font-size: 17px; text-align: left; }
+  #end-stats b { color: #9a3412; font-size: 22px; }
+  #end-quote { margin-top: 12px; padding: 12px 14px; background: #fef3c7; border-radius: 10px; font-size: 16px; line-height: 24px; color: #7c2d12; font-weight: 700; }
+  #ov-dex .ovbox { width: 1040px; height: 620px; display: flex; flex-direction: column; padding: 18px 24px; text-align: left; }
+  #dex-scroll { flex: 1; overflow-y: auto; padding-right: 8px; }
+  #dex-scroll h3 { margin: 12px 0 6px; font-size: 19px; color: #9a3412; border-bottom: 2px solid #e5cfa0; padding-bottom: 3px; }
+  .dxgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .dx { background: #fff; border: 2px solid #e5cfa0; border-radius: 10px; padding: 7px 10px; }
+  .dx.custom { border-color: #a78bfa; background: #faf5ff; }
+  .dxh { font-size: 15px; }
+  .dxh em { font-style: normal; font-size: 11px; background: #7c3aed; color: #fff; padding: 1px 6px; border-radius: 8px; margin-left: 4px; }
+  .dxi { font-size: 18px; margin-right: 4px; }
+  .dxm { font-size: 12px; color: #9a5b12; font-weight: 700; margin: 2px 0; }
+  .dxd { font-size: 13px; line-height: 19px; }
+  table.vt { width: 100%; border-collapse: collapse; font-size: 13px; }
+  table.vt th, table.vt td { border: 1px solid #e5cfa0; padding: 4px 6px; text-align: center; }
+  table.vt th { background: #fde9bf; }
+  .dxnote { font-size: 13px; line-height: 21px; background: #fff3d6; padding: 8px 10px; border-radius: 8px; }
+  #dex-close { position: absolute; right: 22px; top: 14px; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <canvas id="c" width="1280" height="720"></canvas>
+
+  <!-- 场景标注（DOM 文字，位置按镜头估算） -->
+  <div class="label" style="left: 92px; top: 150px;">工位区</div>
+  <div class="label" style="left: 1012px; top: 290px;">老板办公室</div>
+
+  <!-- 顶部 HUD -->
+  <div id="coffee-box" class="panel">☕ <span id="coffee">100</span></div>
+  <div id="wave-box" class="panel">
+    <div id="wave-text">准备上班</div>
+    <div id="wave-bar"><i id="wave-fill"></i>
+      <div class="wmark" style="left: 41.7%;"><span>大波</span></div>
+      <div class="wmark" style="left: 91.7%;"><span>大波</span></div>
+    </div>
+  </div>
+  <div id="stations" class="panel">
+    <div class="hd">工位状态（槽位 / 年假）</div>
+    <div id="stations-list"></div>
+  </div>
+  <div id="controls" class="panel">
+    <button class="btn" id="pause-btn">⏸ 暂停</button>
+    <button class="btn" id="speed-btn">×2</button>
+    <button class="btn" id="btn-restart">↺ 重新开始</button>
+    <button class="btn" id="btn-dex-game">📖 图鉴</button>
+    <button class="btn" id="btn-mute">🔊</button>
+  </div>
+
+  <div id="banner"></div>
+  <div id="toast"></div>
+  <div id="tip"></div>
+  <div id="fx"></div>
+
+  <!-- 底部卡片栏 -->
+  <div id="bar">
+    <div id="cards"></div>
+    <div id="shovel" title="拖到单位上铲除"><div class="ic">⛏️</div><div class="nm">铲子</div><div class="sub">拖到单位上</div></div>
+    <div id="hint">拖拽卡片到格子里布置。卡片悬停 0.5 秒看介绍。咖啡因掉落和咖啡机会持续产出。</div>
+  </div>
+
+  <!-- 开始界面 -->
+  <div id="ov-start" class="ov">
+    <div class="ovbox">
+      <h1>植物大战僵尸 · 打工人版</h1>
+      <h2>守住 5 个工位，别让老板亲自走过来</h2>
+      <p>一波波「工作」从老板办公室涌向组里的工位。调动打工人的武器库（咖啡机、DDL 加农炮、背锅侠……）把它们挡在办公区里。</p>
+      <div class="tips">
+        · 从底部卡片<b>拖拽</b>到格子里布置；拖到橙色铲子上方可铲除<br>
+        · 工位槽位占满 → 自动批准一次年假（清场该行，每工位 1 次，但工作还堆着）<br>
+        · 老板到达工位 = 直接结束；年假用过后再有人到达 = 结束<br>
+        · 12 波通关。P 暂停，M 静音
+      </div>
+      <div class="row">
+        <button class="btn primary" id="btn-start">开始上班</button>
+        <button class="btn" id="btn-dex-start">📖 图鉴</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 暂停 -->
+  <div id="ov-pause" class="ov hidden">
+    <div class="ovbox">
+      <h2>已暂停 · 开会中，别玩手机</h2>
+      <div class="row">
+        <button class="btn primary" id="btn-resume">▶ 继续</button>
+        <button class="btn" id="btn-restart-pause">↺ 重新开始</button>
+      </div>
+      <div class="row"><button class="btn" id="btn-dex-game-2">📖 图鉴</button></div>
+    </div>
+  </div>
+
+  <!-- 结算 -->
+  <div id="ov-end" class="ov hidden">
+    <div class="ovbox">
+      <h1 id="end-title">—</h1>
+      <p id="end-sub"></p>
+      <div id="end-stats"></div>
+      <div id="end-quote"></div>
+      <div class="row"><button class="btn primary" id="btn-restart-end">再上一次班</button></div>
+    </div>
+  </div>
+
+  <!-- 图鉴 -->
+  <div id="ov-dex" class="ov hidden">
+    <div class="ovbox">
+      <h2 style="margin-top:0">📖 打工人图鉴 · 单位 / 敌人 / 数值总表</h2>
+      <div id="dex-scroll"><div id="dex-body"></div></div>
+      <div class="row" style="margin-top:10px"><button class="btn" id="dex-close">关闭</button></div>
+    </div>
+  </div>
+</div>
+<!-- 拖拽浮标放在舞台外，避免被舞台缩放变换影响 fixed 定位 -->
+<div id="dragchip"></div>
+
+<script src="lib/three.min.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/models.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "niuma-q3-report",
+  "private": true,
+  "scripts": {
+    "render": "remotion render NiuMaQ3 ../out/video.mp4"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.503",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "remotion": "4.0.503"
+  },
+  "devDependencies": {
+    "@types/react": "19.0.0",
+    "typescript": "5.8.2"
+  }
+}

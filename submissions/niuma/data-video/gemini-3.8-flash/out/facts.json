@@ -1,0 +1,302 @@
+[
+  {
+    "scene": "Scene 1: 开篇",
+    "text_display": "2026.07 - 2026.09",
+    "appearance_time_sec": 0.0,
+    "calculation_scope": "筛选汇报期间：2026年7月至2026年9月（2026 Q3）"
+  },
+  {
+    "scene": "Scene 2: 大盘",
+    "text_display": "6900万",
+    "appearance_time_sec": 3.87,
+    "calculation_scope": "2026 Q3 总销售额约为 6902.48 万元，标题概括性四舍五入表示"
+  },
+  {
+    "scene": "Scene 2: 大盘",
+    "text_display": "+37.1%",
+    "appearance_time_sec": 3.87,
+    "calculation_scope": "2026 Q3 总销售额(69,024,831.00元) vs 2025 Q3 总销售额(50,336,617.00元)，同比增速 (69024831 - 50336617) / 50336617 = +37.13%"
+  },
+  {
+    "scene": "Scene 2: 大盘",
+    "text_display": "6902.48万元",
+    "appearance_time_sec": 3.87,
+    "calculation_scope": "求和 2026-07、2026-08、2026-09 所有明细行的销售额(元) = 69,024,831.00 元，折合 6902.48 万元"
+  },
+  {
+    "scene": "Scene 2: 大盘",
+    "text_display": "+30.9%",
+    "appearance_time_sec": 3.87,
+    "calculation_scope": "2026 Q3 销售额(69,024,831.00元) vs 2026 Q2 销售额(52,722,425.00元)，环比增速 (69024831 - 52722425) / 52722425 = +30.92%"
+  },
+  {
+    "scene": "Scene 2: 大盘",
+    "text_display": "3740.81万元",
+    "appearance_time_sec": 3.87,
+    "calculation_scope": "求和 2026-07、2026-08、2026-09 所有明细行的毛利(元) = 37,408,123.00 元，折合 3740.81 万元"
+  },
+  {
+    "scene": "Scene 2: 大盘",
+    "text_display": "54.2%",
+    "appearance_time_sec": 3.87,
+    "calculation_scope": "2026 Q3 综合毛利率 = 总毛利(37,408,123.00元) / 总销售额(69,024,831.00元) = 54.195% ≈ 54.2%"
+  },
+  {
+    "scene": "Scene 2: 大盘",
+    "text_display": "+30.9%",
+    "appearance_time_sec": 3.87,
+    "calculation_scope": "2026 Q3 毛利(37,408,123.00元) vs 2025 Q3 毛利(28,582,867.00元)，毛利同比增长 (37408123 - 28582867) / 28582867 = +30.88% ≈ +30.9%"
+  },
+  {
+    "scene": "Scene 2: 大盘",
+    "text_display": "281.65万单",
+    "appearance_time_sec": 3.87,
+    "calculation_scope": "求和 2026-07、2026-08、2026-09 所有明细行的订单数 = 2,816,489 单，折合 281.65 万单"
+  },
+  {
+    "scene": "Scene 2: 大盘",
+    "text_display": "24.5元",
+    "appearance_time_sec": 3.87,
+    "calculation_scope": "2026 Q3 平均客单价 = 总销售额(69,024,831.00元) / 总订单数(2,816,489单) = 24.507元 ≈ 24.5元"
+  },
+  {
+    "scene": "Scene 2: 大盘",
+    "text_display": "+33.2%",
+    "appearance_time_sec": 3.87,
+    "calculation_scope": "2026 Q3 订单数(2,816,489) vs 2025 Q3 订单数(2,114,352)，订单同比增速 (2816489 - 2114352) / 2114352 = +33.21% ≈ +33.2%"
+  },
+  {
+    "scene": "Scene 2: 大盘",
+    "text_display": "2656.19万元",
+    "appearance_time_sec": 3.87,
+    "calculation_scope": "求和 2026-07 单月所有明细行销售额 = 26,561,885.00 元，折合 2656.19 万元（创年内最高月营收纪录）"
+  },
+  {
+    "scene": "Scene 2: 大盘",
+    "text_display": "2247.83万元",
+    "appearance_time_sec": 3.87,
+    "calculation_scope": "求和 2026-08 单月所有明细行销售额 = 22,478,328.00 元，折合 2247.83 万元"
+  },
+  {
+    "scene": "Scene 2: 大盘",
+    "text_display": "1998.46万元",
+    "appearance_time_sec": 3.87,
+    "calculation_scope": "求和 2026-09 单月所有明细行销售额 = 19,984,618.00 元，折合 1998.46 万元"
+  },
+  {
+    "scene": "Scene 2: 大盘",
+    "text_display": "2600万+",
+    "appearance_time_sec": 3.87,
+    "calculation_scope": "2026年7月单月销售额 2656.19 万元突破 2600 万元大关"
+  },
+  {
+    "scene": "Scene 3: 结构",
+    "text_display": "60%",
+    "appearance_time_sec": 9.68,
+    "calculation_scope": "经典咖啡(32.3%) + 创意特调(28.5%) 占 Q3 总销售额比例合计 60.8% > 60%"
+  },
+  {
+    "scene": "Scene 3: 结构",
+    "text_display": "215%",
+    "appearance_time_sec": 9.68,
+    "calculation_scope": "轻食品类 2026 Q3 销售额(10,695,296.00元) vs 2025 Q3 销售额(3,395,739.00元)，同比增速 (10695296 - 3395739) / 3395739 = +214.96% ≈ +215.0%"
+  },
+  {
+    "scene": "Scene 3: 结构",
+    "text_display": "+9.2%",
+    "appearance_time_sec": 9.68,
+    "calculation_scope": "经典咖啡 2026 Q3(22,305,862.00元) vs 2025 Q3(20,430,774.00元)，同比增长 +9.18% ≈ +9.2%"
+  },
+  {
+    "scene": "Scene 3: 结构",
+    "text_display": "2230.6万元",
+    "appearance_time_sec": 9.68,
+    "calculation_scope": "2026 Q3 经典咖啡品类销售额汇总为 22,305,862.00 元，折合 2230.59 万元 ≈ 2230.6 万元"
+  },
+  {
+    "scene": "Scene 3: 结构",
+    "text_display": "32.3%",
+    "appearance_time_sec": 9.68,
+    "calculation_scope": "经典咖啡销售额(22,305,862.00元) / Q3总销售额(69,024,831.00元) = 32.32% ≈ 32.3%"
+  },
+  {
+    "scene": "Scene 3: 结构",
+    "text_display": "+34.8%",
+    "appearance_time_sec": 9.68,
+    "calculation_scope": "创意特调 2026 Q3(19,650,111.00元) vs 2025 Q3(14,578,970.00元)，同比增加 +34.78% ≈ +34.8%"
+  },
+  {
+    "scene": "Scene 3: 结构",
+    "text_display": "1965.0万元",
+    "appearance_time_sec": 9.68,
+    "calculation_scope": "2026 Q3 创意特调品类销售额汇总为 19,650,111.00 元，折合 1965.01 万元 ≈ 1965.0 万元"
+  },
+  {
+    "scene": "Scene 3: 结构",
+    "text_display": "28.5%",
+    "appearance_time_sec": 9.68,
+    "calculation_scope": "创意特调销售额(19,650,111.00元) / Q3总销售额(69,024,831.00元) = 28.47% ≈ 28.5%"
+  },
+  {
+    "scene": "Scene 3: 结构",
+    "text_display": "+52.4%",
+    "appearance_time_sec": 9.68,
+    "calculation_scope": "茶饮 2026 Q3(12,818,728.00元) vs 2025 Q3(8,409,514.00元)，同比增速 +52.43% ≈ +52.4%"
+  },
+  {
+    "scene": "Scene 3: 结构",
+    "text_display": "1281.9万元",
+    "appearance_time_sec": 9.68,
+    "calculation_scope": "2026 Q3 茶饮品类销售额汇总为 12,818,728.00 元，折合 1281.87 万元 ≈ 1281.9 万元"
+  },
+  {
+    "scene": "Scene 3: 结构",
+    "text_display": "18.6%",
+    "appearance_time_sec": 9.68,
+    "calculation_scope": "茶饮销售额(12,818,728.00元) / Q3总销售额(69,024,831.00元) = 18.57% ≈ 18.6%"
+  },
+  {
+    "scene": "Scene 3: 结构",
+    "text_display": "1069.5万元",
+    "appearance_time_sec": 9.68,
+    "calculation_scope": "2026 Q3 轻食品类销售额汇总为 10,695,296.00 元，折合 1069.53 万元 ≈ 1069.5 万元"
+  },
+  {
+    "scene": "Scene 3: 结构",
+    "text_display": "15.5%",
+    "appearance_time_sec": 9.68,
+    "calculation_scope": "轻食销售额(10,695,296.00元) / Q3总销售额(69,024,831.00元) = 15.49% ≈ 15.5%"
+  },
+  {
+    "scene": "Scene 3: 结构",
+    "text_display": "+0.9%",
+    "appearance_time_sec": 9.68,
+    "calculation_scope": "周边 2026 Q3(3,554,834.00元) vs 2025 Q3(3,521,620.00元)，同比增加 +0.94% ≈ +0.9%"
+  },
+  {
+    "scene": "Scene 3: 结构",
+    "text_display": "355.5万元",
+    "appearance_time_sec": 9.68,
+    "calculation_scope": "2026 Q3 周边品类销售额汇总为 3,554,834.00 元，折合 355.48 万元 ≈ 355.5 万元"
+  },
+  {
+    "scene": "Scene 3: 结构",
+    "text_display": "5.2%",
+    "appearance_time_sec": 9.68,
+    "calculation_scope": "周边销售额(3,554,834.00元) / Q3总销售额(69,024,831.00元) = 5.15% ≈ 5.2%"
+  },
+  {
+    "scene": "Scene 3: 结构",
+    "text_display": "51.9%",
+    "appearance_time_sec": 9.68,
+    "calculation_scope": "外卖销售额(35,853,235.00元) / Q3总销售额(69,024,831.00元) = 51.94% ≈ 51.9%"
+  },
+  {
+    "scene": "Scene 3: 结构",
+    "text_display": "3585.3万",
+    "appearance_time_sec": 9.68,
+    "calculation_scope": "2026 Q3 外卖渠道销售额汇总为 35,853,235.00 元，折合 3585.32 万元 ≈ 3585.3 万元"
+  },
+  {
+    "scene": "Scene 3: 结构",
+    "text_display": "+64.0%",
+    "appearance_time_sec": 9.68,
+    "calculation_scope": "外卖渠道 2026 Q3(35,853,235.00元) vs 2025 Q3(21,866,413.00元)，同比增速 +63.98% ≈ +64.0%"
+  },
+  {
+    "scene": "Scene 3: 结构",
+    "text_display": "48.1%",
+    "appearance_time_sec": 9.68,
+    "calculation_scope": "门店销售额(33,171,596.00元) / Q3总销售额(69,024,831.00元) = 48.06% ≈ 48.1%"
+  },
+  {
+    "scene": "Scene 3: 结构",
+    "text_display": "3317.2万",
+    "appearance_time_sec": 9.68,
+    "calculation_scope": "2026 Q3 门店渠道销售额汇总为 33,171,596.00 元，折合 3317.16 万元 ≈ 3317.2 万元"
+  },
+  {
+    "scene": "Scene 3: 结构",
+    "text_display": "60.5%",
+    "appearance_time_sec": 9.68,
+    "calculation_scope": "门店毛利(20,068,168.00元) / 门店销售额(33,171,596.00元) = 60.50% ≈ 60.5%"
+  },
+  {
+    "scene": "Scene 3: 结构",
+    "text_display": "2070.43万元",
+    "appearance_time_sec": 9.68,
+    "calculation_scope": "求和 2026 Q3 华东大区各行销售额 = 20,704,324.00 元，折合 2070.43 万元"
+  },
+  {
+    "scene": "Scene 3: 结构",
+    "text_display": "30.0%",
+    "appearance_time_sec": 9.68,
+    "calculation_scope": "华东销售额(20,704,324.00元) / Q3总销售额(69,024,831.00元) = 29.996% ≈ 30.0%"
+  },
+  {
+    "scene": "Scene 3: 结构",
+    "text_display": "76.1%",
+    "appearance_time_sec": 9.68,
+    "calculation_scope": "华东(2070.43万, 30.0%) + 华北(1705.66万, 24.7%) + 华南(1475.46万, 21.4%) = 5251.55 万元，占全盘 5251.55 / 6902.48 = 76.08% ≈ 76.1%"
+  },
+  {
+    "scene": "Scene 4: 高潮帧",
+    "text_display": "6902.48万元",
+    "appearance_time_sec": 15.48,
+    "calculation_scope": "2026 Q3 全季总销售额，全片唯一视觉焦点放大展示"
+  },
+  {
+    "scene": "Scene 4: 高潮帧",
+    "text_display": "+37.1%",
+    "appearance_time_sec": 15.48,
+    "calculation_scope": "2026 Q3 销售额同比 2025 Q3 增长率"
+  },
+  {
+    "scene": "Scene 4: 高潮帧",
+    "text_display": "+30.9%",
+    "appearance_time_sec": 15.48,
+    "calculation_scope": "2026 Q3 销售额环比 2026 Q2 增长率"
+  },
+  {
+    "scene": "Scene 4: 高潮帧",
+    "text_display": "3740.81万",
+    "appearance_time_sec": 15.48,
+    "calculation_scope": "2026 Q3 全季总毛利金额"
+  },
+  {
+    "scene": "Scene 5: 结语收束",
+    "text_display": "6902.48万",
+    "appearance_time_sec": 23.23,
+    "calculation_scope": "2026 Q3 季度营收总额回顾"
+  },
+  {
+    "scene": "Scene 5: 结语收束",
+    "text_display": "+37.1%",
+    "appearance_time_sec": 23.23,
+    "calculation_scope": "2026 Q3 季度营收同比增速回顾"
+  },
+  {
+    "scene": "Scene 5: 结语收束",
+    "text_display": "3740.81万",
+    "appearance_time_sec": 23.23,
+    "calculation_scope": "2026 Q3 季度毛利总额回顾"
+  },
+  {
+    "scene": "Scene 5: 结语收束",
+    "text_display": "54.2%",
+    "appearance_time_sec": 23.23,
+    "calculation_scope": "2026 Q3 季度毛利率回顾"
+  },
+  {
+    "scene": "Scene 5: 结语收束",
+    "text_display": "281.65万单",
+    "appearance_time_sec": 23.23,
+    "calculation_scope": "2026 Q3 季度成交总订单回顾"
+  },
+  {
+    "scene": "Scene 5: 结语收束",
+    "text_display": "+33.2%",
+    "appearance_time_sec": 23.23,
+    "calculation_scope": "2026 Q3 季度订单同比增速回顾"
+  }
+]

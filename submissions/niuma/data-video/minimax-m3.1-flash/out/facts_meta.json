@@ -1,0 +1,36 @@
+{
+  "video": {
+    "title": "牛马咖啡 2026 Q3 经营速报",
+    "file": "out/video.mp4",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "codec": "h264",
+    "duration_seconds": 30.0,
+    "duration_frames": 900,
+    "audio": "out/bgm.wav（music-gen 原创生成，120 BPM，30.0 秒，与画面同起同止）",
+    "reproduce": "cd project && npm install && npx remotion render Q3Report out/video.mp4 --codec=h264 --crf=17"
+  },
+  "period": "2026-07 ~ 2026-09（第三季度）",
+  "compare_bases": {
+    "环比": "2026-04 ~ 2026-06（第二季度）",
+    "同比": "2025-07 ~ 2025-09（去年同期）"
+  },
+  "display_unit": "金额一律以万元显示，由源数据（元）除以 10000 后四舍五入到 0.1",
+  "scenes": [
+    {"id": "S1", "name": "片头",       "start_frame": 0,   "start_sec": 0.0,  "end_sec": 2.0},
+    {"id": "S2", "name": "大盘（高潮帧）", "start_frame": 60,  "start_sec": 2.0,  "end_sec": 5.0},
+    {"id": "S3", "name": "月度节奏",     "start_frame": 150, "start_sec": 5.0,  "end_sec": 8.0},
+    {"id": "S4", "name": "华北引擎",     "start_frame": 240, "start_sec": 8.0,  "end_sec": 11.0},
+    {"id": "S5", "name": "渠道结构",     "start_frame": 330, "start_sec": 11.0, "end_sec": 14.0},
+    {"id": "S6", "name": "毛利率转折",   "start_frame": 420, "start_sec": 14.0, "end_sec": 18.0},
+    {"id": "S7", "name": "同比高潮帧",   "start_frame": 540, "start_sec": 18.0, "end_sec": 23.0},
+    {"id": "S8", "name": "三句话结论",   "start_frame": 690, "start_sec": 23.0, "end_sec": 27.0},
+    {"id": "S9", "name": "品牌落板",     "start_frame": 810, "start_sec": 27.0, "end_sec": 30.0}
+  ],
+  "notes": [
+    "所有数字的时间点给出的是该数字开始滚动出现的时刻（t_appear）与其完全落定的时刻（t_settled）；数字滚动动画期间画面上是过渡值。",
+    "所有场景切换帧号均为 30 的倍数且等于某拍起点（见 out/beats.json 的 cutPoints），误差为 0 帧。",
+    "csv 中 2025-01 至 2026-09 共 1060 行明细，本片只使用 2026-04 之后的月份做趋势图，用 Q3 三个月做全部汇总。"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "period": "2026年Q3",
+  "removedDuplicateRows": 10,
+  "rowsAfterDedup": 1050,
+  "sales": {
+    "q3": 6467.7,
+    "q3py": 5033.7,
+    "q2": 5272.2,
+    "yoyPct": 28.5,
+    "qoqPct": 22.7
+  },
+  "gp": {
+    "q3": 3504.2,
+    "yoyPct": 22.6
+  },
+  "margin": {
+    "q3": 54.2,
+    "q3py": 56.8,
+    "q2": 55.9,
+    "series": [
+      56.8,
+      56.6,
+      56.2,
+      55.9,
+      54.2
+    ],
+    "deltaPt": -2.6,
+    "per100": [
+      56.8,
+      54.2
+    ]
+  },
+  "channel": {
+    "外卖": {
+      "sales": 3366.9,
+      "sharePct": 52.1,
+      "yoyPct": 54.0,
+      "marginPct": 48.4
+    },
+    "门店": {
+      "sales": 3100.7,
+      "sharePct": 47.9,
+      "yoyPct": 8.9,
+      "marginPct": 60.5
+    }
+  }
+}

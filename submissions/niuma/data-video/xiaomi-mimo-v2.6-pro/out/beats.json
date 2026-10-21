@@ -1,0 +1,430 @@
+{
+  "bpm": 120,
+  "beatsPerBar": 4,
+  "secondsPerBeat": 0.5,
+  "totalBeats": 60,
+  "durationSec": 30.0,
+  "note": "每拍 0.5s；downbeat=true 为每小节第一拍。成片切镜/换屏全部对齐 downbeat。",
+  "beats": [
+    {
+      "index": 0,
+      "timeSec": 0.0,
+      "bar": 1,
+      "beatInBar": 1,
+      "downbeat": true
+    },
+    {
+      "index": 1,
+      "timeSec": 0.5,
+      "bar": 1,
+      "beatInBar": 2,
+      "downbeat": false
+    },
+    {
+      "index": 2,
+      "timeSec": 1.0,
+      "bar": 1,
+      "beatInBar": 3,
+      "downbeat": false
+    },
+    {
+      "index": 3,
+      "timeSec": 1.5,
+      "bar": 1,
+      "beatInBar": 4,
+      "downbeat": false
+    },
+    {
+      "index": 4,
+      "timeSec": 2.0,
+      "bar": 2,
+      "beatInBar": 1,
+      "downbeat": true
+    },
+    {
+      "index": 5,
+      "timeSec": 2.5,
+      "bar": 2,
+      "beatInBar": 2,
+      "downbeat": false
+    },
+    {
+      "index": 6,
+      "timeSec": 3.0,
+      "bar": 2,
+      "beatInBar": 3,
+      "downbeat": false
+    },
+    {
+      "index": 7,
+      "timeSec": 3.5,
+      "bar": 2,
+      "beatInBar": 4,
+      "downbeat": false
+    },
+    {
+      "index": 8,
+      "timeSec": 4.0,
+      "bar": 3,
+      "beatInBar": 1,
+      "downbeat": true
+    },
+    {
+      "index": 9,
+      "timeSec": 4.5,
+      "bar": 3,
+      "beatInBar": 2,
+      "downbeat": false
+    },
+    {
+      "index": 10,
+      "timeSec": 5.0,
+      "bar": 3,
+      "beatInBar": 3,
+      "downbeat": false
+    },
+    {
+      "index": 11,
+      "timeSec": 5.5,
+      "bar": 3,
+      "beatInBar": 4,
+      "downbeat": false
+    },
+    {
+      "index": 12,
+      "timeSec": 6.0,
+      "bar": 4,
+      "beatInBar": 1,
+      "downbeat": true
+    },
+    {
+      "index": 13,
+      "timeSec": 6.5,
+      "bar": 4,
+      "beatInBar": 2,
+      "downbeat": false
+    },
+    {
+      "index": 14,
+      "timeSec": 7.0,
+      "bar": 4,
+      "beatInBar": 3,
+      "downbeat": false
+    },
+    {
+      "index": 15,
+      "timeSec": 7.5,
+      "bar": 4,
+      "beatInBar": 4,
+      "downbeat": false
+    },
+    {
+      "index": 16,
+      "timeSec": 8.0,
+      "bar": 5,
+      "beatInBar": 1,
+      "downbeat": true
+    },
+    {
+      "index": 17,
+      "timeSec": 8.5,
+      "bar": 5,
+      "beatInBar": 2,
+      "downbeat": false
+    },
+    {
+      "index": 18,
+      "timeSec": 9.0,
+      "bar": 5,
+      "beatInBar": 3,
+      "downbeat": false
+    },
+    {
+      "index": 19,
+      "timeSec": 9.5,
+      "bar": 5,
+      "beatInBar": 4,
+      "downbeat": false
+    },
+    {
+      "index": 20,
+      "timeSec": 10.0,
+      "bar": 6,
+      "beatInBar": 1,
+      "downbeat": true
+    },
+    {
+      "index": 21,
+      "timeSec": 10.5,
+      "bar": 6,
+      "beatInBar": 2,
+      "downbeat": false
+    },
+    {
+      "index": 22,
+      "timeSec": 11.0,
+      "bar": 6,
+      "beatInBar": 3,
+      "downbeat": false
+    },
+    {
+      "index": 23,
+      "timeSec": 11.5,
+      "bar": 6,
+      "beatInBar": 4,
+      "downbeat": false
+    },
+    {
+      "index": 24,
+      "timeSec": 12.0,
+      "bar": 7,
+      "beatInBar": 1,
+      "downbeat": true
+    },
+    {
+      "index": 25,
+      "timeSec": 12.5,
+      "bar": 7,
+      "beatInBar": 2,
+      "downbeat": false
+    },
+    {
+      "index": 26,
+      "timeSec": 13.0,
+      "bar": 7,
+      "beatInBar": 3,
+      "downbeat": false
+    },
+    {
+      "index": 27,
+      "timeSec": 13.5,
+      "bar": 7,
+      "beatInBar": 4,
+      "downbeat": false
+    },
+    {
+      "index": 28,
+      "timeSec": 14.0,
+      "bar": 8,
+      "beatInBar": 1,
+      "downbeat": true
+    },
+    {
+      "index": 29,
+      "timeSec": 14.5,
+      "bar": 8,
+      "beatInBar": 2,
+      "downbeat": false
+    },
+    {
+      "index": 30,
+      "timeSec": 15.0,
+      "bar": 8,
+      "beatInBar": 3,
+      "downbeat": false
+    },
+    {
+      "index": 31,
+      "timeSec": 15.5,
+      "bar": 8,
+      "beatInBar": 4,
+      "downbeat": false
+    },
+    {
+      "index": 32,
+      "timeSec": 16.0,
+      "bar": 9,
+      "beatInBar": 1,
+      "downbeat": true
+    },
+    {
+      "index": 33,
+      "timeSec": 16.5,
+      "bar": 9,
+      "beatInBar": 2,
+      "downbeat": false
+    },
+    {
+      "index": 34,
+      "timeSec": 17.0,
+      "bar": 9,
+      "beatInBar": 3,
+      "downbeat": false
+    },
+    {
+      "index": 35,
+      "timeSec": 17.5,
+      "bar": 9,
+      "beatInBar": 4,
+      "downbeat": false
+    },
+    {
+      "index": 36,
+      "timeSec": 18.0,
+      "bar": 10,
+      "beatInBar": 1,
+      "downbeat": true
+    },
+    {
+      "index": 37,
+      "timeSec": 18.5,
+      "bar": 10,
+      "beatInBar": 2,
+      "downbeat": false
+    },
+    {
+      "index": 38,
+      "timeSec": 19.0,
+      "bar": 10,
+      "beatInBar": 3,
+      "downbeat": false
+    },
+    {
+      "index": 39,
+      "timeSec": 19.5,
+      "bar": 10,
+      "beatInBar": 4,
+      "downbeat": false
+    },
+    {
+      "index": 40,
+      "timeSec": 20.0,
+      "bar": 11,
+      "beatInBar": 1,
+      "downbeat": true
+    },
+    {
+      "index": 41,
+      "timeSec": 20.5,
+      "bar": 11,
+      "beatInBar": 2,
+      "downbeat": false
+    },
+    {
+      "index": 42,
+      "timeSec": 21.0,
+      "bar": 11,
+      "beatInBar": 3,
+      "downbeat": false
+    },
+    {
+      "index": 43,
+      "timeSec": 21.5,
+      "bar": 11,
+      "beatInBar": 4,
+      "downbeat": false
+    },
+    {
+      "index": 44,
+      "timeSec": 22.0,
+      "bar": 12,
+      "beatInBar": 1,
+      "downbeat": true
+    },
+    {
+      "index": 45,
+      "timeSec": 22.5,
+      "bar": 12,
+      "beatInBar": 2,
+      "downbeat": false
+    },
+    {
+      "index": 46,
+      "timeSec": 23.0,
+      "bar": 12,
+      "beatInBar": 3,
+      "downbeat": false
+    },
+    {
+      "index": 47,
+      "timeSec": 23.5,
+      "bar": 12,
+      "beatInBar": 4,
+      "downbeat": false
+    },
+    {
+      "index": 48,
+      "timeSec": 24.0,
+      "bar": 13,
+      "beatInBar": 1,
+      "downbeat": true
+    },
+    {
+      "index": 49,
+      "timeSec": 24.5,
+      "bar": 13,
+      "beatInBar": 2,
+      "downbeat": false
+    },
+    {
+      "index": 50,
+      "timeSec": 25.0,
+      "bar": 13,
+      "beatInBar": 3,
+      "downbeat": false
+    },
+    {
+      "index": 51,
+      "timeSec": 25.5,
+      "bar": 13,
+      "beatInBar": 4,
+      "downbeat": false
+    },
+    {
+      "index": 52,
+      "timeSec": 26.0,
+      "bar": 14,
+      "beatInBar": 1,
+      "downbeat": true
+    },
+    {
+      "index": 53,
+      "timeSec": 26.5,
+      "bar": 14,
+      "beatInBar": 2,
+      "downbeat": false
+    },
+    {
+      "index": 54,
+      "timeSec": 27.0,
+      "bar": 14,
+      "beatInBar": 3,
+      "downbeat": false
+    },
+    {
+      "index": 55,
+      "timeSec": 27.5,
+      "bar": 14,
+      "beatInBar": 4,
+      "downbeat": false
+    },
+    {
+      "index": 56,
+      "timeSec": 28.0,
+      "bar": 15,
+      "beatInBar": 1,
+      "downbeat": true
+    },
+    {
+      "index": 57,
+      "timeSec": 28.5,
+      "bar": 15,
+      "beatInBar": 2,
+      "downbeat": false
+    },
+    {
+      "index": 58,
+      "timeSec": 29.0,
+      "bar": 15,
+      "beatInBar": 3,
+      "downbeat": false
+    },
+    {
+      "index": 59,
+      "timeSec": 29.5,
+      "bar": 15,
+      "beatInBar": 4,
+      "downbeat": false
+    }
+  ]
+}
