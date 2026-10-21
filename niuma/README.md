@@ -32,7 +32,7 @@
 | 代码题 | [`results/niuma/game/results.md`](../results/niuma/game/results.md) | 盲评 60（均值）+ 客观 40 |
 | K 动画 | [`results/niuma/k-animation/results.md`](../results/niuma/k-animation/results.md) | 盲评 60（均值）+ 客观 40 |
 | 数据短片 | [`results/niuma/data-video/results.md`](../results/niuma/data-video/results.md) | 盲评 60（中位）+ 客观 40 |
-| **三题综合** | [`results/niuma/summary.md`](../results/niuma/summary.md) | 三题名次取平均 |
+| **三题综合** | [`results/niuma/summary.md`](../results/niuma/summary.md) | 三题得分加总 |
 
 ## 大文件
 
