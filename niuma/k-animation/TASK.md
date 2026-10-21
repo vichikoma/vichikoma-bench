@@ -1,6 +1,8 @@
 # K 动画题 · 任务书
 
 > 为角色 **CocoMon** 制作一套游戏常用的循环动画（Mixamo 风格），交付一个带动画的 `.blend` 文件。
+>
+> `cocomon_tpose.blend` 里的角色基于第三方素材（“Cartoon Character” by Rahib Roshan，CC BY 4.0）。你要把这份文件或自己做的成品再分发出去，请保留署名，写法见仓库根目录 [`CREDITS.md`](../../CREDITS.md)。
 
 ## 一、任务
 

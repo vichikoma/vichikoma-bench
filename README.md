@@ -76,6 +76,14 @@ results/        评分与消耗
 口径：**代码 MV、循环 BGM、程序化建模** 三题的名次按 **Borda** 判定（每位评委独立排序后累加）；各维度均为评委平均分，**分数只在同一维度内横向可比**；费用为人民币，含缓存命中与多轮自检重渲的累计用量。
 牛马横评的计分与汇总方式逐题不同（盲评均值／中位数 + 客观脚本核验），见各结果页页首。
 
+## 素材与署名
+
+仓库里分发的第三方素材按各自许可使用，署名在 [`CREDITS.md`](CREDITS.md)。目前一项：
+
+- **K 动画题的角色模型**（`niuma/k-animation/cocomon_tpose.blend`）——“Cartoon Character” by **Rahib Roshan**，[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)，来自 [Sketchfab](https://sketchfab.com/3d-models/cartoon-character-825b8c83ae5546f8b6e5539dd47120c9)。本项目做了重命名与骨骼绑定，各家交付在此基础上加了动画。
+
+**再分发时请把这段署名一起带上。**
+
 ---
 
 ## 关注

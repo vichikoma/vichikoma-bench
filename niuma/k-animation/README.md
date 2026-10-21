@@ -62,3 +62,11 @@ GPT-6.1-Sol · Claude-Haiku-5.5 · Gemini-3.8-Flash · DeepSeek-V4.1-Flash · Qw
 
 - **成品 `.blend` 里是模型自己的文件**，保留了他们各自的场景设置。8 件的相机与五灯都和输入一致（这是客观项 C4 的检查内容），所以打开后视角一样。
 - 每件的交付目录里还有一个 `cocomon_animated_review.blend`：把四个 Action 串成一条时间线（约 350 帧）的副本，方便连着看。它不是交付物，未收录。
+
+## 七、素材与署名
+
+`cocomon_tpose.blend` 里的角色不是原创，是第三方素材改的：
+
+> “Cartoon Character” by **Rahib Roshan**，[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)，来自 [Sketchfab](https://sketchfab.com/3d-models/cartoon-character-825b8c83ae5546f8b6e5539dd47120c9)。改动：重命名为 CocoMon、绑定 25 骨 FK rig；各家交付的 `cocomon_animated.blend` 在此之上新增了 4 个动画 Action。
+
+CC BY 4.0 只要求署名，不限制商用和修改——但**署名必须留着**。如果你要再分发这份输入文件、某件成品，或者拿它做自己的东西，把上面这段（英文原名与链接别省）一起带上即可。仓库汇总见 [`CREDITS.md`](../../CREDITS.md)。
